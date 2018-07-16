@@ -17,57 +17,57 @@ var publicConfig = (function() {
     // 接口主机地址
     var host = {
         mock: "10.16.0.204:8080",
-        dev: 'devmarket.toobei.com',
-        pre: 'premarket.toobei.com',
-        produce: 'market.toobei.com'
+        dev: 'devmarket.bethye.top',
+        pre: 'premarket.bethye.top',
+        produce: 'market.bethye.top'
     };
 
     // 图片接口主机地址
     var imgHost = {
-        mock: 'preimage.toobei.com',
-        dev: 'preimage.toobei.com',
-        pre: 'preimage.toobei.com',
-        produce: 'image.toobei.com'
+        mock: 'preimage.bethye.top',
+        dev: 'preimage.bethye.top',
+        pre: 'preimage.bethye.top',
+        produce: 'image.bethye.top'
     }
 
     var liecaiHost = {
-        mock: 'https://prenliecai.toobei.com',
-        dev: 'https://prenliecai.toobei.com',
-        pre: 'https://prenliecai.toobei.com',
-        produce: 'https://nliecai.toobei.com'
+        mock: 'https://prenliecai.bethye.top',
+        dev: 'https://prenliecai.bethye.top',
+        pre: 'https://prenliecai.bethye.top',
+        produce: 'https://nliecai.bethye.top'
     }
 
     //网址地址
     var static = {
-        mock: 'preliecai.toobei.com',
+        mock: 'preliecai.bethye.top',
         //开发环境
-        dev: 'devliecai.toobei.com',
+        dev: 'devliecai.bethye.top',
         // 预发布环境
-        pre: 'preliecai.toobei.com',
+        pre: 'preliecai.bethye.top',
         // 生产环境
-        produce: 'liecai.toobei.com'
+        produce: 'liecai.bethye.top'
     }
 
     // 网站地址
     var webAddress = {
         // mock环境
-        mock: 'preliecai.toobei.com',
+        mock: 'preliecai.bethye.top',
         //开发环境
-        dev: 'devliecai.toobei.com',
+        dev: 'devliecai.bethye.top',
         // 预发布环境
-        pre: 'preliecai.toobei.com',
+        pre: 'preliecai.bethye.top',
         // 生产环境
-        produce: 'liecai.toobei.com'
+        produce: 'liecai.bethye.top'
     }
 
     var toobeiDomain = {
-        mock: 'pre.toobei.com/app',
+        mock: 'pre.bethye.top/app',
         //开发环境
-        dev: 'pre.toobei.com/app',
+        dev: 'pre.bethye.top/app',
         // 预发布环境
-        pre: 'pre.toobei.com/app',
+        pre: 'pre.bethye.top/app',
         // 生产环境
-        produce: 'www.toobei.com/app'
+        produce: 'www.bethye.top/app'
     }
 
     // http协议名

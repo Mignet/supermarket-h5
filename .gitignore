@@ -2,6 +2,7 @@
 /node_modules
 /output
 /components
+package-lock.json
 *.bak
 .idea
 .vscode

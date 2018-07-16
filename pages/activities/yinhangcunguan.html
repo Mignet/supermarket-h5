@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>银行存管平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body class="articleBody">
+<div class="wraper">
+    <div>
+        <img src="yinhangcunguan/1.jpg">
+    </div>
+    <div>
+        <img src="yinhangcunguan/2.jpg">
+    </div>
+    <div>
+        <img src="yinhangcunguan/3.jpg">
+    </div>
+    <div>
+        <img src="yinhangcunguan/4.jpg">
+    </div>
+    <div>
+        <img src="yinhangcunguan/5.jpg">
+    </div>
+    <div id="xinyongbao">
+        <img src="yinhangcunguan/6.jpg">
+    </div>
+    <div>
+        <img src="yinhangcunguan/7.jpg">
+    </div>
+    <div id="hexindai">
+        <img src="yinhangcunguan/8.jpg">
+    </div>
+</div>
+<script>
+    require('modules/widget/download/download');
+    var $ 	   = require("zepto");
+    var native = require('modules/common/native');
+    var evt = {
+        init:function(){
+            var self = this;
+            if(native.isApp){
+            native.getAppToken(function(data){
+                self.token = data || '';
+                self.bindEvent();
+            });
+            }else{
+                self.bindEvent();            
+            }
+        },
+        bindEvent:function(){
+            if(native.isApp){
+                $(".wraper").on("click","#xinyongbao",function(){
+                    native.action('getAppPlatfromDetail',{orgNo: "OPEN_XINYONGBAO_WEB"});
+                })
+
+                $(".wraper").on("click","#hexindai",function(){                
+                    native.action('getAppPlatfromDetail',{orgNo: "OPEN_HEXINDAI_WEB"});
+                })
+            }else{
+                $(".wraper").on("click","#xinyongbao",function(){
+                    location.href="./../download/actDownload.html?Action=agentDetailLINEOPEN_XINYONGBAO_WEB"
+                })
+
+                $(".wraper").on("click","#hexindai",function(){
+                    location.href="./../download/actDownload.html?Action=agentDetailLINEOPEN_HEXINDAI_WEB"
+                })
+            }
+        }
+    }
+    evt.init();
+</script>
+</body>
+</html>

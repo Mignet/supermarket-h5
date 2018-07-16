@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>常见问题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style type="text/css">
+        .center {
+            text-align: center;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .article {
+            display: none;
+        }
+        .article p {
+            line-height: 2em;
+        }
+        .article a {
+            text-decoration: underline;
+            color: #007aff;
+        }
+        .indent {
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body class="articleBody">
+<div class="wraper">
+    <div class="article">
+        <h4>1.什么是销售佣金？</h4>
+        <p>名下客户投资时，理财师获得的收益称为客户销售佣金。具体计算方法详见<a href="./../message/sale_commission.html">《销售佣金说明》</a></p>
+        <h4>2.什么是推荐奖励？</h4>
+        <p>推荐理财师加入猎财，该理财师出单时您将获得的收益称为推荐奖励。具体详见<a href="./../agreement/recommendRule.html">《推荐奖励说明》</a></p>
+        <h4>3.什么是直接管理津贴？</h4>
+        <p>当您职级达到经理或总监时，您直接推荐的理财师(职级比您低)出单后，您获得的收益称为直接管理津贴。具体详见<a href="./../message/direct_allowance.html">《直接管理津贴说明》</a></p>
+        <h4>4.什么是团队管理津贴？</h4>
+        <p>当您职级达到经理（或总监）时，您团队中的理财师(职级比您低)出单后，您获得的收益称为团队管理津贴。具体详见<a href="./../message/team_allowance.html">《团队管理津贴说明》</a></p>
+        <h4>5.什么是活动奖励？</h4>
+        <p>理财师参加猎财大师活动所获得的奖励称为活动奖励。活动奖励的具体内容和发放时间视具体活动而定。</p>
+        <h4>6.什么是投资返现红包？</h4>
+        <p>投资后根据投资情况返还现金给投资人的红包称为投资返现红包。返还的现金可随时提现。</p>
+        <p>理财师注册猎财、投资人注册T呗时将会获得528元投资返现红包，平台会不定期发放投资返现红包，理财师和投资人也可以通过参加平台活动获取更多红包。</p>
+    </div>
+    <div class="article" data-type="1">
+        <p>该产品为首投标，其佣金计算公式如下：</p>
+        <h4 class="indent">佣金=投资金额×年化佣金率×投资期限／360</h4>
+        <p>　</p>
+        <p>备注：投资金额大于佣金计算金额上限时，按佣金计算金额上限进行计算，否则按实际投资金额计算；投资期限大于佣金计算期限上限时，按佣金计算期限上限计算，否则按实际投资期限计算。</p>
+    </div>
+    <div class="article" data-type="2">
+        <p>该产品为首投标且可提前赎回/转让，其佣金计算公式如下：</p>
+        <p>先计算锁定期佣金到理财师账户，锁定期后若用户继续持有该产品，则按天数计算，次月15日发放到猎财账户）。佣金计算公式如下：</p>
+        <h4 class="indent">锁定期佣金=投资金额×年化佣金率×投资期限／360</h4>
+        <p>　</p>
+        <p>备注：投资金额大于佣金计算金额上限时，按佣金计算金额上限进行计算，否则按实际投资金额计算；投资期限大于佣金计算期限上限时，按佣金计算期限上限计算，否则按实际投资期限计算。</p>
+    </div>
+    <div class="article" data-type="3">
+        <p>该产品为复投标，其佣金计算公式如下：</p>
+        <h4 class="indent">佣金=投资金额×年化佣金率×投资期限／360</h4>
+    </div>
+    <div class="article" data-type="4">
+        <p>该产品为复投标且可提前赎回/转让，其佣金计算公式如下：</p>
+        <p>先计算锁定期佣金到理财师账户，锁定期后若用户继续持有该产品，则按天数计算，次月15日发放到猎财账户）。佣金计算公式如下：</p>
+        <h4 class="indent">锁定期佣金=投资金额×年化佣金率×投资期限／360</h4>
+    </div>
+</div>
+<script type="text/javascript">
+    require('balance_rule/balance_rule');
+</script>
+</body>
+</html>

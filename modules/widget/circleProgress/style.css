@@ -1,0 +1,73 @@
+.circleProgress_wrapper{
+    position:relative;
+    margin:auto;
+    width:2.96rem;
+    height:2.96rem;
+}
+.circleProgress{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    border:.04rem solid transparent;
+    position:absolute;
+}
+.circleProgress_bg{
+    border-color: #dcdcdc;
+    border-radius:50%;
+}
+.circleProgress_half{
+  width: 50%;
+  height: 100%;
+  top:0;
+  position: absolute;
+  overflow: hidden;
+}
+.circleProgress_left{
+  left:0;
+}
+.circleProgress_right{
+  right:0;
+}
+.circleProgress_over{
+    width:200%;
+    border-radius: 50%;
+}
+.circleProgress_left .circleProgress_over{
+    -webkit-transform: rotate(-225deg);
+    border-left-color:#12b7f5;
+    border-top-color:#12b7f5;
+}
+.circleProgress_right .circleProgress_over{
+    left:-100%;
+    -webkit-transform: rotate(-225deg);
+    border-right-color:#12b7f5;
+    border-bottom-color:#12b7f5;
+}
+.gray .circleProgress_over{
+    border-color:transparent;
+}
+
+.point_wraper{
+    width:.26rem;
+    height:100%;
+    position:absolute;
+    margin-left:-0.13rem;
+    left:50%;
+    top:0;
+}
+.point_num{
+    background:#12b7f5;
+    width:100%;
+    height:.26rem;
+    line-height:.26rem;
+    border-radius:50%;
+    text-align:center;
+    position: absolute;
+    left:0;
+    top:-0.11rem;
+    color:#fff;
+    font-size:.1rem;
+}
+.gray .point_num{
+    background:#dcdcdc;
+}

@@ -1,0 +1,454 @@
+﻿@font-face {
+    font-family: DINOTMedium;
+    src: url('./../font/DINOT-Medium.ttf');
+    src: url('./../font/DINOT-Medium.otf');
+}
+.lc-font{
+    font-family: "DINOTMedium";
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('./../font/iconfont.eot');
+  src: url('./../font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('./../font/iconfont.woff') format('woff'),
+  url('./../font/iconfont.ttf') format('truetype'),
+  url('./../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+html{
+    -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #f6f6f6;
+    color: #323232;
+    font-family: 'Microsoft YaHei', Arial;
+    font-size: .14rem;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased; 
+}
+a {
+    display: block;
+    color: #323232;
+}
+img {
+    max-width: 100%;
+}
+input {
+    color: #323232;
+}
+h1 {
+    font-size: .184rem;
+    color: #3e4446;
+}
+h2, h3 {
+    font-size: .184rem;
+}
+ button{
+    display: block;
+    border:0;
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    outline:none;
+} 
+/*垂直居中*/
+.vertically{
+    width:0;
+    height: 100%;
+    display:inline-block;
+    vertical-align: middle;
+}
+/*统一配置*/
+.wraper {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+}
+.padding {
+    padding: 0 .07rem;
+}
+.padding2 {
+    padding: 0 .14rem;
+}
+.padding3 {
+    padding: .26rem .14rem;
+}
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}
+.lineHeight2_5 {
+    line-height: 2.5em;
+}
+.lineHeight3 {
+    line-height: 3em;
+}
+.marginTop014 {
+    margin-top: .14rem;
+}
+/*表单公用部分*/
+.inputList {
+    background: #fff;
+    font-size: .18rem;
+    border-top: solid 1px #dcdcdc;
+}
+.inputList li {
+    position: relative;
+    line-height: .5rem;
+    height: .5rem;
+    border-bottom: solid 1PX #dcdcdc;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.inputList li label {
+    position: absolute;
+    left: .14rem;
+    top: 0;
+}
+.inputWraper {
+    margin: 0 0 0 6.2em;
+    height: 100%;
+}
+.inputList li input {
+    height: 100%;
+    width: 100%;
+    display: block;
+    font-size: .18rem;
+}
+.commonForm li {
+    padding-right: .14rem;
+}
+/*按钮样式*/
+a.button {
+    display: block;
+    line-height: .5rem;
+    height: .5rem;
+    text-align: center;
+    border-radius: .25rem;
+    color: #fff;
+    font-size: .17rem;
+    background: #007bd6;
+    overflow: hidden;
+}
+.subButton {
+    margin-top: .2rem;
+}
+/*不可点击按钮状态*/
+a.disButton {
+    background: #dcdcdc;
+}
+/*按下按钮状态*/
+a.active {
+    background: #c32f22;
+}
+.phoneCode {
+    position: absolute;
+    width: 8em;
+    text-align: center;
+    right: 0;
+    top: 0;
+    color: #ef4a3c;
+}
+.hadSend {
+    color: #dcdcdc;
+}
+.phoneCode:after {
+    content: "";
+    display: block;
+    height: 86%;
+    width: 1px;
+    background: #dcdcdc;
+    left: 0;
+    top: 7%;
+    position: absolute;
+}
+.listMore, .listFull, .listEmpty {
+    text-align: center;
+    line-height: 1.5em;
+    padding: 1em 0 2em 0;
+}
+.transition {
+    -moz-transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+.flex {
+    display: box;
+    display: flex;
+}
+.oneFlex {
+    flex: 1;
+}
+.bodyBottom {
+    position: absolute;
+    left: 0;
+    bottom: .2rem;
+    width: 100%;
+    text-align: center;
+    color: #646464;
+}
+/*分割顶部间隙*/
+.top-gap:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.1656rem;
+    background-color: #f6f6f6;
+}
+.bottom-gap:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.1656rem;
+    background-color: #f6f6f6;
+}
+/*
+ * @ 规则说明介绍的通用样式
+ */
+.article_service {
+    padding: .26rem .14rem;
+}
+.article_service h1 {
+    color: #323232;
+    margin-bottom: .14rem;
+    line-height: 1.5em;
+    font-size: .18rem;
+    text-align: center
+}
+.article_service p {
+    text-indent: 2em;
+    margin-bottom: .05rem;
+}
+.article_service table {
+    width: 100%
+}
+.article_service table td {
+    border: solid 1px #969696;
+    text-align: center;
+    padding: 5px
+}
+.article_service table p {
+    text-indent: 0
+}
+.article_service h2, .article_service h3, .article_service h4, .article_service h5 {
+    margin-bottom: .05rem;
+}
+.article_service h2 {
+    color: #323232;
+    text-align: center;
+    font-size: .16rem;
+    margin-top: .14rem
+}
+.article_service h3 {
+    text-align: center;
+    font-size: .14rem
+}
+.article_service h4 {
+    color: #323232;
+    margin-top: .14rem
+}
+.article_service h5 {
+    color: #323232
+}
+.arrow {
+    background: url('../images/arrow.png?__inline') no-repeat 96% center;
+    background-size: auto .16rem;
+}
+.arrow-up {
+    background: url('./../images/arrow-up.png?__inline') no-repeat 96% center;
+    background-size: auto .16rem;
+}
+.arrow-down {
+    background: url('./../images/arrow-down.png?__inline') no-repeat 96% center;
+    background-size: auto .16rem;
+}
+.article {
+    padding: .34rem .18rem .18rem .18rem;
+    color: #969696;
+}
+.article h1 {
+    color: #323232;
+    margin-bottom: .14rem;
+    line-height: 1.5em;
+    font-size: .18rem;
+    text-align: center;
+}
+.article table {
+    width: 100%;
+}
+.article table td {
+    border: solid 1px #969696;
+    text-align: center;
+    padding: 5px;
+}
+.article table p {
+    text-indent: 0;
+}
+.article h2 {
+    color: #323232;
+    text-align: center;
+    font-size: .16rem;
+    margin-top: .14rem;
+}
+.article h3 {
+    text-align: center;
+    font-size: .14rem;
+}
+.article h4 {
+    color: #323232;
+    margin-top: .14rem;
+}
+.article h5 {
+    color: #323232;
+}
+.article .arcImg {
+    text-indent: 0;
+
+}
+.articleBody {
+    background: #fff;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.hidden {
+    visibility: hidden !important;
+}
+.none {
+    display: none !important;
+}
+.block {
+    display: block !important;
+}
+.visible {
+    visibility: visible !important;
+}
+
+.lazy-preloader {
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    left: 50%;
+    top: 50%;
+    margin-left: -.3rem;
+    margin-top: -.3rem;
+    z-index: 10;
+    background-image: url(./../images/loading_01.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: loop 1s infinite linear;
+}
+@-webkit-keyframes loop {
+    0% {
+        background-image: url(./../images/loading_01.png);
+    }
+    10% {
+        background-image: url(./../images/loading_02.png);
+    }
+    20% {
+        background-image: url(./../images/loading_03.png);
+    }
+    30% {
+        background-image: url(./../images/loading_04.png);
+    }
+    40% {
+        background-image: url(./../images/loading_05.png);
+    }
+    50% {
+        background-image: url(./../images/loading_06.png);
+    }
+    60% {
+        background-image: url(./../images/loading_07.png);
+    }
+    70% {
+        background-image: url(./../images/loading_08.png);
+    }
+    80% {
+        background-image: url(./../images/loading_09.png);
+    }
+    90% {
+        background-image: url(./../images/loading_10.png);
+    }
+    100% {
+        background-image: url(./../images/loading_01.png);
+    }
+}
+.ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.scale-bottom-1px{
+  position: relative;
+  border:none;
+}
+.scale-bottom-1px:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: #dcdcdc;
+  width: 100%;
+  height: 1PX;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+}
+.scale-bottom-dashed-1px{
+    position: relative;
+    border:none;
+}
+.scale-bottom-dashed-1px:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1PX dashed red;
+  width: 100%;
+  height: 0;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+}
+
+.scale-1px{
+  position: relative;
+  border:none;
+}
+.scale-1px:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1PX solid #efefef;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+}

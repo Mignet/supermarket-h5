@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>收货地址</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div class="wraper">
+        <div class="linear-gradient-wrapper"></div>
+        <input type="password" style="position:absolute;height:0;top:-10000px;">
+        <div class="form-wrapper">
+            <section>
+                <header>添加收货地址</header>
+                <div class="form-content">
+                    <ul>
+                        <li>
+                            <div class="left">收 货 人:</div>
+                            <div class="right"><input id="receivingUserName" type="text"></div>
+                        </li>
+                        <li>
+                            <div class="left">手机号码:</div>
+                            <div class="right"><input id="mobile" type="text"></div>
+                        </li>
+                        <li>
+                            <div class="left">所在地区:</div>
+                            <div class="right"><p id="selectAreaText"></p><span id="selectArea" class="select-area">请选择></span></div>
+                        </li>
+                        <li>
+                            <div class="left">详细地址:</div>
+                            <div class="right"><input type="text" id="receivingAddress" placeholder="请输入详细地址信息"></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="form-wrapper form-wrapper2">
+            <section>
+                <header>添加账户信息</header>
+                <div class="form-content">
+                    <ul>
+                        <li>
+                            <div class="left">账户类型:</div>
+                            <div class="right"><p>爱奇艺账户</p></div>
+                        </li>
+                        <li>
+                            <div class="left">姓名:</div>
+                            <div class="right"><input id="thirdName" type="text"></div>
+                        </li>
+                        <li>
+                            <div class="left">手机号码:</div>
+                            <div class="right"><input id="thirdMobile" type="text"></div>
+                        </li>
+                        <li>
+                            <div class="left">爱奇艺账户:</div>
+                            <div class="right"><input id="thirdAccount" type="text" placeholder="请输入爱奇艺账户"></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="save-wrapper">
+            <img id="saveAddrBtn" src="boundty/save-addr-btn.png">
+        </div>
+    </div>
+    <div class="mask-bg"></div>
+    <div class="mask-content" style="display: none;">
+        <div class="mask-header">
+            <h2>配送至</h2>
+            <img class="mask-close-btn" src="boundty/close-btn2.png">
+        </div>
+        <div class="mask-top">
+            <p id="selectProvice" style="display: none;"></p>
+            <p id="selectCity" style="display: none;"></p>
+            <p id="selectText" class="active">请选择省</p>
+        </div>
+        <div class="mask-bottom">
+            <ul id="selectAreaItems" class="select-area-items">
+<!--                 <li class="select-area-item">
+                </li> -->
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript">
+    require('./boundty/shippingAddress')
+</script>
+</body>
+</html>

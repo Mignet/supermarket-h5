@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网投网端午活动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        img{ pointer-events: none; } 
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <div><img src="./wtwDuanwu/1_01.jpg"></div>
+        <div><img src="./wtwDuanwu/1_02.jpg"></div>
+        <div><img src="./wtwDuanwu/1_03.jpg"></div>
+        <div class="btn-wrapper">
+            <div id="btn" class="btn">
+                <img src="./wtwDuanwu/1_04.jpg">
+            </div>
+        </div>
+        <div><img src="./wtwDuanwu/1_05.jpg"></div>
+    </div>
+    <script>
+        var native = require('modules/common/native');
+        document.getElementById('btn').onclick = function(){
+            if(native.isApp){
+                native.action('getAppPlatfromDetail',{orgNo:'OPEN_WANGTOUWANG_WEB'})
+            }else{
+                location.href = './../download/download.html'
+            }
+        }
+        require('modules/widget/download/download');
+    </script>
+</body>
+
+</html>

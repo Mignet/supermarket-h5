@@ -1,0 +1,313 @@
+body,html{
+	background-color: #eff0f1;
+}
+.container{
+	overflow: hidden;
+	background-color:#fff;
+	margin-bottom: 70px;
+}
+.header{
+	position:relative;
+	left:0;
+	top:0;
+	height: 476px;
+	background: url('./wave.png') no-repeat left bottom #4e8cef;
+	background-size: 100% auto;
+}
+.header-content{
+	position:relative;
+	left:0;
+	top:0;
+	z-index:50;
+	padding-top: 140px;
+	text-align: center;
+	h2{
+		font-size: 32px;
+		color: #fff;
+		line-height: 1;
+	}
+	h3{
+		font-family: DINOTMedium;
+		font-size:80px;
+		color:#fff;
+		line-height: 1.5;
+	}
+	p{
+		font-size:26px;
+		color:#fff;
+		opacity: .6;
+	}
+}
+.circle-wrapper{
+	position: absolute;
+	left:0;
+	right:0;
+	width: 440px;
+	height:290px;
+	top:.2rem;
+	margin: auto;
+	z-index:50;
+	canvas{
+		position:relative;
+		z-index:100;
+		display:block;
+		width:100%;
+		height:100%;
+	}
+}
+.button-wrapper{
+	padding-top:50px;
+	display:flex;
+	justify-content: center;
+	button{
+		flex:0 0 200px;
+		height:54px;
+		border:1PX solid #fff;
+		border-radius: 4PX;
+		font-size:28px;
+		color:#fff;
+	}
+	span{
+		flex:0 0 70px;
+	}
+}
+.tab-wrapper{
+	width:100%;
+	height:80px;
+	border-bottom: 1PX solid #cfcfcf;
+	box-sizing: border-box;
+	padding:0 30px;
+	overflow:hidden;
+	.tab-inner{
+		overflow-x: scroll;
+		height:80px;
+		padding-bottom: 30px;
+	}
+	ul{
+		font-size:0;
+		white-space: nowrap;
+		li{
+			font-size:28px;
+			color:#666;
+			display:inline-block;
+			height:80px;
+			line-height: 80px;
+			box-sizing:border-box;
+			border-bottom:2PX solid #fff;
+			padding:0 10px;
+			margin-right: 24px;
+			flex:1;
+		}
+		li.active{
+			border-bottom:4PX solid #4e8cef;
+			color:#4e8cef;
+		}
+	}
+}
+.tab-content-wrapper{
+	padding: 60px 0 0;
+	h2{
+		padding:0 30px;
+		font-size:32px;
+		color:#4f5960;
+		text-align:center;
+		line-height: 1;
+		padding-bottom: 20px;
+		font-weight: bold;
+	}
+	p.sub-title{
+		padding:0 30px;
+		font-size:28px;
+		color:#4f5960;
+		line-height: 1.84;
+		text-align:justify;
+	}
+	img.chart{
+		box-sizing:border-box;
+		padding:0 30px 0;
+		width:100%;
+	}
+}
+.table-wrapper{
+	padding:20px 30px 0;
+	h3{
+		font-size:32px;
+		color:#4f5960;
+		text-align:center;
+		padding-bottom: 20px;
+		font-weight: bold;
+		padding-top:60px;
+	}
+	table{
+		width:100%;
+	}
+	th{
+		width:50%;
+		box-sizing:border-box;
+		text-align:center;
+		height:58px;
+		color:#666;
+		font-size:26px;
+		background-color:#f6f6f6;
+		border:1PX solid #cfcfcf;
+		font-weight: normal;
+	}
+	td{
+		width:50%;
+		text-align:center;
+		height:58px;
+		color:#666;
+		font-size:26px;
+		border:1PX solid #cfcfcf;
+		box-sizing:border-box;
+	}
+	.source{
+		font-size:22px;
+		color:#999;
+		line-height: 1.84;
+	}
+}
+.recomment-wrapper{
+	margin: 88px 30px;
+	box-sizing:border-box;
+	border:1PX dashed #4e8cef;
+	border-radius:5PX;
+	h3{
+		font-size:32px;
+		color:#4e8cef;
+		text-align:center;
+		line-height: 2;
+		font-weight: bold;
+	}
+	p{
+		padding:10px 20px;
+		font-size:28px;
+		color:#4e8cef;
+		line-height: 1.5;
+	}
+}
+.insurance-wrapper-ul{
+	li:first-child{
+		.insurance-title{
+			padding-top:0;
+		}
+	}
+	.insurance-title{
+		padding:56px 30px 0;
+		span{
+			display:inline-block;
+			height:30px;
+			width:6px;
+			margin-right: 20px;
+			background-color:#4e8cef;
+			border-top: .02rem solid #fff;
+		}
+		h2{
+			float: left;
+			font-size:32px;
+			color:#4f5960;
+			line-height: 1;
+			padding:0 0 30px;
+			font-weight: bold;
+			overflow:hidden;
+			border-top: 1px solid #fff;
+			b{
+				display:inline-block;
+			}
+		}
+		p{
+			float: right;
+			font-size:26px;
+			color:#999;
+		}
+	}
+	.insurance-pic{
+		padding:0 30px;
+		height:249px;
+		overflow:hidden;
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+	.insurance-subtitle{
+		padding:28px 30px 0;
+		h1{
+			font-size:36px;
+			color:#434b51;
+			font-weight: bold;
+		}
+		p{
+			font-size:24px;
+			color:#b3b3b3;
+			line-height: 2;
+		}
+	}
+	.insurance-bottom{
+		padding:0 30px;
+		font-size:24px;
+		color:#bebebe;
+		padding-bottom: 26px;
+		span{
+			font-size:42px;
+			color:#fd5d5d;
+			font-family:DINOTMedium;
+		}
+		h3{
+			float:left;
+			font-size:24px;
+			color:#999;
+		}
+		h4{
+			float: right;
+			font-size:24px;
+			color:#999;
+		}
+	}
+}
+.insurance-list .insurance-pic{
+	padding-top:50px;
+}
+.insurance-list .insurance-pic:first-child{
+	padding-top:0;
+}
+.child-subtitle{
+	padding:0 30px;
+	font-size:28px;
+	color:#4f5960;
+	line-height: 1.84;
+	.yellow{
+		color:#ffd051;
+	}
+	.blue{
+		color:#4e8cef;
+	}
+}
+.chart-title{
+	font-size: .17664rem;
+	color: #4f5960;
+	text-align: center;
+	padding-bottom: .1104rem;
+	padding-top:80px;
+	font-weight: 700;
+}
+.sub-chart-title{
+	font-size: 22px;
+	color: #999;
+	text-align: center;
+	padding-bottom: .1104rem;
+}
+.scale-bottom-solid-1px{
+    position: relative;
+    border:none;
+}
+.scale-bottom-solid-1px:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1PX solid #cfcfcf;
+  width: 100%;
+  height: 0;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+}

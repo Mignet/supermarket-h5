@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>超级返活动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        img{ 
+            pointer-events: none; 
+        } 
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <div><img src="./superFanli/1.jpg"></div>
+        <div><img src="./superFanli/2.jpg"></div>
+        <div id="shareBtn"><img src="./superFanli/3.jpg"></div>
+        <div><img src="./superFanli/4.jpg"></div>
+        <div><img src="./superFanli/5.jpg"></div>
+    </div>
+<script>
+var $ = require("zepto");
+var native = require('modules/common/native');
+var api = require('modules/api/api');
+var Service = require('modules/common/service');
+
+var evt = {
+    init: function () {
+        var self = this;
+        this.isBindCard = false;
+        if (native.isApp) {
+            native.getAppToken(function (data) {
+                self.token = data || "";
+                native.action('removeLocalSharedBtn');
+                if(self.token){
+                    self.getUserInfo();
+                    self.getBindCard();
+                }else{
+                    $("#shareBtn").on('click',function(){
+                        native.action('tokenExpired')
+                    })
+                }
+            });
+        } else {
+            if(publicConfig.mode === 'pre'){
+                self.token = sessionStorage.getItem('__token__');
+                if(this.token){
+                    this.getUserInfo();
+                    this.getBindCard();
+                }
+            }
+            $("#shareBtn").on('click',function(){
+                location.href = './../download/download.html'
+            })
+            
+        }
+    },
+    //获取用户信息
+    getUserInfo:function(){
+        var self = this;
+        var userInfoService = new Service();
+        userInfoService.api = api.getUserInfo;
+        userInfoService.data = {
+            token: self.token
+        };
+        userInfoService.success = function (result) {
+            self.recommendCode = result.mobile;
+            self.name = result.userName;
+            self.userId = result.userId;
+            $("#shareBtn").on('click',function(){
+                self.appShareRegEvent();
+            })
+        };
+        userInfoService.send();
+    },
+    // 判断是否绑卡
+    getBindCard(){
+        var self = this;
+        var getBindCardService = new Service();
+        getBindCardService.api = api.personAuthenticate;
+        getBindCardService.data = {
+            token: self.token
+        };
+        getBindCardService.success = function (result) {
+            self.isBindCard = result.bundBankcard;
+        };
+        getBindCardService.send();
+    },
+    appShareRegEvent: function () {
+        var REGISTER_URL = ""
+        if(this.name && this.isBindCard){
+            REGISTER_URL = publicConfig.leicaiDomain + 'pages/user/register_packet.html?recommendCode=' + this.recommendCode + '&name=' + encodeURIComponent(this.name)
+        }else{
+            REGISTER_URL = publicConfig.leicaiDomain + 'pages/user/register_packet.html?recommendCode=' + this.recommendCode
+        }
+        var appShareData = {
+            shareTitle: '我用猎财大师很久了，送你528元红包，速领！', // 分享标题
+            shareDesc: '理财我推荐安全靠谱的猎财大师，我已经用了很久了，邀你一起来赚钱,速来！',
+            shareLink: REGISTER_URL,
+            shareImgurl: 'dfa3e35be331f6ec67566130f67820b9' // 分享图标
+        }
+        native.appShare(appShareData);
+    }
+};
+
+evt.init();
+</script>
+</body>
+</html>

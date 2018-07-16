@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>交易详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"/><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div id="wraperContainer" style="display: none;">
+        <header class="top-container scale-bottom-1px">
+            <div class="planner-relation scale-1px">{{userTypeText}}</div>
+            <h2 id="toDetail">
+                <img src="{{headImage}}">
+                <strong>{{userName}}</strong>
+                <i id="canJumpNative" class="iconfont" style="display: none;">&#xe605;</i>
+            </h2>
+            <h3>
+                <strong>{{feeAmountSum}}</strong>
+                <p>我的佣金(元)</p>
+            </h3>
+        </header>
+
+        <section class="center-container">
+            <div class="list-wrapper clearfix">
+                <p>平台名称：</p>
+                <p>{{platformName}}</p>
+            </div>        
+            <div class="list-wrapper clearfix">
+                <p>产品名称：</p>
+                <p class="ellipsis">{{productName}}</p>
+            </div>
+            <div class="list-wrapper insuranceHook clearfix" style="display: none;">
+                <p>保费金额(元)：</p>
+                <p>{{investAmt}}元</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p id="buyMoney">出单金额：</p>
+                <p>{{investAmt}}元</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p>产品期限：</p>
+                <p>{{deadLineValueNewText}}</p>
+            </div>
+        
+            <div class="list-wrapper insuranceHook clearfix" style="display: none;">
+                <p>投资时间：</p>
+                <p>{{startTime}}</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p id="buyTime">出单时间：</p>
+                <p class="ellipsis">{{startTime}}</p>
+            </div>
+            
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p>预期到期时间：</p>
+                <p>{{endTime}}</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p>年化收益率：</p>
+                <p>{{productRateText}}</p>
+            </div>
+
+            <div class="list-wrapper clearfix">
+                <p>佣金率：</p>
+                <p>{{productFeeRate}}%</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p>预期收益：</p>
+                <p>{{profit}}元</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p>猎财返现红包：</p>
+                <p>{{redpacketProfit}}元</p>
+            </div>
+
+            <div id="isQiTa" class="list-wrapper investHook clearfix" style="display: none;">
+                <p class="orgRewardTips">平台奖励：<i class="iconfont">&#xe6af;</i></p>
+                <p>{{virtualPlatformBouns}}元</p>
+            </div>
+
+            <div id="isSelf" class="list-wrapper investHook clearfix" style="display: none;">
+                <p class="orgRewardTips">平台奖励：<i class="iconfont">&#xe6af;</i></p>
+                <p><span id="setOrgReward" class="set-org-reward">{{virtualPlatformBouns}}</span>元</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p>加佣佣金：</p>
+                <p>{{personAddfeeAmount}}元</p>
+            </div>
+
+            <div class="list-wrapper investHook clearfix" style="display: none;">
+                <p id="totalYearRateTips">综合年化收益率：<i class="iconfont">&#xe6af;</i></p>
+                <p>{{totalProductRateText}}%</p>
+            </div>
+
+            <div class="list-wrapper insuranceHook clearfix" style="display: none;">
+                <p>投保单号：</p>
+                <p>{{insureNum}}</p>
+            </div>
+
+            <div class="list-wrapper insuranceHook clearfix" style="display: none;">
+                <p>保障日期：</p>
+                <p class="ellipsis">{{startDate}}~{{endDate}}</p>
+            </div>
+
+            <div class="list-wrapper insuranceHook clearfix" style="display: none;">
+                <p>犹豫期：</p>
+                <p>{{hesitateDate}}天</p>
+            </div>
+
+            <div class="list-wrapper insuranceHook clearfix" style="display: none;">
+                <p>结算状态：</p>
+                <p id="balanceSuccess" class="balance-success" style="display: none;">已结算</p>
+                <p id="balanceFail" class="balance-fail" style="display: none;"><i class="iconfont">&#xe6af;</i>结算失败</p>
+                <p id="balanceProgress" class="balance-progress" style="display: none;"><i class="iconfont">&#xe6af;</i>结算中</p>
+            </div>
+        </section>
+        <section class="calc-container" id="calcContainer">
+            <a class="link-rank link" href="./../rank/my_rank.html"><i class="iconfont">&#xe6af;</i></a>
+            <p>我的佣金计算：<span class="investHook" style="display: none;">{{feeRateCalculateMsg}}</span></p>
+            <p>{{feeRateCalculateMapText}}
+               <span>{{feeListText}}</span>={{feeAmountSum}}
+            </p>
+
+            <h4 class="fixPart" style="display: none;">备注：{{fixRemarkText}}</h4>
+        </section>
+        <section class="call-container">
+            <p>对此单有疑问</p>
+            <p>联系客服：400-888-6987</p>
+        </section>
+    </div>
+    <script>
+        require('./buyDetail/buyDetail')
+    </script>
+</body>
+</html>

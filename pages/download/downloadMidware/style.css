@@ -1,0 +1,65 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide div:first-child{
+   	width:100%;
+	height:100%;	
+}
+
+.swiper-slide div:first-child img{
+   	width:100%;
+	height:100%;
+}
+
+
+/*.pic {
+	position: relative;
+}*/
+/*.btn {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+}*/
+
+.btn img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.swiper-slide .btn .arrow {
+	position: absolute;
+	bottom: .6rem;
+	left:50%;
+	width: 30px;
+	height: auto;
+	margin-left: -10px;
+	z-index: 10;
+	backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;         
+    -webkit-animation: nextPageMove 1.5s linear infinite;
+    -moz-animation: nextPageMove 1.5s linear infinite;
+    -o-animation: nextPageMove 1.5s linear infinite;
+    animation: nextPageMove 1.5s linear infinite;
+}
+
+@-webkit-keyframes nextPageMove {
+     from {
+        bottom:80px;
+     }
+
+     50%{
+       bottom:60px;
+     }
+     to {
+       bottom:80px;
+     }
+}

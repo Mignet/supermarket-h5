@@ -1,0 +1,101 @@
+body,html{
+	overflow:hidden;
+	height:100%;
+	background-color: #fff;
+	-webkit-overflow-scrolling: auto;
+}
+.tab-wrapper{
+	position: absolute;
+	top: 0;
+	width:100%;
+	display:flex;
+	height:80px;
+	border-bottom: 1PX solid #cfcfcf;
+	background-color:#fff;
+	z-index: 200;
+	box-sizing:border-box;
+	li{
+		flex:1;
+	}
+	span{
+		display:block;
+		width: 140px;
+		height: 100%;
+		box-sizing: border-box;
+		border-bottom:2PX solid #fff;
+		text-align: center;
+		line-height: 80px;
+		margin: 0 auto;
+		font-size: 30px;
+		color: #666;
+	}
+	li.active{
+		span{
+			color:#4e8cef;
+			border-bottom:2PX solid #4e8cef;
+		}
+	}
+}
+.tab-content{
+	-webkit-overflow-scrolling: touch;
+	height:100%;
+	overflow:auto;
+	padding: 80px 30px 0;
+	box-sizing:border-box;
+	li{
+		border-bottom: 1PX solid #eff0f1;
+		box-sizing:border-box;
+		padding:16px 0;
+	}
+	li:last-child{
+		border:0;
+	}
+	h2{
+		color:#585959;
+		font-size:32px;
+		font-weight: bold;
+		line-height: 80px;
+	}
+	p{
+		display:inline;
+		font-size:30px;
+		color:#666;
+		line-height: 1.84;
+	}
+	span{
+		float: right;
+		font-size:30px;
+		color:#4e8cef;
+		line-height: 1.84;
+	}
+}
+.insurance-list{
+	min-height: 100%;
+	a{
+		display:block;
+		width:100%;
+	}
+	.left{
+		float:left;
+		width:500px;
+		h3{
+			font-size:32px;
+			color:#4f5960;
+		}
+		p{
+			display:block;
+			padding-top: 50px;
+			color:#999;
+			font-size:24px;
+		}
+	}
+	.right{
+		float:right;
+		width:186px;
+		height:136px;
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+}

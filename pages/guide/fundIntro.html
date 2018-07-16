@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基金介绍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+<div id="contentBg" class="content-bg"></div>
+<div class="wrap">
+    <div class="content">
+        <img src="./fundIntro/banner.jpg">
+        <h1 class="second-t"><img src="fundIntro/content-second-t.png"></h1>
+        <p class="text">简单来讲，投资基金就是将众多投资者的资金集中起来，形成独立财产，由基金托管人（一般是商业银行）托管，再由基金管理人以投资组合的方法进行证券投资的一种投资工具。</p>
+        <div class="content-fund-tree"><img src="fundIntro/content-fund-tree.png"></div>
+        <h1 class="third-t"><img src="fundIntro/content-third-t.png"></h1>
+        <div class="two-role-wrapper">
+            <div class="two-role clearfix">
+                <div class="left">
+                    <h2>基金托管人</h2>
+                    <p style="text-align: left;">基金托管人一般是指的商业银行，是基金资产的名义持有人或管理机构。</p>
+                </div>
+                <div class="right">
+                    <h2>基金管理人</h2>
+                    <p style="text-align: left;">基金管理人是指凭借专门的知识与经验，运用所管理基金的资产，使基金持有人获取尽可能多收益的专业性机构。通常由证劵公司，信托投资公司或其他机构等发起成立。</p>
+                </div>
+            </div>
+        </div>
+        <h1 class="four-t"><img src="fundIntro/conent-four-t.png"></h1>
+        <div style="height: 0.1656rem;"></div>
+        <p class="four-text">银行托管，资金同卡进出</p>
+        <p class="four-text">基金市场安全透明</p>
+        <p class="four-text">证监会全程监管</p>
+        <h1 class="five-t"><img src="fundIntro/content-five-t.png"></h1>
+        <div class="five-content">
+            <h2><b>稳健型： </b><span>随存随取，低风险，稳健收益</span></h2>
+            <div class="two-role clearfix">
+                <div class="left">
+                    <p>货币型基金</p>
+                    <p>100%投资于货币市场</p>
+                    <img src="fundIntro/currency-circle.png">
+                </div>
+                <div class="right">
+                    <p>债券型基金</p>
+                    <p>债券投资＞80%</p>
+                    <img src="fundIntro/bold-circle.png">
+                </div>
+            </div>
+            <h2><b>进取型： </b><span>高收益，高风险</span></h2>
+            <div class="two-role clearfix">
+                <div class="left">
+                    <p>股票型基金</p>
+                    <p>股票投资＞80%</p>
+                    <img src="fundIntro/stock-circle.png">
+                </div>
+                <div class="right">
+                    <p>混合型基金</p>
+                    <p>股票≤80% 债券≤80%</p>
+                    <img src="fundIntro/mix-cicle.png">
+                </div>
+            </div>
+        </div>
+        <div style="display: none;" id="goBuy" class="go-buy"><img src="fundIntro/buyBtn.png"></div>
+        <div class="footer">
+            <h3>基金销售服务由<b>&nbsp;&nbsp;奕丰金融&nbsp;&nbsp;</b>提供，销售代码：381</h3>
+            <h4><span></span>&nbsp;&nbsp;基金有风险&nbsp;&nbsp;投资需谨慎&nbsp;&nbsp;<span></span></h4>
+        </div>
+    </div>
+</div>   
+<script type="text/javascript">
+    require('fundIntro/fundIntro');
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新手攻略</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+<!--     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+</head>
+<body>
+<div class="wraper">
+  <header>
+    <img src="strategy/banner.jpg" alt="banner">
+  </header>
+  <div class="wrapper red-packet-wrapper">
+    <nav>自己买&nbsp;佣金+收益都是你的</nav>
+    <div class="year-rate-box">
+      <p>新手<br>专享</p>
+      <div class="year-rate">
+        <p><span id="yearRate">9.90</span><span>%</span></p>
+        <p>超高收益</p>
+      </div>
+    </div>
+    <a id="buyProduct">立即购买</a>
+  </div>
+  <div class="wrapper client-wrapper">
+    <nav>邀请客户赚佣金</nav>
+    <img src="./strategy/invite_client.png">
+    <a id="inviteClient">立即邀请</a>
+  </div>
+  <div class="wrapper cfp-wrapper">
+    <nav>推荐理财师赢奖励</nav>
+    <img src="./strategy/invite_cfp.png">
+    <a id="invitedCfg">立即推荐</a>
+  </div>
+
+  <div class="wrapper leader-wrapper">
+    <nav>职级晋升-享津贴</nav>
+    <p><img src="./strategy/lever.png"></p>
+    <a id="leaderTeam">立即推荐</a>
+    <p><a class="leader-detail" href="../message/manage_allowance.html">查看详情 >></a></p>
+  </div>
+
+  <div class="wrapper" style="margin-bottom: 0;">
+    <nav>老李投资小故事</nav>
+    <img style="padding-top: .3rem;padding-bottom: .2rem;" src="strategy/story.png">
+  </div>
+</div>
+<script type="text/javascript">
+  require("strategy/strategy")
+</script>
+</body>
+</html>

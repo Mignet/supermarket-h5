@@ -1,0 +1,107 @@
+nav{
+    background: url("title.png") no-repeat center;
+    background-size: 100% auto;
+    text-align: center;
+    color: #4d4d4d;
+    font-size: .18rem;
+    line-height: 2em;
+    font-weight: bold;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .15rem .2rem;
+    background-color: #fff;
+    text-align: center;
+}
+.identification-wrapper{
+    height: 2.83rem;
+}
+.red-packet-wrapper{
+    height: 2.6rem;
+}
+.identification-wrapper img{
+    padding-top: .2rem;
+    width: 2.6rem;
+}
+.identification-wrapper a{
+    margin-top: .25rem;
+}
+.year-rate-box{
+    position: relative;
+    display: inline-block;
+    width: 2.96rem;
+    height: 1.08rem;
+    margin-top: .15rem;
+    background: url("red_packet.png") no-repeat center;
+    background-size: 100% auto;
+    margin-bottom: .25rem;
+}
+.year-rate-box > p{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: .23rem;
+    width: .9rem;
+    height: 100%;
+    text-align: center;
+    font-size: .21rem;
+    color: #e4f6ff;
+    line-height: 1.5em;
+    box-sizing: border-box;
+}
+.wrapper a{
+    display:inline-block;
+    width: 3.5rem;
+    height: .4rem;
+    background:url("button.png") no-repeat center;
+    background-size: 100% auto;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .4rem;
+    color: #fff;
+    cursor: pointer;
+}
+.year-rate{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.08rem;
+    height: 1.08rem;
+    color: #e4f6ff;
+    text-align: center;
+}
+.year-rate p{
+    width: 100%;
+    text-align: center;
+}
+.year-rate p:first-child{
+    padding-top: .25rem;
+    font-size: .34rem;
+}
+.year-rate p:first-child span:last-child{
+    font-size: .18rem;
+}
+.client-wrapper{
+    height: 2.6rem;
+}
+.client-wrapper img{
+    padding-top: .15rem;
+    padding-bottom: .25rem;
+    width: 3.5rem;
+}
+.cfp-wrapper img{
+    padding-top: .15rem;
+    padding-bottom: .35rem;
+    width: 3.5rem;
+}
+.cfp-wrapper{
+    height: 3.48rem;
+}
+.leader-wrapper{
+    height: 3.68rem;
+}
+.leader-wrapper p{
+    padding: .15rem .13rem .35rem;
+}

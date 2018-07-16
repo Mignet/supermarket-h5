@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        body{
+            background-color: #fff;
+        }
+        .main .title{
+            font-size: 0.23184rem;
+            color: #49595d;
+            padding:0.3312rem 20px 0.2208rem;
+            font-weight: bold;
+            line-height: 1.8em;
+        }
+        .main .sub-title{
+            font-size: 0.13248rem;
+            color: #999;
+            padding:0 20px 0.3312rem;
+        }
+        .main .content-wrapper{
+            padding-bottom: 0.3312rem;
+        }
+        .main .content-wrapper p{
+            text-align: justify;
+            line-height: 2em!important;
+            color: #49595d;
+            font-size: 0.17664rem!important;
+        }
+        .main .content-wrapper img{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" style="visibility: hidden;">
+        <h2 class="title">{{title}}</h2>
+        <p class="sub-title">来源&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{source}}</p>
+        <div class="content-wrapper">
+            {{content}}
+        </div>
+    </div>
+<script type="text/javascript">
+    require('modules/widget/download/download')
+    require('handbook/handbook')
+</script>
+</body>
+</html>

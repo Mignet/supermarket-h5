@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+	<style type="text/css" media="screen">
+	    body{
+	    	background:#fff;
+	    	font-size: 14px;
+	    }
+	    body *{
+	    	line-height: 1.5em;
+	    }
+		.header{
+		    padding:0 .2rem;
+		    display: none;
+		}
+
+		.header #releaseTitle{
+		    padding-top:.3rem;
+		    font-size  : 16px;
+		    font-weight: 700;
+		}
+
+		.header .releasePerson{
+		    margin-top:.1rem;
+		    font-size:.12rem;
+		}
+
+        .wraper{
+        	display: none;
+        }
+
+        .title{
+        	font-size: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .center {
+            text-align: center;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .article p {
+            line-height: 150%;
+            text-indent: 0;
+        }
+        .main{
+        	display: none;
+        }				
+	</style>
+</head>
+<body>
+	<header class="header">
+		<p id="releaseTitle"></p>
+		<p class="releasePerson">
+			<span>发布人：<span id="releasePerson"></span></span>
+			&nbsp;,&nbsp;
+			<span id="releaseTime"></span>
+		</p>
+	</header>
+
+	<div class="wraper" >
+	    <h2  class="title"></h2>
+	    <div class="article">
+
+	    </div>
+	</div>	
+
+	<main class="main">
+
+	</main>
+
+	<script type="text/javascript">
+	require('./detail');
+	</script>
+</body>
+</html>

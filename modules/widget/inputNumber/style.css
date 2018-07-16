@@ -1,0 +1,54 @@
+
+/*数字键盘*/
+.numKeyboard {
+	position: fixed;
+	left:0;bottom:0;
+	z-index:9999;
+	width: 100%;
+	background: #fff;
+	-o-transition: bottom .3s;
+	-webkit-transition: bottom .3s;
+	transition: bottom .3s;
+}
+.numKeyboard li{
+	float: left;
+	width: 33.333%;
+	font-family: "Arial";
+	font-weight: bold;
+	font-size:.18rem;
+	text-align:center;
+	box-sizing:border-box;
+	color:#333;
+	border:1px solid #b5bdc9;
+	border-width: 0 1px 1px 0;
+}
+.numKeyboard li:nth-child(3n) {
+	border-right: none;
+}
+.numKeyboard label,.numKeyboard span{
+	display:block;
+	height:.55rem;
+	line-height:.55rem;
+}
+.dropdown,.backspace{
+	background-color: #d5d9df;	
+}
+
+.dropdown{
+	background: url(keydown.png) no-repeat center center #eee;
+	-webkit-background-size: .36rem .27rem;
+	background-size: .36rem .27rem;
+}
+
+.backspace{
+	background: url(del.png) no-repeat center center #eee;
+	-webkit-background-size: .26rem .19rem;
+	background-size: .26rem .19rem;
+}
+
+.numKeyboard label.active {
+	background-color: #d5d9df;
+}
+.numKeyboard span.active{
+	background-color: #e3e3e3;
+}

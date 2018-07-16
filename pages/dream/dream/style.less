@@ -1,0 +1,113 @@
+body,html{
+    background-color: #eeeff0;
+}
+.dream-container{
+    position: relative;
+    z-index: 200;
+    height: 488px;
+}
+.dream-content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -98px;
+    width: 690px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 10PX;
+    height: 582px;
+    padding: 0 50px;
+    h2{
+        padding-top:50px;
+        padding-bottom:14px;
+        line-height:1;
+        font-size: 30px;
+        color: #434b51;
+    }
+    .input-wrapper{
+        height: 80px;
+        display: flex;
+        background-color: #efefef;
+        label{
+            flex: 0 0 100px;
+            background-image: url('./dream-name-icon.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 40% auto;
+        }
+        input{
+            flex: 1;
+            background-color: #efefef;
+        }
+    }
+    .dream-name{
+        label{
+            background-image: url("./dream-name-icon.png");
+        }
+    }
+    .dream-money {
+        label{
+            background-image: url("./dream-money-icon.png");
+        }
+    }
+    .dream-month{
+        display: flex;
+        justify-content: center;
+        height: 80px;
+        button{
+            box-sizing: border-box;
+            flex: 0 0 110px;
+            height: 100%;
+            font-size: 36px;
+            color: #434b51;
+            border:1PX solid #929398;
+        }
+        span{
+            box-sizing: border-box;
+            height: 100%;
+            flex: 0 0 246px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #434b51;
+            border-top:1PX solid #929398;
+            border-bottom: 1PX solid #929398;
+        }
+    }
+}
+
+.next-step{
+    box-sizing: border-box;
+    padding:50px 30px;
+    button{
+        width: 100%;
+        height: 100px;
+        background-color: #4e8cef;
+        border-radius: 5PX;
+        color: #fff;
+        font-size: 36px;
+    }
+}
+
+.all-dream{
+    h3{
+        font-size: 24px;
+        color:#666;
+    }
+}
+.all-dream-content{
+    font-size: 0;
+    padding: 0 30px;
+    span{
+        display: inline-block;
+        font-size: 24px;
+        color: #b3b3b3;
+        line-height:1;
+        padding: 10px 20px;
+        border:1PX solid #b3b3b3;
+        border-radius: 22px;
+        margin:20px;
+    }
+}

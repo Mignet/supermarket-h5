@@ -1,0 +1,109 @@
+.share-btn{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0.61824rem;
+	z-index: 999;
+}
+.share-btn button{
+	display: table;
+	width: 100%;
+	height: 100%;
+	font-size: 0.25392rem;
+	color: #fff;
+	background-color: #564ee6;
+	vertical-align: middle;
+}
+.list-container{
+	width: 100%;
+	box-sizing: border-box;
+	padding:0 0.1656rem;
+	background-color: #347ae4;
+	padding-bottom: 0.41952rem;
+}
+.list-wrapper{
+	width: 100%;
+	background-color: #fff;
+	padding-top: 0.2208rem;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.list-wrapper .title{
+	width: 2.83728rem;
+	height: 0.36432rem;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	background: url('./title-4.png') no-repeat center;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	font-size: 0.23184rem;
+	color: #fff;
+	letter-spacing: 2px;
+}
+.list-wrapper .list{
+	padding: 0 0.1656rem;
+}
+.list-item{
+	display: flex;
+	padding-top: 0.276rem;
+}
+.list-item > p{
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	height: 0.28704rem;
+}
+.list-item > p:first-child{
+	width:0.49128rem;
+	font-size: 0.1656rem;
+	color: #2f3136;
+}
+.list-item > p:first-child img{
+	height: 100%;
+}
+.list-item > p:nth-of-type(2){
+	width: 1.58424rem;
+	font-size: 0.1656rem;
+	color: #2f3136;
+	letter-spacing: 1px;
+}
+.list-item > p:last-child{
+	width: 1.41312rem;
+	justify-content:flex-end;
+	box-sizing: border-box;
+	padding-right: 0.1104rem;
+	color: #4e8cef;
+
+}
+.list-item > p:last-child span{
+	font-family: "DINOTMedium";
+	font-size: 0.19872rem;
+}
+.list-item > p:last-child b{
+	font-weight: normal;
+	font-size: 0.08832rem;
+	padding-top: 0.04416rem;
+}
+.data-source{
+	width: 100%;
+	height: 0.2208rem;
+	padding-top: 0.1104rem;
+	padding-bottom: 0.15456rem;
+}
+.data-source button{
+	display: table;
+	vertical-align: middle;
+	width: 1.656rem;
+	box-sizing: border-box;
+	height: 100%;
+	border:1px solid #4e8cef;
+	border-radius: 0.1104rem;
+	font-size: 0.12144rem;
+	color: #4e8cef;
+	margin: 0 auto;
+}
+.box-shadow{
+	box-shadow: 0 8px 40px rgba(0,0,0,.1);
+}

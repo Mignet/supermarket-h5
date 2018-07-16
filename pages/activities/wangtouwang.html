@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网投网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <!-- @require wangtouwang/style.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div class="wraper">
+        <div><img src="wangtouwang/1_01.png"></div>
+        <div><img src="wangtouwang/1_02.png"></div>
+        <div class="btn-wrapper">
+            <div id="btn" class="btn">
+                <img src="wangtouwang/btn.png">
+            </div>
+        </div>
+        <div><img src="wangtouwang/1_04.png"></div>
+    </div>
+    <script>
+        var native = require('modules/common/native');
+        document.getElementById('btn').onclick = function(){
+            if(native.isApp){
+                native.action('getAppPlatfromDetail',{orgNo:'OPEN_WANGTOUWANG_WEB'})
+            }else{
+                location.href = './../download/download.html'
+            }
+        }
+        require('modules/widget/download/download');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+	<div class="wraper">
+		<!-- 登录 -->
+		<div class="registerMobile">
+			<div class="login_logo"><img src="images/inviteRegister-banner.png" /></div>
+			<!-- <p class="padding2 lineHeight2_5" id="registerTitle2" style="display:none;">您是理财师专属客户，需由您的理财师推荐您升级</p> -->
+			<ul class="padding2 inputList" id="loginFrom">
+				<li>
+					<label for="loginMob">手机号码</label>
+					<div class="inputWraper">
+						<input required pattern="^1\d{10}$" name="mobile" id="loginMob" type="tel" maxlength="11" placeholder="请输入您的手机号码">
+					</div>
+				</li>
+			</ul>
+			<p class="padding2 recommendText">您正通过<span id="recommendMob"></span>的推荐链接注册，注册成功将成为他的伙伴</p>
+			<!-- 底部内容 -->
+			<div class="padding2">
+				<a id="loginSub" class="button subButton disButton">下一步</a>
+			</div>
+			<p class="padding2 lineHeight3 loginText"><a href="https://nliecai.toobei.com/#/">已有账号？直接<span class="readA">登录</span></a></p>
+		</div>
+	</div>
+	<!--<div class="lineHeight3 bodyBottom">客服电话400-888-6987</div>-->
+	<script type="text/javascript">
+		require('registerZH/register');
+	</script>
+</body>
+</html>

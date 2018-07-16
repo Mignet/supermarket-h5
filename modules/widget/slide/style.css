@@ -1,0 +1,38 @@
+.banner{
+	width:100%;
+	overflow:hidden;
+	position:relative;
+	text-align:center;
+}
+
+.bannerContent{
+	position:absolute;
+	overflow:hidden;
+	left:0;
+	top:0;
+}
+.bannerContent li{
+	float:left;
+}
+
+.bannerMark{
+	position:absolute;
+	bottom:.2rem;
+	left:50%;
+	overflow:hidden;
+}
+.bannerMark span{
+	display:block;
+	float:left;
+	width:.08rem;
+	height:.08rem;
+	background:rgba(255,255,255,.35);
+	margin-right:.05rem;
+	border-radius:100%;
+}
+.bannerMark span.current{
+	background:rgba(255,255,255,1);
+}
+.bannerMark span:last-child{
+	margin-right:0;
+}

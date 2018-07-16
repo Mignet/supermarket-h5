@@ -1,0 +1,156 @@
+body{
+    background-color: #45a7f2;
+}
+.wraper{
+    position: relative;
+    padding-bottom: .5rem;
+}
+.box{
+    padding: 0 .25rem .25rem;
+}
+.inner{
+    position: relative;
+    padding-top: .24rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.title{
+    width: 2.3rem;
+}
+.content-box{
+    border-radius: 10px;
+    margin: .44rem .18rem .32rem;
+    overflow: hidden;
+}
+.content-box .top{
+    background-color: #e2eef7;
+}
+.content-box .top ul{
+    line-height: 1em;
+    color: #373737;
+    font-size: .13rem;
+    padding: 0 .12rem;
+}
+.content-box .top ul li{
+    float: left;
+    text-align: left;
+}
+.content-box .top ul li:first-child{
+    width: 1.2rem;
+}
+.content-box .top ul li span{
+    font-size: .16rem;
+}
+.content-box .bottom{
+    background-color: #45a7f2;
+    text-align: left;
+    line-height: 2em;
+    padding: .1rem;
+    color: #fff;
+}
+.content-box .bottom p{
+    text-align: justify;
+}
+
+/*  福利**/
+.welfare-box .support{
+    height: .18rem;
+    padding-top: .25rem;
+    padding-bottom: .3rem;
+    text-align: center;
+}
+.welfare-box .support img{
+    width: 2.8rem
+}
+
+.card-wraper {
+    width: 100%;
+    text-align: center;
+}
+.card-wraper img{
+    width: 1.58rem;
+}
+.welfare-box .cue{
+    text-align: left;
+    padding: .1rem .18rem .25rem;
+    color: #7c7c7c;
+}
+
+/*沙龙*/
+.salon-inner{
+    padding: .24rem .18rem .47rem;
+}
+.salon-box h3{
+    font-size: .2rem;
+    color: #3b3b3b;
+    text-align: left;
+    padding-top: .24rem;
+}
+.salon-box h3 img{
+    width: .18rem;
+    padding-right: .2rem;
+}
+.salon-box .intro{
+    padding-top: .05rem;
+    line-height: 2em;
+    color: #6a6a6a;
+    text-align: justify;
+}
+.swiper-container{
+    height: 2.53rem;
+}
+.swiper-container .swiper-button-next{
+    background-image: url("./right.png?__inline");
+    right:20px;
+    width: .24rem;
+    height: .24rem;
+    margin-top: -.12rem;
+    background-size: 100% auto;
+}
+.swiper-container .swiper-button-prev{
+    background-image: url("./left.png?__inline");
+    left:20px;
+    width: .24rem;
+    height: .24rem;
+    margin-top: -.12rem;
+    background-size: 100% auto;
+}
+.salon-box .place{
+    text-align: left;
+    padding-top: .15rem;
+}
+.salon-box .place p{
+    line-height: 2em;
+    color: #6a6a6a;
+}
+.tel{
+    text-align: center;
+    color: #fff;
+    padding-bottom: .24rem;
+    color: #fff2f0;
+}
+
+#support{
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 999;
+}
+.support-ta{
+    background-image: url('support.png?__inline');
+}
+
+.have-support{
+    background-image: url('have-support.png?__inline')
+}
+
+.other-support{
+    background-image: url("other-support.png?__inline")
+}

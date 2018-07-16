@@ -1,0 +1,62 @@
+
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide div:first-child{
+    width:100%;
+    height:100%;
+}
+
+.swiper-slide div:first-child img{
+    width:100%;
+    height:100%;
+}
+
+.next_logo{
+    display: none;
+    position: absolute;
+    text-align: center;
+    width:100%;
+    top: 95%;
+    z-index: 10;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+    -webkit-animation: nextPageMove 1.5s linear infinite;
+    -moz-animation: nextPageMove 1.5s linear infinite;
+    -o-animation: nextPageMove 1.5s linear infinite;
+    animation: nextPageMove 1.5s linear infinite;
+}
+
+.swiper-slide-active .next_logo {
+    display: block;
+}
+
+@-webkit-keyframes nextPageMove {
+    from {
+        top: 92%;
+        opacity:0;
+    }
+
+    50%{
+        top: 87%;
+        opacity:0.8;
+    }
+    to {
+        top: 92%;
+        opacity:0;
+    }
+}
+
+.next_logo img{
+    width:.5rem;
+    height:.5rem;
+    line-height: .5rem;
+    border-radius: 50%;
+}

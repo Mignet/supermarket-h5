@@ -1,0 +1,81 @@
+
+ul li{
+    position: relative;
+	height:1.1rem;
+    padding:.12rem;
+    width:100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content:center;
+    background: #fff;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+
+ul li > div:first-child{
+    width:30%;
+}
+
+ul li > div:first-child img{
+    width:1rem;
+    height:.8rem;
+}
+
+ul li > div:last-child{
+	width:70%;
+    padding-left:.1rem;
+    vertical-align: top;
+}
+
+ul li > div:last-child h2{
+    font-size: .2rem;   
+    margin-bottom:.05rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+ul li > div:last-child p{
+    color:#969696;
+    line-height: .2rem;   
+    font-size: .12rem;
+}
+
+ul li > div:last-child p{
+    color:#969696;
+    line-height: .2rem;   
+    font-size: .12rem;
+}
+
+ul li > div:last-child span{
+    position: absolute;
+    font-size: .1rem;
+    color:#969696;
+    right:.12rem;
+    bottom:.06rem;
+}
+
+.listEmpty{
+   height:1.5rem!important;
+   padding-top:1rem;
+}
+
+.header{
+    padding:0 .2rem;
+}
+.header > p:first-child{
+    padding-top:.3rem;
+    font-size:.19rem;
+    font-weight: 700;
+}
+
+.header > p:last-child{
+    margin-top:.1rem;
+    font-size:.12rem;
+}
+

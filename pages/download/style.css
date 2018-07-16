@@ -1,0 +1,56 @@
+.downloadLogo{
+/*	padding-top:.5rem;*/
+    padding: .5rem 0;
+	text-align:center;
+}
+.downloadLogo h1{
+	font-size:.14rem;
+	margin:.08rem 0;
+}
+.downloadLogo p{
+	font-size:.12rem;
+	color:#969696;
+}
+.downloadLogoImg{
+	width:1rem;
+	height:1rem;
+	margin:auto;
+}
+
+.downloadButton{
+	padding:.1rem .14rem 0 .14rem;
+}
+.downloadButton li{
+	margin-bottom:.1rem;
+}
+
+.versionsText{
+	text-align: center;
+	padding-top: .1rem;
+	color:#969696;
+}
+
+.downloadtip{
+	text-align: center;
+    width:100%;
+    margin-top: 0.5rem;
+}
+
+.iosTip{
+	text-align:center;
+	font-size:.18rem;
+	background:#cecece;
+	color:#fff;
+	line-height:.68rem;
+	border-radius:.1rem;
+}
+
+
+.canDownLoad{
+	margin-top:.5rem;
+	font-size:.18rem;
+	text-align:center;
+	color:#da3021;
+	display:none;
+}
+

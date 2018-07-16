@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>邀请理财师</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+	<div id="rankImg" style="display: none;">
+		<img id="firstIcon" data-src="plannerInvitation/first-icon.png">
+		<img id="secondIcon" data-src="plannerInvitation/second-icon.png">
+		<img id="thirdIcon" data-src="plannerInvitation/third-icon.png">
+	</div>
+	<div class="wraper">
+		<div><img src="./plannerInvitation/banner.jpg"></div>
+		<div><img src="./plannerInvitation/1.jpg"></div>
+		<div><img src="./plannerInvitation/2.jpg"></div>
+		<div><img src="./plannerInvitation/3.jpg"></div>
+		<div><a class="link" href="./../rank/my_rank.html"><img src="./plannerInvitation/4.jpg"></a></div>
+		<div><img src="./plannerInvitation/5.jpg"></div>
+		<div><img src="./plannerInvitation/6.jpg"></div>
+		<div class="list-container">
+			<div class="list-wrapper box-shadow">
+				<div class="title"><span id="preMonth"></span>月邀请奖励排行榜</div>
+				<div id="list" class="list" style="display: none;">
+					<div class="list-item clearfix">
+						<p>{{rank}}</p>
+						<p>{{mobile}}</p>
+						<p><span>{{totalProfit}}</span><b>元</b></p>
+					</div>
+				</div>
+				<div class="data-source">
+					<button id="leicaiRank">数据来源于猎财排行榜 ></button>
+				</div>
+			</div>
+		</div>
+		<div style="height: 0.61824rem;"></div>
+	</div>
+    <div class="share-btn">
+    	<button id="shareBtn">分享邀请理财师</button>
+    </div>
+    <script>
+    	require('./plannerInvitation/index')
+    </script>
+</body>
+</html>

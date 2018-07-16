@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>平台详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div class="wraper main">
+        <div class="header">
+            <div class="top clearfix">
+                <div class="left">
+                    <img class="org-logo" src="{{orgLogo}}">
+                </div>
+                <div class="right">
+                    <h2>
+                        <p>{{orgName}}</p>
+                        {{orgTagHtml}}
+                    </h2>
+                    <h3>
+                        <p>年化收益率：</p><span>{{feeRateMin}}%～{{feeRateMax}}%</span>
+                    </h3>
+                    <h4>
+                        <p>年化佣金率：<span>{{orgFeeRatio}}%</span></p>
+                        <p>安全等级：<span>{{orgLevel}}</span></p>
+                    </h4>
+                </div>
+            </div>
+            <div class="bottom">
+                <p>{{orgAdvantage}}</p>
+            </div>
+        </div>
+    </div>
+<script>
+    require('./detail/detail')
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>五星财富风控调查报告</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <!--<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+	<style media="screen">
+		html,
+		body,
+		.wraper,
+		.swiper-container,
+		.swiper-wrapper,
+		.swiper-slide{
+			width: 100%;
+			height: 100%;
+			background-color: #8678b9;
+		}
+        .swiper-slide img{
+            width: 100%;
+            height: 100%;
+        }
+	</style>
+</head>
+<body class="articleBody">
+<div class="wraper">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	            <img data-src="./wuxingcaifuControlAnalysis/01.jpg" class="swiper-lazy">
+	        </div>
+			<div class="swiper-slide">
+				<img data-src="./wuxingcaifuControlAnalysis/02.jpg" class="swiper-lazy">
+			</div>
+			<div class="swiper-slide">
+				<img data-src="./wuxingcaifuControlAnalysis/03.jpg" class="swiper-lazy">
+			</div>
+			<div class="swiper-slide">
+	            <img data-src="./wuxingcaifuControlAnalysis/04.jpg" class="swiper-lazy">
+	        </div>
+			<div class="swiper-slide">
+				<img data-src="./wuxingcaifuControlAnalysis/05.jpg" class="swiper-lazy">
+			</div>
+			<div class="swiper-slide">
+				<img data-src="./wuxingcaifuControlAnalysis/06.jpg" class="swiper-lazy">
+			</div>
+			<div class="swiper-slide">
+				<img data-src="./wuxingcaifuControlAnalysis/07.jpg" class="swiper-lazy">
+			</div>
+			<div class="swiper-slide">
+				<img data-src="./wuxingcaifuControlAnalysis/08.jpg" class="swiper-lazy">
+			</div>
+	    </div>
+	</div>
+
+</div>
+<script>
+	require('modules/widget/download/download');
+	/**
+	 * @require modules/library/swiper/swiper.css
+	 */
+	var $ 	   = require("zepto");
+	var Swiper = require('modules/library/swiper/swiper');
+	var Analysis = {
+		init:function(){
+			var mySwiper = new Swiper('.swiper-container',{
+	            direction       : 'vertical',
+				lazyLoading : true,
+				lazyLoadingInPrevNext : true,
+			})
+		}
+	}
+	Analysis.init();
+</script>
+</body>
+</html>

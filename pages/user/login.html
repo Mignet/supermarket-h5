@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="background:#fff;">
+	<div class="wraper">
+		<div class="login">
+			<div class="login_logo"><img src="../../static/images/logo.png" /></div>
+			<!-- 登录 -->
+<!-- 			<p class="loginTitle">您可以使用领会或小牛钱罐子账号登录</p> -->
+			<ul class="loginForm" id="loginFrom">
+				<li class="loginMobile">
+					<input required data-key="手机号码" data-pattern="mobile" name="mobile" id="mobile" type="tel" maxlength="11" placeholder="请输入您的手机号码">
+				</li>
+				<li class="loginPwd">
+					<input required data-key="登录密码" pattern=".{6,20}" name="password" id="loginPwd"  type="password" placeholder="请输入您的登录密码"><a class="eyes" id="eyes"></a>
+				</li>
+			</ul>
+			<!-- 底部内容 -->
+			<div class="padding2">
+				<a id="loginSub" class="button subButton disButton">登录</a>
+			</div>
+			<p class="loginBottom">
+                <a class="floatLeft" href="register.html">免费注册</a>
+                <a class="floatRight" href="findPwd.html">忘记密码？</a>
+            </p>
+		</div>
+	</div>
+	<div class="lineHeight3 bodyBottom" style="color:#969696">客服电话400-888-6987</div>
+	<script type="text/javascript">
+		require('login/login');
+	</script>
+</body>
+</html>

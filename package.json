@@ -1,0 +1,31 @@
+{
+  "name": "financial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fis-conf.js",
+  "scripts": {
+    "start": "npm run release && npm run server && npm run watch",
+    "restart": "npm run clean && npm start",
+    "server": "fis3 server start -p 9093",
+    "clean": "fis3 server stop && fis3 server clean",
+    "open": "fis3 server open",
+    "release": "fis3 release",
+    "watch": "fis3 release -wL",
+    "ngrok": "ngrok -httpauth=gc:1314 -subdomain channel 9003",
+    "ngrokserver": "ngrok -subdomain server 10.10.16.167:6660",
+    "r": "fis3 release -d ../release/financial/",
+    "rmr": "rm -rf ../release/liecai/ && fis3 release -d ../release/liecai/"
+  },
+  "author": "ypl",
+  "license": "MIT",
+  "dependencies": {
+    "fis3-deploy-replace": "^1.0.2",
+    "fis3-hook-module": "^1.2.2",
+    "fis3-hook-relative": "^1.0.6",
+    "fis3-postpackager-loader": "^1.3.12"
+  },
+  "devDependencies": {
+    "fis-parser-less": "^0.1.3",
+    "fis3-postpackager-loader": "^1.5.3"
+  }
+}

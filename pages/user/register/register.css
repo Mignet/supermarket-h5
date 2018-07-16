@@ -1,0 +1,54 @@
+body,html{
+	background-color: #44a8f2;
+}
+.readA{
+	color:#007aff;
+	padding-left:.05rem;
+}
+
+.registerMobile{
+	/*padding-top: 0.35rem;*/
+	color:#000;
+}
+.login_logo{
+	width:100%;
+	margin:0 auto;
+	height: 4rem;
+	text-align:center;
+}
+.login_logo img {
+	height: 4rem;
+	width: 100%;
+}
+
+.registerMobile .inputList{
+	background: transparent;
+	border:none;
+}
+.registerMobile .inputList li{
+	background: #fff;
+	border-radius: .25rem;
+	border-color:#f3f3f3;
+	border: 1px solid #f1f1f1;
+}
+.loginText{
+	margin-top:.2rem;
+	display:none;
+	text-align:center;
+}
+
+.recommendText{
+	display:none;
+	font-size: .17rem;
+	color: #fff;
+	padding-bottom: .15rem;
+}
+.intro{
+	line-height: 1.8em;
+	text-indent: 2em;
+	color: #fff;
+	font-size: .17rem;
+}
+.inputWraper{
+	margin:0;
+}

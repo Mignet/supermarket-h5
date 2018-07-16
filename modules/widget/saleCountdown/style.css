@@ -1,0 +1,12 @@
+.saleCountdown strong{
+    border:solid 1px #c2c2c2;
+    font-weight:normal;
+    color:#da3021;
+    border-radius:.02rem;
+    padding:0 .03rem;
+    position: relative;
+    background: url(saleCountdown_bg.png) center center repeat-x #fff;
+    background-size: auto 100%;
+    margin:0 .05rem;
+}
+

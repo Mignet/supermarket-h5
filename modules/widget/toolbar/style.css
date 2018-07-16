@@ -1,0 +1,68 @@
+.toolbarPadding{
+	height:0.78rem;
+}
+.toolbar{
+    position:fixed;
+    width:100%;
+    left:0;
+    bottom:0;
+    z-index: 10000;
+    display:none;
+}
+.toolbar ul{
+	background:#fff;
+	text-align:center;
+	display: -webkit-box;
+	display: -webkit-flex; 
+    display: flex;
+    border-top:solid 1px #e1e1e1;
+}
+.toolbar li{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1; 
+    flex: 1;
+	background-repeat:no-repeat;
+	background-position:center .09rem;
+	background-size:auto .20rem;
+    
+}
+.toolbar li a{
+	padding:0.32rem 0 0.05rem 0;
+	display:block;
+	color:#828282;
+	font-size:.11rem;
+}
+.toolbar li.current a{
+	color:#ef4a3c;
+}
+.toolbar li:nth-child(1){
+	background-image:url(toolbar_1.png);	
+}
+.toolbar li:nth-child(2){
+	background-image:url(toolbar_2.png);	
+}
+.toolbar li:nth-child(3){
+	background-image:url(toolbar_3.png);	
+}
+.toolbar li:nth-child(4){
+	background-image:url(toolbar_4.png);	
+}
+.toolbar li:nth-child(5){
+	background-image:url(toolbar_5.png);	
+}
+
+.toolbar li:nth-child(1).current{
+	background-image:url(toolbar_1_press.png);	
+}
+.toolbar li:nth-child(2).current{
+	background-image:url(toolbar_2_press.png);	
+}
+.toolbar li:nth-child(3).current{
+	background-image:url(toolbar_3_press.png);	
+}
+.toolbar li:nth-child(4).current{
+	background-image:url(toolbar_4_press.png);
+}
+.toolbar li:nth-child(5).current{
+	background-image:url(toolbar_5_press.png);
+}

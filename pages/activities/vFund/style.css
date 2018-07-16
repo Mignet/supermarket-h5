@@ -1,0 +1,49 @@
+body{
+	background-color: #fcede6;
+}
+.env-wrapper{
+	width: 100%;
+	background:url('./1_04.jpg') no-repeat right top;
+	background-size: cover;
+	padding-bottom: 0.0552rem;
+}
+.env-inner{
+	position: relative;
+}
+.swiper-container{
+	width: 2.66064rem;
+}
+.env-wrapper .swiper-button-prev.swiper-button-disabled, 
+.env-wrapper .swiper-button-next.swiper-button-disabled{
+	display: none;
+}
+
+.env-wrapper .swiper-pagination-fraction, 
+.env-wrapper .swiper-pagination-custom, 
+.env-wrapper .swiper-container-horizontal>.swiper-pagination-bullets{
+	bottom: 0;
+}
+.env-wrapper .swiper-pagination-bullet{
+	background-color: #cdb392;
+}
+.env-wrapper .swiper-pagination-bullet-active{
+	background-color: #432d14;
+}
+.env-wrapper .swiper-button-prev, 
+.env-wrapper .swiper-container-rtl .swiper-button-next{
+	background-image: url('./arrow-left.png');
+	left:0.3312rem;
+}
+
+.env-wrapper .swiper-button-next,
+.env-wrapper .swiper-container-rtl .swiper-button-prev{
+	background-image: url('./arrow-right.png');
+	right:0.3312rem;
+}
+.env-wrapper .swiper-button-prev, 
+.env-wrapper .swiper-button-next{
+	width: 0.3036rem;
+	height: 0.3036rem;
+	background-size: 100% 100%;
+	margin-top: -0.1518rem;
+}

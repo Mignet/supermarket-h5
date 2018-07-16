@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>梦想计划</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div class="wraper">
+        <div class="banner">
+            <img src="./dream/banner.png">
+        </div>
+        <div class="dream-container">
+            <div class="dream-content">
+                <h2>我的梦想是</h2>
+                <div class="dream-name input-wrapper">
+                    <label></label>
+                    <input type="text" maxlength="16" placeholder="请写下你的梦想">
+                </div>
+                <h2>我的梦想预算(元)</h2>
+                <div class="dream-money input-wrapper">
+                    <label></label>
+                    <input type="number" placeholder="实现梦想所需的金额">
+                </div>
+
+                <h2>多久实现梦想</h2>
+                <div class="dream-month">
+                    <button>-</button><span>6个月</span><button>+</button>
+                </div>
+            </div>
+        </div>
+        <div class="next-step">
+            <button>下一步</button>
+        </div>
+
+        <div class="all-dream">
+            <h3>看看大家的梦想</h3>
+            <div class="all-dream-content">
+                <span>买个大房子</span>
+                <span>买辆新车</span>
+                <span>去南极看企鹅</span>
+                <span>装修新房子</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    require('./dream/index')
+</script>
+</html>

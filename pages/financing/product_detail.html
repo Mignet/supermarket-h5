@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>产品详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"/><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+<main class="main">
+    <div class="product-main-wrapper">
+        <div class="product-main">
+            <h2 class="ellipsis">{{productName}}</h2>
+            <div>
+                <p class="year-rate">
+                    <b>{{yearRate}}</b>
+                    <span>%</span>
+                </p>
+                <p class="year-rate-text">年化收益率</p>
+            </div>
+            <div class="income-content">
+                <div class="product-limit oneFlex">
+                    <p>产品期限</p>
+                    <p>{{deadLineText}}</p>
+                </div>
+                <div class="remaining-quota oneFlex">
+                    <p>剩余额度(元)</p>
+                    <p>{{residualAmount}}</p>
+                </div>
+                <div class="commission-rate oneFlex">
+                    <p>加息</p>
+                    <p>{{feeRatio}}<span>%</span></p>
+                </div>
+            </div>
+            <div class="progress-wrapper {{isShowProgress}}">
+                <div class="progress-bg">
+                    <div id="progressActive" class="progress-active" style="width: {{percentage}}"></div>
+                </div>
+                <p id="progressText" class="progress-text" style="padding-left: {{textPercentage}};transform:translateX({{textTransform}});">已售{{percentage}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="profit-calc-wrapper bottom-gap">
+        <div class="profit-calc">
+            <p>每万元总收益：{{allIncome}}元（含佣金{{commission}}元）</p>
+            <div id="calculatorBox" data-productId={{productId}} class="calculator-box">
+                <img src="./images/calc.png?__inline">
+            </div>
+        </div>
+    </div>
+
+    <div id="redPacketContainer" class="red-packet-container arrow" style="display: none;">
+        <img src="./../../static/images/red-envelope-icon.png">
+        <span>新用户注册送528元红包</span>
+    </div>
+
+    <div id="youhuiquan" class="youhuiquan-wrap arrow" style="display: none;">
+        <div class="left">
+            <img src="./../../static/images/red-envelope-icon.png">
+            <p>猎财专享优惠券</p>
+        </div>
+        <div id="youhuiquanNum" class="right"></div>   
+    </div>
+
+    <div class="product-intro-wrapper bottom-gap">
+        <div class="product-intro both-sides-gap">
+            <div class="product-intro-title clearfix">
+                <h2>产品介绍</h2>
+                <p class="clearfix">
+                    <span style="display: {{isNewerClass}}">
+                        <b>新手专享</b>
+                    </span>
+                    <span style="display: {{isRedemptionClass}}">
+                        <b>{{isRedemptionText}}</b>
+                    </span>
+                </p>
+            </div>
+            <div class="product-quota clearfix">
+                <p>产品总额：{{buyTotalMoney}}元</p>
+                <p>起投金额：{{buyMinMoney}}元</p>
+            </div>
+            <div>
+                <div id="productDesc" class="product-desc animated">
+                    <div id="productDescInner" class="product-desc-inner">{{productDesc}}</div>
+                </div>
+                <p id="openIcon" class="open-icon">
+                    <img id="foldImage" data-src="./images/fold_icon.png" style="display: none;">
+                    <img id="openImage" data-src="./images/open_icon.png" style="display: none;">
+                    <img id="actualImage" src="./images/open_icon.png">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-org-wrapper">
+        <div id="orgInfo" class="product-org"  data-orgnumber={{orgNumber}}>
+            <div class="top arrow">
+                <div class="platform-logo">
+                    <span style="width: 0;height: 100%;display: inline-block;vertical-align: middle;"></span>
+                    <img id="platformLogo">
+                </div>
+                <span class="org-level">安全等级：{{orgLevel}}</span>
+            </div>
+            <div class="bottom">{{orgAdvantage}}</div>
+        </div>
+    </div>
+
+    <div class="lvdun-wrapper">
+        <img src="./images/danger-tips.png">
+        <p>投资人应根据平台提供的信息进行独立判断，具有独自承担风险的能力</p>
+    </div>
+
+    <div style="height:0.552rem;"></div>
+    <footer class="footer clearfix">
+        <div data-productId={{productId}}>
+            <a onclick="_hmt.push(['_trackEvent', 'link', 'click','C_product_details_strategy'])" href="./guide.html?orgNumber={{orgNumber}}" style="padding:0.0828rem 0;">
+                <img src="./images/strategy.png">
+                <p>猎财攻略</p>
+            </a>
+        </div>
+        <div id="buySelf" class="buySelf">{{buttonText}}</div>
+    </footer>
+</main>
+<script type="text/javascript">
+    require('product_detail/product_detail');
+</script>
+</body>
+</html>

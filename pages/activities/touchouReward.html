@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>投筹上线奖励</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="background-color:#fef3cf;">
+    <div class="wraper" style="display: none;">
+        <div><img src="touchouReward/1_01.jpg"></div>
+        <div><img src="touchouReward/1_02.jpg"></div>
+        <div><img src="touchouReward/1_03.jpg"></div>
+        <div class="rank-list-container">
+            <div class="top">
+                <img src="touchouReward/title.png">
+            </div>
+            <div class="center">
+                <h3 class="tips"><span></span>个人累计出单年化投资额排行榜(限投筹产品)</h3>
+                <div class="rank-list-wrapper">
+                    <div class="title">
+                        <p class="rank">排名</p>
+                        <p class="mobile">手机号</p>
+                        <p class="year-invest">累计年化投资额(元)</p>
+                    </div>
+                    <ul id="lists" class="lists">
+                        <li><p class="rownum-icon"><span>{{rownum}}</span></p><p>{{mobile}}</p><p>{{investAmt}}</p></li>
+                    </ul>
+                    <div id="seeMore" class="see-more">
+                        <a>查看更多>></a>
+                    </div>
+                    <div class="my-money-wrapper">
+                        <h2>
+                            <span></span>我的累计年化投资额：<b id="yearRate">---</b>元   
+                        </h2>
+                    </div>
+
+                    <div class="know-wrapper">
+                        <button id="learn">了解投筹</button>
+                        <button id="go">立即投资</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <img src="touchouReward/bg3.jpg">
+            </div>
+        </div>
+        <div>
+            <img src="touchouReward/1_10.jpg">
+        </div>
+    </div>
+<script>
+    require('./touchouReward/index')
+    require('modules/widget/download/download');
+</script>
+</body>
+</html>

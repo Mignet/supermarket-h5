@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>职级特权</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div id="wrapper" style="display: none;">
+        <header id="headerContainer" class="header-container">
+            <div class="privilege">
+                <a href="rankPrivilege.html">特权说明</a>
+            </div>
+            <p id="presentMonth" class="present-month-title">本月职级</p>
+            <div id="levelLogo" class="level-logo">
+                <img data-src="images/rank_logo_1.png" style="display: none;">
+                <img data-src="images/rank_logo_2.png" style="display: none;">
+                <img data-src="images/rank_logo_3.png" style="display: none;">
+                <img data-src="images/rank_logo_4.png" style="display: none;">
+            </div>
+            <div id="progressWrapper" class="progress-wrapper">
+                <div class="top">
+                    <h2 class="title">{{cfpLevelContent}}</h2>
+                    <p class="tip">每天2:00更新数据</p>
+                </div>
+                <div class="pro-con">
+                    <div class="item year-grade">
+                        <h3 class="real real-grade">
+                            <span id="realGradeNum">0.00</span>
+                        </h3>
+                        <div class="item-inner">
+                            <div class="item-1">个人年化投资额</div>
+                            <div class="item-2">
+                                <h4 class="progress-bar-wrapper">
+                                    <span id="gradeProgress"></span>
+                                    <b id="gradeCircle"></b>
+                                </h4>
+                            </div>
+                            <div class="item-3">{{yearpurAmountMaxNew}}元</div>
+                        </div>
+                    </div>
+                    <div id="subPlanner" class="item sub-planner">
+                       <h3 class="real real-grade">
+                           <span>{{lowerLevelCfpActualNew}}人</span>
+                       </h3>
+                       <div class="item-inner">
+                           <div class="item-1">直接推荐理财师</div>
+                           <div class="item-2">
+                               <h4 class="progress-bar-wrapper">
+                                   <span id="plannerProgress"></span>
+                                   <b id="plannerCircle"></b>
+                               </h4>
+                           </div>
+                           <div class="item-3">{{subPlannerText}}</div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div id="nowRank" class="now-rank clearfix">
+                <p>见习</p>
+                <i></i>
+                <p>顾问</p>
+                <i></i>
+                <p>经理</p>
+                <i></i>
+                <p>总监</p>
+            </div>
+            <p id="rankArrow" class="rank-arrow">
+                <span></span>
+            </p>
+        </header>
+        <section id="rankDetailWrapper" class="rank-detail-wrapper swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="rank_detail" data-type="1">
+                        <div class="sec_header scale-bottom-1px">
+                            <h2><img src="./images/rank_title_1.png?__inline">尊享权益</h2>
+                        </div>
+                        <ul class="rank_privilege clearfix">
+                            <li>
+                                <a href="./../guide/commssion.html">
+                                    <img src="./images/rank_commission_icon.png?__inline">
+                                    <p>基础佣金</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../agreement/recommendRule.html">
+                                    <img src="./images/rank_reward_icon.png?__inline">
+                                    <p>推荐奖励</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../message/direct_allowance.html">
+                                    <img src="./images/icon_1_gray.png?__inline">
+                                    <p class="gray">直接管理津贴</p>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="./../message/team_allowance.html">
+                                    <img src="./images/icon_2_gray.png?__inline">
+                                    <p class="gray">团队管理津贴</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="rank_detail" data-type="2">
+                        <div class="sec_header scale-bottom-1px">
+                            <h2><img src="./images/rank_title_2.png?__inline">尊享权益</h2>
+                        </div>
+                        <ul class="rank_privilege clearfix">
+                            <li>
+                                <a href="./../guide/commssion.html">
+                                    <img src="./images/rank_commission_icon.png?__inline">
+                                    <p>基础佣金</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../agreement/recommendRule.html">
+                                    <img src="./images/rank_reward_icon.png?__inline">
+                                    <p>推荐奖励</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../message/direct_allowance.html">
+                                    <img src="./images/icon_1_gray.png?__inline">
+                                    <p class="gray">直接管理津贴</p>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="./../message/team_allowance.html">
+                                    <img src="./images/icon_2_gray.png?__inline">
+                                    <p class="gray">团队管理津贴</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="rank_detail" data-type="3">
+                        <div class="sec_header scale-bottom-1px">
+                            <h2><img src="./images/rank_title_3.png?__inline">尊享权益</h2>
+                        </div>
+                        <ul class="rank_privilege clearfix">
+                            <li>
+                                <a href="./../guide/commssion.html">
+                                    <img src="./images/rank_commission_icon.png?__inline">
+                                    <p>基础佣金</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../agreement/recommendRule.html">
+                                    <img src="./images/rank_reward_icon.png?__inline">
+                                    <p>推荐奖励</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../message/direct_allowance.html">
+                                    <img src="./images/rank_direct_icon.png?__inline">
+                                    <p>直接管理津贴30%</p>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="./../message/team_allowance.html">
+                                    <img src="./images/rank_allowance_icon.png?__inline">
+                                    <p>团队管理津贴30%</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="rank_detail" data-type="4">
+                        <div class="sec_header scale-bottom-1px">
+                            <h2><img src="./images/rank_title_4.png?__inline">尊享权益</h2>
+                        </div>
+                        <ul class="rank_privilege clearfix">
+                            <li>
+                                <a href="./../guide/commssion.html">
+                                    <img src="./images/rank_commission_icon.png?__inline">
+                                    <p>基础佣金</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../agreement/recommendRule.html">
+                                    <img src="./images/rank_reward_icon.png?__inline">
+                                    <p>推荐奖励</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./../message/direct_allowance.html">
+                                    <img src="./images/rank_direct_icon.png?__inline">
+                                    <p>直接管理津贴50%</p>
+                                </a>
+                            </li>
+                            <li >
+                                <a href="./../message/team_allowance.html">
+                                    <img src="./images/rank_allowance_icon.png?__inline">
+                                    <p>团队管理津贴50%</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<script type="text/javascript">
+    require( 'rank/rank');
+</script>
+</body>
+</html>

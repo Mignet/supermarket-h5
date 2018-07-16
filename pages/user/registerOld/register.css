@@ -1,0 +1,54 @@
+body,html{
+	background: url('../images/inviteRegister-bg.png');
+	/*background: url('../images/loveDay.jpg');*/
+	background-size: cover;
+}
+.readA{
+	color:#007aff;
+	padding-left:.05rem;
+}
+
+.registerMobile{
+	/*padding-top: 0.35rem;*/
+	color:#000;
+}
+.login_logo{
+	width:100%;
+	margin:0 auto;
+	height: 4rem;
+	text-align:center;
+}
+.login_logo img {
+	height: 4rem;
+	width: 100%;
+}
+
+.registerMobile .inputList{
+	background: transparent;
+	border:none;
+}
+.registerMobile .inputList li{
+	background: #fff;
+	border-radius: 5px;
+	border-color:#f3f3f3;
+	border: 1px solid #f1f1f1;
+}
+.loginText{
+	margin-top:.2rem;
+	display:none;
+	text-align:center;
+}
+/*a.button{*/
+	/*background: linear-gradient(#bc6bdd, #7c6cfe);*/
+/*}*/
+
+a.disButton {
+	background: #dcdcdc;
+}
+
+.recommendText{
+	display:none;
+	padding-top:.22rem;
+	margin-left:.14rem;
+	color:#646464;
+}

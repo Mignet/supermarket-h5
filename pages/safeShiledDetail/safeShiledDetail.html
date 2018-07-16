@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>律盾计划具体组成内容</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        .flex {
+            background: #fff;
+        }
+        .oneFlex {
+            width: 0;
+            height: .54rem;
+            line-height: .54rem;
+            text-align: center;
+            font-size: .16rem;
+            color: #3e4446;
+        }
+        .oneFlex.active {
+            border-bottom: 2px solid #02a0f2;
+        }
+        section {
+            padding: 0 .26rem;
+        }
+        article {
+            display: none;
+        }
+        h4 {
+            font-size: .16rem;
+            color: #3e4446;
+            padding: .16rem 0 .06rem 0;
+            line-height: 150%;
+        }
+        p {
+            font-size: .16rem;
+            color: #a2a2a2;
+            line-height: 150%;
+        }
+        a {
+            color: #02a0f2;
+        }
+    </style>
+</head>
+<body> 
+<div class="wraper">
+    <nav>
+        <ul class="flex">
+            <li class="oneFlex active">维权基金</li>
+            <li class="oneFlex">平台风险保证金</li>
+            <li class="oneFlex">VIP优先兑付</li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            <h4>设立目的：</h4>
+            <p>专门用于为平台的全部投资人提供法律援助支持。</p>
+            <h4>基金来源：</h4>
+            <p>根据合作平台的投资用户数，按照100元人民币/人的标准从自身的营业收入和营销费用中划拨，作为维权基金，并存入在银行单独开立的维权基金托管账户。</p>
+            <h4>使用条件：</h4>
+            <p>当任一合作平台的产品发生逾期且需要启动法律程序时，将启用该笔资金为投资人聘请全国知名律所（如金杜、华商、盈科律师事务所等）中经验丰富的专业律师代表投资人启动法律程序解决争议，确保投资人在极端情况下能够及时有效的维权，最大限度地保护投资人的利益。</p>
+        </article>
+        <article>
+            <h4>设立目的：</h4>
+            <p>将专门用于投资人在遭受产品逾期情况时，在一定限额内垫付投资人的本金或收益损失。</p>
+            <h4>保证金来源：</h4>
+            <p>1、入驻前，要求合作平台先行缴纳一定数额的资金（具体金额以双方服务协议为准），用以担保平台合作顺利。</p>
+            <p>2、入驻后，根据其产品发行规模、风险等级等情况提取并交纳的资金，用以担保合作期间平台平稳运营。</p>
+            <p>全部风险保证金将存入在银行单独开立的风险保证金托管账户。</p>
+            <h4>使用条件：</h4>
+            <p>当合作平台的的产品发生逾期，将按照 <a class="safeMoney" href="safeMoney.html">《合作平台风险保证金使用规则》</a>，以合作平台风险保证金总额为限，提取相应资金用于垫付理财用户的本金或收益损失。</p>
+        </article>
+        <article>
+            <h4>当合作平台的的产品发生逾期时，投资人享有如下VIP优先兑付：</h4>
+            <p>（1）、合作平台的风险准备金优先兑付；</p>
+            <p>（2）、合作平台自有运营资金无条件优先对投资人进行债权回购；</p>
+            <p>（3）、律师团队参与合作平台的不良资产处置，确保合作平台的回款优先兑付投资客户。</p>
+        </article>
+    </section>
+</div>
+<script type="text/javascript">
+    var $ = require("zepto");
+    if( sessionStorage.getItem('__localItem__') === 'true' ) {
+        $('article').eq(1).show();
+        $('.oneFlex').eq(1).addClass('active').siblings().removeClass('active');
+        sessionStorage.removeItem('__localItem__');
+    } else {
+        $('article').eq(0).show();
+    }
+
+    $('.oneFlex').on('click', function(){
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('article').eq(index).show().siblings().hide();
+    });
+
+    $('.safeMoney').on('click', function() {
+        sessionStorage.setItem('__localItem__', 'true');
+    });
+</script>
+</body>
+</html>

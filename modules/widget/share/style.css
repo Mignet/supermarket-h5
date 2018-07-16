@@ -1,0 +1,30 @@
+
+
+.shareContent{
+	background:url(toShar.png) no-repeat right top;
+	background-size:auto 1.14rem;
+	position: fixed;
+	right:25px;
+	top:10px;
+	z-index:10;
+	padding-top:1.14rem;
+	width:2.62rem;
+}
+.shareContent p{
+	width:2.2rem;
+	font-size:0.16rem;
+	background:#ef4a3c;
+	color:#fff;
+	border-radius: 10px;
+	padding:.1rem;
+}
+
+.shareBg{
+	width:100%;
+	height:100%;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index:9;
+	background:rgba(0,0,0,0.9);
+}

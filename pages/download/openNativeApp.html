@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>web跳原生app测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        button{
+            display: block;
+            width: 100%;
+            font-size: 25px;
+            line-height: 50px;
+            text-align: center;
+            background: #efefef;
+        }
+    </style>
+</head>
+<body class="articleBody">
+<div class="wraper">
+    <button id="skipH5Page">跳转到具体某一个h5页面</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipHomePage">跳转到app首页</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipPlatformPagePlatform">跳转到平台页平台选项</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipPlatformPageProduct">跳转到平台页产品选项</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipPlatformPageFund">跳转到平台页基金选项</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipLiecaiPage">跳转到猎财页</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipMyPage">跳转到我的页面</button>
+    <div style="height: 20px;background: green;"></div>
+    <button id="skipInvestRecordPage">跳转到投资记录页面</button>
+    <div style="height: 20px;background: green;"></div>
+    <a id="loadAppButton" style="display:none;width:0px;height:0px;"></a>
+</div>
+<script>
+    var comm = require("modules/common/common");
+    var evt = {
+        init:function(){
+            this.bindEvent();
+        },
+        bindEvent:function(){
+            var self = this;
+            $("#skipH5Page").on('click',function(){
+                var data = {
+                    android:{
+                        name:'WebActivityCommon',
+                        paramsKey:'url,shareFlag',
+                        params:'https://www.baidu.com,Boolean_true',
+                    },
+                    ios:{
+                        name:'UniversalInteractWebViewController',
+                        method:'initRequestUrl:requestMethod:',
+                        params:'https://www.baidu.com,Get'
+                    }
+                }
+                self.doOpenApp(data);
+            })
+            $("#skipHomePage").on('click',function(){
+                var data = {
+                    android:{
+                        name:'MainActivity',
+                        paramsKey:'skipTab',
+                        params:'p0'
+                    },
+                    ios:{
+                        name:'HomeViewController',
+                        method:'',
+                        params:''
+                    }
+                }
+                self.doOpenApp(data);
+            })
+            $("#skipPlatformPagePlatform").on('click',function(){
+                var data = {
+                    android:{
+                        name:'MainActivity',
+                        paramsKey:'skipTab',
+                        params:'p1t0'
+                    },
+                    ios:{
+                        name:'AgentContainerViewController',
+                        method:'',
+                        params:'0'
+                    }
+                }
+                self.doOpenApp(data);
+            })
+            $("#skipPlatformPageProduct").on('click',function(){
+                var data = {
+                    android:{
+                        name:'MainActivity',
+                        paramsKey:'skipTab',
+                        params:'p1t1'
+                    },
+                    ios:{
+                        name:'AgentContainerViewController',
+                        method:'',
+                        params:'1'
+                    }
+                }
+                self.doOpenApp(data);
+            })
+            $("#skipPlatformPageFund").on('click',function(){
+                var data = {
+                    android:{
+                        name:'MainActivity',
+                        paramsKey:'skipTab',
+                        params:'p1t2'
+                    },
+                    ios:{
+                        name:'AgentContainerViewController',
+                        method:'',
+                        params:'2'
+                    }
+                }
+                self.doOpenApp(data);
+            })
+
+            $("#skipLiecaiPage").on('click',function(){
+                var data = {
+                    android:{
+                        name:'MainActivity',
+                        paramsKey:'skipTab',
+                        params:'p2'
+                    },
+                    ios:{
+                        name:'LeiCaiViewController',
+                        method:'',
+                        params:''
+                    }
+                }
+                self.doOpenApp(data);
+            })
+
+            $("#skipMyPage").on('click',function(){
+                var data = {
+                    android:{
+                        name:'MainActivity',
+                        paramsKey:'skipTab',
+                        params:'p3'
+                    },
+                    ios:{
+                        name:'MyInfoViewController',
+                        method:'',
+                        params:''
+                    }
+                }
+                self.doOpenApp(data);
+            })
+
+            $("#skipInvestRecordPage").on('click',function(){
+                var data = {
+                    android:{
+                        name:'InvestRecordActivity',
+                        paramsKey:'',
+                        params:''
+                    },
+                    ios:{
+                        name:'CSTradeContainerController',
+                        method:'initWithNibName:bundle:purchaseCount:redomeCount:',
+                        params:'CSTradeContainerController,nil,0,0'
+                    }
+                }
+                self.doOpenApp(data);
+            })
+        },
+        getParams:function(data){
+            var data = data || "";
+            var result = ''
+            if(comm.isAndroid()){
+                var result = JSON.stringify(data.android)
+            }else if(comm.isIOS()){
+                var result = JSON.stringify(data.ios);
+            }
+
+            result = comm.toBase64(result)
+            return result || "";
+        },
+        doOpenApp:function(data){
+            var params = this.getParams(data) || "";
+            var el = document.getElementById('loadAppButton');
+            el.setAttribute('href','lcds://lcdsApp?' + params);
+            el.click(); 
+        }
+    }
+    evt.init();
+</script>
+</body>
+</html>

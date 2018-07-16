@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新手福利</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+  <div id="btnStatus" style="display:none;">
+    <img data-src="/pages/strategy/newerWelfare/btn-default.png">
+    <img data-src="/pages/strategy/newerWelfare/btn-active.png">
+    <img data-src="/pages/strategy/newerWelfare/btn-gray.png">
+  </div>
+  <div id="allStatus" style="display:none;">
+    <div id="statusOne">
+      <img data-src="newerWelfare/one-1.png">
+      <img data-src="newerWelfare/one-2.png">
+      <img data-src="newerWelfare/one-3.png">
+    </div>
+    <div id="statusTwo">
+      <img data-src="newerWelfare/two-1.png">
+      <img data-src="newerWelfare/two-2.png">
+      <img data-src="newerWelfare/two-3.png">
+    </div>
+    <div id="statusThree">
+      <img data-src="newerWelfare/three-1.png">
+      <img data-src="newerWelfare/three-2.png">
+      <img data-src="newerWelfare/three-3.png">
+    </div>
+    <div id="statusFour">
+      <img data-src="newerWelfare/four-1.png">
+      <img data-src="newerWelfare/four-2.png">
+      <img data-src="newerWelfare/four-3.png">
+    </div>
+    <div id="statusFive">
+      <img data-src="newerWelfare/five-1.png">
+      <img data-src="newerWelfare/five-2.png">
+      <img data-src="newerWelfare/five-3.png">
+    </div>
+  </div>
+  <div class="wraper">
+    <header><img src="newerWelfare/banner.jpg"></header>
+    <section>
+      <div class="welfare-swiper">
+        <div id="welfareSwiperContainer" class="welfare-swiper-container">
+          <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img id="regStatus"></div>
+                  <div class="swiper-slide"><img id="bindcardStatus"></div>
+                  <div class="swiper-slide"><img id="investStatus"></div>
+                  <div class="swiper-slide"><img id="inviteCfpStatus"></div>
+                  <div class="swiper-slide"><img id="inviteCfpInvestStatus"></div>
+                  <div class="slideLast swiper-slide"><img style="visibility:hidden;" src="newerWelfare/five-1.png"></div>
+                  <div class="slideLast swiper-slide"><img style="visibility:hidden;" src="newerWelfare/five-1.png"></div>
+              </div>
+          </div>
+          <div class="btn-wrapper"><button id="handleClick"></button></div>
+        </div>
+      </div>
+    </section>
+    <section class="task-progress-container">
+      <div class="task-progress">
+        <h3>完成所有任务，还可领取<span>&nbsp;288&nbsp;</span>元红包大奖！</h3>
+        <div class="progress-graphic">
+          <span class="progress-circle">1</span>
+          <i></i>
+          <span class="progress-circle">2</span>
+          <i></i>
+          <span class="progress-circle">3</span>
+          <i></i>
+          <span class="progress-circle">4</span>
+          <i></i>
+          <span class="progress-circle">5</span>
+          <i></i>
+          <img src="newerWelfare/288-red-packet.png">
+        </div>
+        <div class="progress-btn">
+          <button id="progressBtn">立即领取</button>
+        </div>
+        <p class="reminder">新手福利仅针对2017年9月28日之后注册的用户</p>
+      </div>
+    </section>
+  </div>
+<script type="text/javascript">
+  require('./newerWelfare/newerWelfare')
+</script>
+</body>
+</html>

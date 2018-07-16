@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>福利领取成功</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+<!--     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <style type="text/css">
+        body{
+            display: none;
+            background-color: #fff;
+        }
+        .content{
+            padding: .34rem 0 0 .25rem;
+        }
+        .content p{
+            color: #6c6e6d;
+            font-size: .16rem;
+            line-height: 1.8em;
+
+        }
+        .qr {
+            padding-top: .1rem;
+        }
+        .qr img{
+            display: block;
+            width: 1.06rem;
+            margin: 0 auto;
+        }
+        .back{
+            margin-top: .22rem;
+        }
+        .back a{
+            display: block;
+        }
+        .back img{
+            display: block;
+            width: 3.15rem;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <div>
+            <img src="receiveSuccess/banner.png">
+        </div>
+        <div class="content">
+            <p>邀请人：<span id="shareName"></span></p>
+            <p>举办时间：每周五下午14:00 开始</p>
+            <p>举办地址：长沙市开福区湘江中路万达广场A座47楼</p>
+            <p>客服电话：400-888-6987</p>
+        </div>
+        <div class="qr">
+            <img src="./receiveSuccess/qr_code.jpg">
+        </div>
+        <div class="back">
+            <a id="back">
+                <img src="./receiveSuccess/back.png"> 
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var receiveSuccess = {
+            init:function(){
+                this.getData();
+            },
+            getData:function(){
+                var shareName = sessionStorage.getItem("__shareName2__")
+                var code = sessionStorage.getItem("__code__");
+                var shareMobile = sessionStorage.getItem("__shareMobile2__");
+                if(code){
+                    document.getElementById('back').setAttribute('href','./csFenxiang.html?shareName='+shareName + "&shareMobile="+shareMobile + "&code="+code)
+                }
+                if(shareName){
+                    document.getElementById('shareName').innerText = sessionStorage.getItem("__shareName__")
+                }       
+                document.getElementsByTagName('body')[0].style.display="block";
+            }
+        }
+        receiveSuccess.init();
+    </script> 
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试跳转页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        button{
+            display: block;
+            width: 100%;
+            height: 50px;
+            font-size: 25px;
+            line-height: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="articleBody">
+<div class="wraper">
+    <button>浏览器测试跳转</button>
+</div>
+<script>
+var $      = require("zepto");
+var native = require('modules/common/native');
+var comm = require("modules/common/common");
+var evt = {
+    init:function(){
+        var self = this;
+        if(native.isApp){
+            native.getAppToken(function(data){
+                self.token = data || '';
+                self.bindEvent();
+            });
+        }else{
+            self.bindEvent();            
+        }
+    },
+    bindEvent:function(){
+        $("button").on('click',function(){
+            var data = {
+                android:{
+                    // name:'OrgInfoDetailActivity',
+                    name:'WebActivityCommon',
+                    paramsKey:'url,shareFlag',
+                    params:'https://www.baidu.com,Boolean_true',
+                },
+                // ios:{
+                //     name:'AgentDetailViewController',
+                //     method:'initWithNibName:bundle:platNo:',
+                //     params:'AgentDetailViewController,nil,OPEN_XINYONGBAO_WEB'
+                // }
+                ios:{
+                    name:'UniversalInteractWebViewController',
+                    method:'initRequestUrl:requestMethod:',
+                    params:'https://www.baidu.com,Get'
+                }
+            }
+
+            // var data = {
+            //     android:{
+            //         name:'WebActivityCommon',
+            //         url:'https://preliecai.toobei.com/pages/activities/lsbOnline.html',
+            //         // orgNumber:'OPEN_GAOSOUYI_WEB',
+            //         // params:'https://preliecai.toobei.com/pages/activities/lsbOnline.html',
+            //         Boolean_shareFlag:false
+            //     },
+            //     ios:{
+            //         name:'AgentDetailViewController',
+            //         method:'initWithNibName:bundle:platNo:',
+            //         params:'AgentDetailViewController,nil,OPEN_XINYONGBAO_WEB'
+            //     }
+            // }
+            var oString = comm.toBase64(JSON.stringify(data));
+            comm.setCookie("__TONATIVEPAGE__",oString)
+            location.href="./openApp.html"
+        })
+    }
+}
+evt.init();
+</script>
+</body>
+</html>

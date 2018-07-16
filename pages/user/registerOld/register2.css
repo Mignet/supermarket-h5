@@ -1,0 +1,22 @@
+
+.login2Form{
+	color:#000;
+}
+.agree{
+	margin-top: .34rem;
+	text-align:center;
+}
+.agree a{
+	color:#007aff;
+}
+.imgCode{
+	width:5em;
+	height:100%;
+	overflow:hidden;
+}
+.imgCode img{
+	height:100%;
+}
+.disButton{
+	color:#f1f1f1;
+}

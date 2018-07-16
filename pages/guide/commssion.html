@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基础佣金说明</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <!-- @require ./commission/style.less -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="display: none;">
+    <div class="wraper">
+        <div class="banner">
+            <img src="./commission/banner.png">
+        </div>
+        <div class="section section-one">
+            <div class="title">
+                <img src="./commission/title-1.png">
+            </div>
+            <p class="intro">我的客户(包括我自己)购买网贷产品且产品募集成功(保险产品出单且没有退保),则我可以获得对应产品佣金率(如图1红框所示)的奖励,该奖励即为基础佣金。</p>
+            <div class="pic">
+                <img src="./commission/section-1.png">
+            </div>
+        </div>
+
+        <div class="section section-two">
+            <div class="title">
+                <img src="./commission/title-2.png">
+            </div>
+            <h2 class="sub-title">
+                <span></span><p>网贷产品</p>
+            </h2>
+            <h3 class="order">(1).对于固定期限产品(如图1所示)</h3>
+            <p class="example">基础佣金=投资本金×佣金率×产品期限(天)/360</p>
+            <div class="example-detail">
+                <img src="./commission/example-icon.png">
+                <p>我成功购买了如图1所示的固定期限网贷产品，金额1万，则我获得：</p>
+                <h3>基础佣金=10000x1%x90/360=25元</h3>
+            </div>
+        </div>
+
+        <div class="section section-three">
+            <h3 class="order">(2).对于浮动期限(如图2红框所示)产品</h3>
+            <p class="example">基础佣金=锁定期佣金+锁定期后每日佣金的累加</p>
+            <p class="beizhu"><span>备注: </span><b>锁定期佣金=投资本金x佣金率x产品最低期限(天) /360<br>锁定期后每日佣金=每日在投本金x实时佣金率/ 360</b></p>
+            <div class="pic">
+                <img src="./commission/section-2.png">
+            </div>
+            <div class="example-detail">
+                <img src="./commission/example-icon.png">
+                <p>我成功购买了如图2所示的浮动期限网贷产品，金额1万，持有80天后赎回到账，则我获得：</p>
+                <h3>基础佣金=锁定期基础佣金+锁定期后基础佣金<br>=10000x1%x30/360+50x10000x1%/360<br>=8.33+13.88=22.21元</h3>
+            </div>
+        </div>
+
+        <div class="section section-four">
+            <h2 class="sub-title">
+                <span></span><p>保险产品(如图3所示）</p>
+            </h2>
+            <p class="example">基础佣金=保险产品首期保费×佣金率</p>
+            <div class="pic">
+                <img src="./commission/section-3.png">
+            </div>
+            <div class="example-detail">
+                <img src="./commission/example-icon.png">
+                <p>我成功购买了如图3所示的保险产品，首期保费7250元，则我获得：</p>
+                <h3>基础佣金=7250x12.5%=906.25元</h3>
+            </div>
+        </div>
+
+        <div class="section section-five">
+            <div class="title">
+                <img src="./commission/title-3.png">
+            </div>
+            <h2 class="five-list">
+                <span></span><p>1.网贷固定期限的产品,募集成功后,实时结算。</p>
+            </h2>
+            <h2 class="five-list">
+                <span></span><p>2.网贷浮动期限的产品：募集成功后，实时结算锁定期内基础佣金；锁定期后佣金，每天实时结算，当月继续持有该产品的基础佣金累计在第一天收入记录中。</p>
+            </h2>
+            <h2 class="five-list">
+                <span></span><p>3.保险产品：由于受保险机构结算方式的影响，出单成功后（没有退保），一般在（起保日期+犹豫期+15天） 至 （起保日期+犹豫期+25天）内结算。其中，犹豫期具体以保险产品的《产品条款》说明为准；起保日期具体以电子保单中的起始保障时间为准。</p>
+            </h2>
+            <h3 class="tip">以上所有基础佣金均在结算后的次月15号统一发放，遇节假日提前发放。</h3>
+        </div>
+    </div>
+    <script>
+        document.getElementsByTagName('body')[0].style.display = 'block'
+    </script>
+</body>
+</html>

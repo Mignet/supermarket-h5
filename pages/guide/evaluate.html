@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>保险智能测评</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="visibility: hidden;">
+    <div id="template" style="display: none;">
+        <li>
+            <div class="insurance-title clearfix">
+                <h2><span></span><b>{{categoryName}}</b></h2>
+                <p>推荐保额{{coverage}}万</p>
+            </div>
+            <div class="insurance-list insuranceListHook">
+                <div class="insurance-pic insurancePicHook" caseCode ={{caseCode}}>
+                    {{insurancePic}}
+                </div>
+                <div class="insurance-subtitle">
+                    <h1 class="ellipsis">{{productName}}</h1>
+                    <p>{{fullDescription}}</p>
+                </div>
+                <div class="scale-bottom-solid-1px">
+                    <div class="insurance-bottom clearfix">
+                        <h3><span>{{priceString}}</span>元起</h3>
+                        <h4><span>{{feeRatio}}%</span>佣金率</h4>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </div>
+    <div class="container">
+        <div id="header" class="header">
+            <div class="header-content">
+                <h2>{{riskGrade}}</h2>
+                <h3>{{totalScore}}</h3>
+                <p>生成时间:<span>{{createDate}}</span></p>
+            </div>
+            <div class="circle-wrapper">
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="button-wrapper">
+                <button id="evaluation">重新测评</button>
+                <span></span>
+                <button id="share">晒晒指数</button>
+            </div>
+        </div>
+        <div class="tab-wrapper">
+            <div class="tab-inner">
+                <ul id="tab" class="tab">
+                    <li class="active" data-index='0' style="display: none;">本人</li>
+                    <li data-index='1' style="display: none;">配偶</li>
+                    <li data-index='2' style="display: none;">父亲</li>
+                    <li data-index='3' style="display: none;">母亲</li>
+                    <li data-index='4' style="display: none;">配偶父亲</li>
+                    <li data-index='5' style="display: none;">配偶母亲</li>
+                    <li data-index='6' style="display: none;">子女1</li>
+                    <li data-index='7' style="display: none;">子女2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-content-wrapper">
+            <ul id="tabContent" class="tab-content">
+                <li data-value='0' style="display: none;">
+                    <h2>评测分析</h2>
+                    <p class="sub-title">对于家庭支柱而言,在自己的黄金30年内,应该给自己充足保额的重大疾病保障</p>
+                    <h4 class="chart-title">6种重大疾病发生率（男）</h4>
+                    <img class="chart" src="evaluate/nan-chart-1.png" alt="">
+                    <h4 class="chart-title">6种重大疾病致死率（男）</h4>
+                    <img class="chart" src="evaluate/nan-chart-2.png" alt="">
+                    <div class="table-wrapper">
+                        <h3>6种重大疾病治疗康复费用</h3>
+                        <table>
+                            <tr>
+                                <th>疾病</th>
+                                <th>治疗康复费用</th>
+                            </tr>
+                            <tr>
+                                <td>恶性肿瘤(癌症)</td>
+                                <td>12-50万</td>
+                            </tr>
+                            <tr>
+                                <td>急性心肌梗塞</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>脑中风后遗症</td>
+                                <td>10-40万</td>
+                            </tr>
+                            <tr>
+                                <td>重大器官移植术或<br>造血干细胞移植手术</td>
+                                <td>20-50万</td>
+                            </tr>
+                            <tr>
+                                <td>冠状动脉搭桥手术<br>(冠状动脉旁路移植手术)</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>终末期肾病</td>
+                                <td>10万/年</td>
+                            </tr>
+                        </table>
+                        <p class="source">来源:中国人身保险业重大疾病经验发生率表（2006-2010）</p>
+
+                        <div class="six-bing">
+                            <h3>名词释义</h3>
+                            <p class="sub-title">6病种：是指根据中国保险行业协会颁布的重大疾病有关定义所规定的第1-6种重大疾病，即恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血肝细胞移植术、冠状动脉搭桥术（或称冠状动脉旁路移植术）和终末期肾病（或称慢性肾功能衰竭尿毒症期）。</p>
+                        </div>
+                    </div>
+
+                    <div class="recomment-wrapper">
+                        <h3>小保推荐方案</h3>
+                        <p>“您是家庭的顶梁柱，随着人生角色的变化，您肩上的责任越来越重，研究表明，男性由于社会压力大、加班熬夜抽烟饮酒等不良生活习惯，发生风险的概率高于女性，购买保险的成本也高于同龄女性，因此在自己的黄金30年里，应该给自己充足的保障，以对冲未来潜在的风险。建议您优先配置重疾险+意外险+定期寿险，搭配部分医疗险种和家庭财产险。”</p>
+                    </div>
+                </li>
+                <li data-value='1' style="display: none;">
+                    <h2>评测分析</h2>
+                    <p class="sub-title">对于家庭支柱而言,在自己的黄金30年内,应该给自己充足保额的重大疾病保障</p>
+                    <h4 class="chart-title">6种重大疾病发生率（女）</h4>
+                    <img class="chart" src="evaluate/nv-chart-1.png" alt="">
+                    <h4 class="chart-title">6种重大疾病致死率（女）</h4>
+                    <img class="chart" src="evaluate/nv-chart-2.png" alt="">
+                    <div class="table-wrapper">
+                        <h3>6种重大疾病治疗康复费用</h3>
+                        <table>
+                            <tr>
+                                <th>疾病</th>
+                                <th>治疗康复费用</th>
+                            </tr>
+                            <tr>
+                                <td>恶性肿瘤(癌症)</td>
+                                <td>12-50万</td>
+                            </tr>
+                            <tr>
+                                <td>急性心肌梗塞</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>脑中风后遗症</td>
+                                <td>10-40万</td>
+                            </tr>
+                            <tr>
+                                <td>重大器官移植术或<br>造血干细胞移植手术</td>
+                                <td>20-50万</td>
+                            </tr>
+                            <tr>
+                                <td>冠状动脉搭桥手术<br>(冠状动脉旁路移植手术)</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>终末期肾病</td>
+                                <td>10万/年</td>
+                            </tr>
+                        </table>
+                        <p class="source">来源:中国人身保险业重大疾病经验发生率表（2006-2010）</p>
+
+                        <div class="six-bing">
+                            <h3>名词释义</h3>
+                            <p class="sub-title">6病种：是指根据中国保险行业协会颁布的重大疾病有关定义所规定的第1-6种重大疾病，即恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血肝细胞移植术、冠状动脉搭桥术（或称冠状动脉旁路移植术）和终末期肾病（或称慢性肾功能衰竭尿毒症期）。</p>
+                        </div>
+                    </div>
+
+                    <div class="recomment-wrapper">
+                        <h3>小保推荐方案</h3>
+                        <p>“正值青年的你，是家庭的支柱，慢慢承担起家庭的重担，此时为自己投保重大疾病保险，也是成本较低的时期。建议您优先配置重疾险+意外险，并可搭配医疗险种。”</p>
+                    </div>
+                </li>
+                <li data-value='2' style="display: none;">
+                    <h2>评测分析</h2>
+                    <p class="sub-title">父母在，人生尚有来处。可是年纪越来越大身体却越来越差,是时候轮到我们来照顾他们了。</p>
+                    <h4 class="chart-title">6种重大疾病发生率（男）</h4>
+                    <img class="chart" src="evaluate/father-chart-1.png" alt="">
+                    <h4 class="chart-title">6种重大疾病致死率（男）</h4>
+                    <img class="chart" src="evaluate/father-chart-2.png" alt="">
+                    <div class="table-wrapper">
+                        <h3>6种重大疾病治疗康复费用</h3>
+                        <table>
+                            <tr>
+                                <th>疾病</th>
+                                <th>治疗康复费用</th>
+                            </tr>
+                            <tr>
+                                <td>恶性肿瘤(癌症)</td>
+                                <td>12-50万</td>
+                            </tr>
+                            <tr>
+                                <td>急性心肌梗塞</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>脑中风后遗症</td>
+                                <td>10-40万</td>
+                            </tr>
+                            <tr>
+                                <td>重大器官移植术或<br>造血干细胞移植手术</td>
+                                <td>20-50万</td>
+                            </tr>
+                            <tr>
+                                <td>冠状动脉搭桥手术<br>(冠状动脉旁路移植手术)</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>终末期肾病</td>
+                                <td>10万/年</td>
+                            </tr>
+                        </table>
+                        <p class="source">来源:中国人身保险业重大疾病经验发生率表（2006-2010）</p>
+
+                        <h4 class="chart-title">中国60岁以上人口住院费用报销比例</h4>
+                        <h5 class="sub-chart-title">(2012年)</h5>
+                        <img class="chart" src="evaluate/father-chart-3.png" alt="">
+
+                        <div class="six-bing">
+                            <h3>名词释义</h3>
+                            <p class="sub-title">6病种：是指根据中国保险行业协会颁布的重大疾病有关定义所规定的第1-6种重大疾病，即恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血肝细胞移植术、冠状动脉搭桥术（或称冠状动脉旁路移植术）和终末期肾病（或称慢性肾功能衰竭尿毒症期）。</p>
+                        </div>
+                    </div>
+
+                    <div class="recomment-wrapper">
+                        <h3>小保推荐方案</h3>
+                        <p>“父母的年纪越来越大，轮到我们照顾他们了。考虑到年龄问题，家中老人是健康风险较高群体。但是给老年人购买重疾险限制较高且杠杆较低，但此时又是疾病的高发期，尤其是癌症；与此同时年纪大了腿脚不灵活，跌倒摔伤的几率要比年轻人大的多，建议优先配置意外险，搭配部分重疾（防癌险）”</p>
+                    </div>
+                </li>
+                <li data-value='3' style="display: none;">
+                    <h2>评测分析</h2>
+                    <p class="sub-title">父母在，人生尚有来处。可是年纪越来越大身体却越来越差,是时候轮到我们来照顾他们了。</p>
+                    <h4 class="chart-title">6种重大疾病发生率（女）</h4>
+                    <img class="chart" src="evaluate/mother-chart-1.png" alt="">
+                    <h4 class="chart-title">6种重大疾病致死率（女）</h4>
+                    <img class="chart" src="evaluate/mother-chart-2.png" alt="">
+                    <div class="table-wrapper">
+                        <h3>6种重大疾病治疗康复费用</h3>
+                        <table>
+                            <tr>
+                                <th>疾病</th>
+                                <th>治疗康复费用</th>
+                            </tr>
+                            <tr>
+                                <td>恶性肿瘤(癌症)</td>
+                                <td>12-50万</td>
+                            </tr>
+                            <tr>
+                                <td>急性心肌梗塞</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>脑中风后遗症</td>
+                                <td>10-40万</td>
+                            </tr>
+                            <tr>
+                                <td>重大器官移植术或<br>造血干细胞移植手术</td>
+                                <td>20-50万</td>
+                            </tr>
+                            <tr>
+                                <td>冠状动脉搭桥手术<br>(冠状动脉旁路移植手术)</td>
+                                <td>10-30万</td>
+                            </tr>
+                            <tr>
+                                <td>终末期肾病</td>
+                                <td>10万/年</td>
+                            </tr>
+                        </table>
+                        <p class="source">来源:中国人身保险业重大疾病经验发生率表（2006-2010）</p>
+                        <h4 class="chart-title">中国60岁以上人口住院费用报销比例</h4>
+                        <h4 class="sub-chart-title">(2012年)</h4>
+                        <img class="chart" src="evaluate/father-chart-3.png" alt="">
+                        <div class="six-bing">
+                            <h3>名词释义</h3>
+                            <p class="sub-title">6病种：是指根据中国保险行业协会颁布的重大疾病有关定义所规定的第1-6种重大疾病，即恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血肝细胞移植术、冠状动脉搭桥术（或称冠状动脉旁路移植术）和终末期肾病（或称慢性肾功能衰竭尿毒症期）。</p>
+                        </div>
+                    </div>
+
+                    <div class="recomment-wrapper">
+                        <h3>小保推荐方案</h3>
+                        <p>“父母的年纪越来越大，轮到我们照顾他们了。考虑到年龄问题，家中老人是健康风险较高群体。但是给老年人购买重疾险限制较高且杠杆较低，但此时又是疾病的高发期，尤其是癌症；与此同时年纪大了腿脚不灵活，跌倒摔伤的几率要比年轻人大的多，建议优先配置意外险，搭配部分重疾（防癌险）”</p>
+                    </div>
+                </li>
+                <li data-value='4' style="display: none;">
+                   <h2>评测分析</h2>
+                   <p class="sub-title">父母在，人生尚有来处。可是年纪越来越大身体却越来越差,是时候轮到我们来照顾他们了。</p>
+                   <h4 class="chart-title">6种重大疾病发生率（男）</h4>
+                   <img class="chart" src="evaluate/father-chart-1.png" alt="">
+                   <h4 class="chart-title">6种重大疾病致死率（男）</h4>
+                   <img class="chart" src="evaluate/father-chart-2.png" alt="">
+                   <div class="table-wrapper">
+                       <h3>6种重大疾病治疗康复费用</h3>
+                       <table>
+                           <tr>
+                               <th>疾病</th>
+                               <th>治疗康复费用</th>
+                           </tr>
+                           <tr>
+                               <td>恶性肿瘤(癌症)</td>
+                               <td>12-50万</td>
+                           </tr>
+                           <tr>
+                               <td>急性心肌梗塞</td>
+                               <td>10-30万</td>
+                           </tr>
+                           <tr>
+                               <td>脑中风后遗症</td>
+                               <td>10-40万</td>
+                           </tr>
+                           <tr>
+                               <td>重大器官移植术或<br>造血干细胞移植手术</td>
+                               <td>20-50万</td>
+                           </tr>
+                           <tr>
+                               <td>冠状动脉搭桥手术<br>(冠状动脉旁路移植手术)</td>
+                               <td>10-30万</td>
+                           </tr>
+                           <tr>
+                               <td>终末期肾病</td>
+                               <td>10万/年</td>
+                           </tr>
+                       </table>
+                       <p class="source">来源:中国人身保险业重大疾病经验发生率表（2006-2010）</p>
+
+                       <h4 class="chart-title">中国60岁以上人口住院费用报销比例</h4>
+                       <h5 class="sub-chart-title">(2012年)</h5>
+                       <img class="chart" src="evaluate/father-chart-3.png" alt="">
+
+                       <div class="six-bing">
+                           <h3>名词释义</h3>
+                           <p class="sub-title">6病种：是指根据中国保险行业协会颁布的重大疾病有关定义所规定的第1-6种重大疾病，即恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血肝细胞移植术、冠状动脉搭桥术（或称冠状动脉旁路移植术）和终末期肾病（或称慢性肾功能衰竭尿毒症期）。</p>
+                       </div>
+                   </div>
+
+                   <div class="recomment-wrapper">
+                       <h3>小保推荐方案</h3>
+                       <p>“父母的年纪越来越大，轮到我们照顾他们了。考虑到年龄问题，家中老人是健康风险较高群体。但是给老年人购买重疾险限制较高且杠杆较低，但此时又是疾病的高发期，尤其是癌症；与此同时年纪大了腿脚不灵活，跌倒摔伤的几率要比年轻人大的多，建议优先配置意外险，搭配部分重疾（防癌险）”</p>
+                   </div>
+                </li>
+               <li data-value='5' style="display: none;">
+                  <h2>评测分析</h2>
+                   <p class="sub-title">父母在，人生尚有来处。可是年纪越来越大身体却越来越差,是时候轮到我们来照顾他们了。</p>
+                   <h4 class="chart-title">6种重大疾病发生率（女）</h4>
+                   <img class="chart" src="evaluate/mother-chart-1.png" alt="">
+                   <h4 class="chart-title">6种重大疾病致死率（女）</h4>
+                   <img class="chart" src="evaluate/mother-chart-2.png" alt="">
+                   <div class="table-wrapper">
+                       <h3>6种重大疾病治疗康复费用</h3>
+                       <table>
+                           <tr>
+                               <th>疾病</th>
+                               <th>治疗康复费用</th>
+                           </tr>
+                           <tr>
+                               <td>恶性肿瘤(癌症)</td>
+                               <td>12-50万</td>
+                           </tr>
+                           <tr>
+                               <td>急性心肌梗塞</td>
+                               <td>10-30万</td>
+                           </tr>
+                           <tr>
+                               <td>脑中风后遗症</td>
+                               <td>10-40万</td>
+                           </tr>
+                           <tr>
+                               <td>重大器官移植术或<br>造血干细胞移植手术</td>
+                               <td>20-50万</td>
+                           </tr>
+                           <tr>
+                               <td>冠状动脉搭桥手术<br>(冠状动脉旁路移植手术)</td>
+                               <td>10-30万</td>
+                           </tr>
+                           <tr>
+                               <td>终末期肾病</td>
+                               <td>10万/年</td>
+                           </tr>
+                       </table>
+                       <p class="source">来源:中国人身保险业重大疾病经验发生率表（2006-2010）</p>
+                       <h4 class="chart-title">中国60岁以上人口住院费用报销比例</h4>
+                       <h4 class="sub-chart-title">(2012年)</h4>
+                       <img class="chart" src="evaluate/father-chart-3.png" alt="">
+                       <div class="six-bing">
+                           <h3>名词释义</h3>
+                           <p class="sub-title">6病种：是指根据中国保险行业协会颁布的重大疾病有关定义所规定的第1-6种重大疾病，即恶性肿瘤、急性心肌梗塞、脑中风后遗症、重大器官移植术或造血肝细胞移植术、冠状动脉搭桥术（或称冠状动脉旁路移植术）和终末期肾病（或称慢性肾功能衰竭尿毒症期）。</p>
+                       </div>
+                   </div>
+
+                   <div class="recomment-wrapper">
+                       <h3>小保推荐方案</h3>
+                       <p>“父母的年纪越来越大，轮到我们照顾他们了。考虑到年龄问题，家中老人是健康风险较高群体。但是给老年人购买重疾险限制较高且杠杆较低，但此时又是疾病的高发期，尤其是癌症；与此同时年纪大了腿脚不灵活，跌倒摔伤的几率要比年轻人大的多，建议优先配置意外险，搭配部分重疾（防癌险）”</p>
+                   </div>
+               </li>
+                <li data-value='6' style="display: none;">
+                    <h2>评测分析</h2>
+                    <p class="sub-title">孩子是家庭和社会的未来,但是他们对风险的感知和预警能力较差,时常不注意存在于身边的各种危险因素。下图是2004年世卫组织发布的世界儿童主要死因排序。</p>
+                   <h4 class="chart-title">2004世界儿童主要死因排序</h4>
+                    <img class="chart" src="evaluate/child-chart-1.png" alt="">
+                    <p class="child-subtitle">数据来源：世界卫生组织</p>
+                    <p class="child-subtitle">以上标注<span class="yellow">黄色部分</span>为儿童各个阶段的意外事故致死的占比，可以看出5岁—19岁时，意外事故对儿童生命都具有严重的威胁。意外风险已经成为导致儿童伤亡的首要原因</p>
+                    <p class="child-subtitle">标注<span class="blue">蓝色部分</span>也可看出白血病、脑膜炎等重大疾病对于儿童各阶段的死因有着极高的占比。</p>
+                    <p class="child-subtitle">由此可见，为孩子投保，主要针对的还是意外、重疾和医疗险等几个方面</p>
+                   <h4 class="chart-title">青少年意外风险时间段占比（0-19岁）</h4>
+                    <img class="chart" src="evaluate/child-chart-2.png" alt="">
+                   <h4 class="chart-title">6种重大疾病发生率（男）</h4>
+                    <img class="chart" src="evaluate/child-chart-3.png" alt="">
+                    <div class="recomment-wrapper">
+                        <h3>小保推荐方案</h3>
+                        <p>“少年儿童生性就顽皮好动，却没有相应的自保意识和自保能力，所以发生意外的可能性远高于成年人，而且由于年龄小，身体机能还没完全发育好，因此抵抗疾病侵袭的能力差。因此给家中小宝贝购买保险优先考虑意外险和医疗险，经济充裕可搭配重疾险和其它长期险。”</p>
+                    </div>
+                </li>
+                <li data-value='7' style="display: none;">
+                    <h2>评测分析</h2>
+                    <p class="sub-title">孩子是家庭和社会的未来,但是他们对风险的感知和预警能力较差,时常不注意存在于身边的各种危险因素。下图是2004年世卫组织发布的世界儿童主要死因排序。</p>
+                   <h4 class="chart-title">2004世界儿童主要死因排序</h4>
+                    <img class="chart" src="evaluate/child-chart-1.png" alt="">
+                    <p class="child-subtitle">数据来源：世界卫生组织</p>
+                    <p class="child-subtitle">以上标注<span class="yellow">黄色部分</span>为儿童各个阶段的意外事故致死的占比，可以看出5岁—19岁时，意外事故对儿童生命都具有严重的威胁。意外风险已经成为导致儿童伤亡的首要原因</p>
+                    <p class="child-subtitle">标注<span class="blue">蓝色部分</span>也可看出白血病、脑膜炎等重大疾病对于儿童各阶段的死因有着极高的占比。</p>
+                    <p class="child-subtitle">由此可见，为孩子投保，主要针对的还是意外、重疾和医疗险等几个方面</p>
+                    <h4 class="chart-title">青少年意外风险时间段占比（0-19岁）</h4>
+                    <img class="chart" src="evaluate/child-chart-2.png" alt="">
+                    <h4 class="chart-title">6种重大疾病发生率（男）</h4>
+                    <img class="chart" src="evaluate/child-chart-3.png" alt="">
+
+                    <div class="recomment-wrapper">
+                        <h3>小保推荐方案</h3>
+                        <p>“少年儿童生性就顽皮好动，却没有相应的自保意识和自保能力，所以发生意外的可能性远高于成年人，而且由于年龄小，身体机能还没完全发育好，因此抵抗疾病侵袭的能力差。因此给家中小宝贝购买保险优先考虑意外险和医疗险，经济充裕可搭配重疾险和其它长期险。”</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="insurance-wrapper">
+            <ul id="insuranceList" class="insurance-wrapper-ul">
+            </ul>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    require('./evaluate/index')
+</script>
+</body>
+</html>

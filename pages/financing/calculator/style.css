@@ -1,0 +1,61 @@
+
+textarea:focus, 
+input:focus {
+    outline: 0;
+}
+
+.common-style {
+    background: #fff;
+    padding: .14rem .14rem;
+    font-size: .18rem;
+    border-bottom: 1px solid #dcdcdc;
+}
+.common-style span:first-child {
+    display: inline-block;
+    width:1.5rem;
+}
+.common-style span:last-child {
+    display: inline-block;
+    width:2.3rem;
+    text-align: right;
+}
+
+.common-style e{
+    color:#969696;
+}
+
+.common-style input {
+    width:2.3rem;
+    font-size: .18rem;
+    text-align: right;
+}
+
+ul > li:last-child > span:last-child{
+    color:#ef4a3b;
+}
+
+#calculation{
+    cursor: pointer;
+    text-align: center;  
+    background: #12b7f5;
+    height:.58rem;
+    line-height: .58rem;
+    font-size: .22rem;
+    color:#fff;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#dcdcdc;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#dcdcdc;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#dcdcdc;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#dcdcdc;
+}

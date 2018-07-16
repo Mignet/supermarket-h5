@@ -1,0 +1,33 @@
+.dateTool{
+	position:relative;text-align:center;
+	padding-right:.14rem;
+}
+
+.preMon,.nextMon{
+	position:absolute;
+	width:.4rem;
+	height:.4rem;
+	top:65%;
+	margin-top:-0.2rem;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:auto 60%;
+}
+
+.preMon{
+	background-image: url(pre.png);
+	left:0;
+}
+.year:after{
+	content:'年';
+}
+.month:after{
+	content:'月';
+	font-size:.14rem;
+	color:#000;
+}
+
+.nextMon{
+	background-image: url(next.png);
+	right:0.14rem;
+}

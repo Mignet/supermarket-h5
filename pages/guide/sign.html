@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>天天签到 天天领现金</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"/><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+	<div class="sign-container">
+		<img src="./sign/bg.jpg" />
+        <h3 class="sign-statistics">你的好友<span id="recommendMob">---</span>通过签到累计获得了<span id="money">0</span>元奖励</h3>
+		<button id="goRegister">签到</button>
+		<p class="sign-tips">连续签到 <span>0</span> (天)</p>
+	</div>
+    <script>
+    	require('./sign/index')
+    </script>
+</body>
+</html>

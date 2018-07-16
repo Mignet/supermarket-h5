@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>佣金计算规则</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+       h1{
+        font-size: .16rem;
+        color:#323232;
+        margin:.1rem 0;
+       }
+
+       p{
+        line-height: 2em;
+        color:#969696;
+       }
+    </style>
+</head>
+<body>
+    <div style="background: #fff;padding:.14rem">
+        <h1>一. 首投标佣金计算规则（右上角带“首投标”标签）</h1>
+        <p>只有用户首次投资该机构的产品时，才会产生佣金。佣金计算公式如下：</p>
+        <p style="color:#323232;text-align: center;margin:.2rem 0">佣金=投资金额×年化佣金率×投资期限／360</p>
+        <p>投资金额大于佣金计算金额上限时，按佣金计算金额上限进行计算，否则按实际投资金额计算；投资期限大于佣金计算期限上限时，按佣金计算期限上限计算，否则按实际投资期限计算。</p>
+        <p>示例：某合作机构佣金计算金额上限为20000元，佣金计算期限上限为90天，首投年化佣金为2%。若客户购买50000元期限为6个月的产品，则
+        佣金＝20000×2%×90/360＝100元</p>
+
+        <p style="margin-top:.2rem">若产品可提前赎回或转让（带“可赎回”或“可转让”标签）则先计算锁定期佣金到理财师账户，锁定期后若用户继续持有该产品，则每天计算一次佣金到理财师账户，次月15日发放到理财师银行卡）。佣金计算公式如下：</p>
+        <p style="color:#323232;text-align: center;margin:.2rem 0;">总佣金＝锁定期佣金＋N＊锁定期后每天佣金(N为锁定期后持有天数)</p>
+        <p>示例：假设客户购买50000元期限12为个月，锁定期为90天，30天后可自由赎回，年化佣金为2%的产品，则</p>
+        <p>锁定期佣金＝50000×2%×90/360=250元</p>
+        <p>90天后，用户每多持有该产品一天，理财师佣金增加量即锁定期后每天佣金＝50000×2%×1/360=2.78元</p>
+
+        <h1 style="margin-top:.2rem;">二. 复投标佣金计算规则（右上角带“复投标”标签）</h1>    
+        <p>用户每次购买，都会产生佣金。佣金计算公式如下:</p>
+        <p style="color:#323232;text-align: center;margin:.2rem 0;">佣金=销售金额×年化佣金率×产品期限／360</p>
+        <p>示例：客户购买50000元期限为6个月(180天)、佣金为2%的产品，则佣金＝50000×2%×180/360＝500元</p>
+        <p style="margin-top:.2rem;">若产品可提前赎回或转让（带“可赎回”或“可转让”标签）则先计算锁定期佣金到理财师账户，锁定期后若用户继续持有该产品，则每天计算一次佣金到理财师账户，次月15日发放到理财师银行卡）。佣金计算公式如下：</p>
+        <p style="color:#323232;text-align: center;margin:.2rem 0;">总佣金＝锁定期佣金＋N＊锁定期后每天佣金(N为锁定期后持有天数)</p>
+        <p>示例：假设客户购买50000元期限12为个月，锁定期为90天，30天后可自由赎回，年化佣金为2%的产品，则</p>
+        <p>锁定期佣金＝50000×2%×90/360=250元</p>
+        <p>90天后，用户每多持有该产品一天，理财师佣金增加量即锁定期后每天佣金＝50000×2%×1/360=2.78元</p>
+    </div>   
+</body>
+</html>

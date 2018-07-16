@@ -1,0 +1,39 @@
+
+.login2Form{
+	color:#000;
+}
+.agree{
+	margin-top: .34rem;
+	text-align:center;
+}
+.agree a{
+	color:#007aff;
+}
+.imgCode{
+	width:5em;
+	height:100%;
+	overflow:hidden;
+}
+.imgCode img{
+	height:100%;
+}
+.setNewPwd{
+	color:#969696;
+	text-align:center;
+	margin-top:.15rem
+}
+
+.eyes{
+	position:absolute;
+	height:100%;
+	width:.4rem;
+	background-image: url(../../../static/images/mine_eye_close.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:.22rem auto;
+	right:0;
+	top:0;
+}
+.openEyes{
+	background-image: url(../../../static/images/mine_eye_open.png);
+}

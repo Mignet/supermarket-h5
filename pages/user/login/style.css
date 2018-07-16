@@ -1,0 +1,79 @@
+
+.login_logo{
+	width:1.16rem;
+	margin:0 auto .52rem auto;
+	text-align:center;
+    padding-top: .6rem;
+}
+.loginForm{
+	margin:0 .14rem;
+}
+.loginTitle{
+	padding-left:.28rem;
+	color:#1e1e1e;
+}
+.loginForm li{
+	border-bottom:solid 1px #e9e9e9;
+	background-repeat:no-repeat;
+	padding-left:.55rem;
+	line-height:.5rem;
+	font-size:.18rem;
+	position:relative;
+}
+.loginForm li input{
+	height:.5rem;
+	width:100%;
+	font-size:.18rem;
+}
+.loginMobile{
+	background-size:.2rem auto;
+	background-image: url(phone.png);
+	background-position:.14rem center;
+}
+.loginPwd{
+	background-size:.2rem auto;
+	background-image: url(lock.png);
+	background-position:.15rem center;
+}
+.loginBottom{
+    overflow: hidden;
+    padding: 0 .14rem;
+}
+.loginBottom a {
+    line-height: 3em;
+	padding-top:.2rem;
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+.loginBottom a:last-child {
+    text-align: right;
+}
+
+.eyes{
+	position:absolute;
+	height:100%;
+	width:.4rem;
+	background-image: url(hide-eye.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:.22rem auto;
+	right:0;
+	top:0;
+}
+/*// #loginSub{*/
+/*// 	background: #12b7f5;*/
+/*// 	display: block;*/
+/*// 	width: 100%;*/
+/*// 	height: 100%;*/
+/*// }*/
+.openEyes{
+	background-image: url(show-eye.png);
+}
+
+.floatLeft,.floatRight{
+    font-size: .138rem;
+    color:#007aff;
+}
+

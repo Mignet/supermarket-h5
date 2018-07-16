@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的劳动工装照</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div id="imageTemp" class="image-temp" style="display: none;">
+        <img src="mayDay/images/bg.jpg">
+        <img src="mayDay/images/photo-bg.png">
+        <img src="mayDay/images/title-1.png">
+        <img id="tempContentBg" src="mayDay/images/content-bg.png">
+        <img id="tempLogo" src="./../../static/images/lcds_icon_80.png">
+        <img id="tempSelectBg" src="mayDay/images/select.png">
+        <img id="myCloth" src="mayDay/images/my-cloth.png">
+        <img id="friendSrc">
+    </div>
+
+    <div class="swiper-container" style="visibility: hidden;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide-one swiper-no-swiping">
+                <div class="wrapper">
+                    <img class="title swiper-lazy" data-src="mayDay/images/title-1.png">
+                    <div class="intro-wrapper">
+                        <img data-src="mayDay/images/intro.png" class="swiper-lazy">
+                    </div>
+                    <div class="one-avatar-wrapper">
+                        <img id="friendAvator">
+                    </div>
+                    <img id="frientText" class="friend-text" src="mayDay/images/my-friend-cloth.png">
+                    <div class="bottom slideNextHook">
+                        <p>已有超过 <span class="loveWorkNum">0</span> 人热爱工作</p>
+                        <div class="button-long">我也要玩</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slide-two swiper-no-swiping">
+                <div class="wrapper">
+                    <img class="title swiper-lazy" data-src="mayDay/images/title-2.png">
+                    <ul id="twoContentWrapper" class="two-content-wrapper">
+                        <li class="active" data-md5="610ffa981b78e47865ed0d6b32d2233b"><img data-src="./mayDay/images/boy1.jpg" class="swiper-lazy"></li>
+                        <li data-md5="d740d7b755d9eda5cc2ed2760db560a8"><img data-src="./mayDay/images/girl1.jpg" class="swiper-lazy"></li>
+                        <li data-md5="f4453bb36f04cc82e21b201b12887631"><img data-src="./mayDay/images/boy2.jpg" class="swiper-lazy"></li>
+                        <li data-md5="9ac946a64c1e9d6f3f223108eb8bcd45"><img data-src="./mayDay/images/girl2.jpg" class="swiper-lazy"></li>
+                        <li data-md5="b2040415dd7563a6dee9f2e4edadec36"><img data-src="./mayDay/images/boy3.jpg" class="swiper-lazy"></li>
+                        <li data-md5="75e8832265ce9bdcd5132a96e520ee63"><img data-src="./mayDay/images/girl3.jpg" class="swiper-lazy"></li>
+                    </ul>
+                    <p class="two-tips">正脸自拍 展现热爱工作的你</p>
+                </div>
+            </div>
+
+            <!-- 三 -->
+            <div class="swiper-slide slide-three swiper-no-swiping">
+                <div id="selectImageWrapper" class="wrapper">
+                    <img id="storageTemp">
+                    <img class="title swiper-lazy" data-src="mayDay/images/title-1.png">
+                    <div class="one-avatar-wrapper">
+                        <img id="tempImg">
+                        <form style="display: none;" id="formWrapper">
+                            <input id="takePhoto" type="file" accept="image/*" name="userfile"/>
+                            <input type="button" value="提交" id="handlePhoto">
+                        </form>
+                    </div>
+                    <div class="bottom">
+                        <p>已有超过 <span class="loveWorkNum">0</span> 人热爱工作</p>
+                        <div id="uploadPhotoBtn" class="button-long">上传自拍</div>
+                    </div>
+                </div>
+                <div id="clipWrapper" class="clip-wrapper" style="display: none;">
+                    <div class="clip-inner">
+                        <img id="sureImg">
+                    </div>
+                    <div class="clip-bottom">
+                        <button id="cancelSelectImage">取消</button>
+                        <button id="sureSelectImage">确认</button>
+                    </div>
+                </div>
+                <div id="threeLayer" class="four-layer" style="display: none;">
+                    <div class="layer-wrapper"></div>
+                    <div class="layer-container">
+                        <p class="layer-tips">正在上传 请稍后...</p>
+                    </div>
+                </div>
+                <div id="threeLayer2" class="four-layer" style="display: none;">
+                    <div class="layer-wrapper"></div>
+                    <div class="layer-container">
+                        <p class="layer-tips">正在合成 请稍后...</p>
+                    </div>
+                </div>
+            </div>
+
+<!--             <div class="swiper-slide slide-four swiper-no-swiping">
+                <div class="wrapper">
+                    <img class="title swiper-lazy" data-src="mayDay/images/title-1.png">
+                    <div class="one-avatar-wrapper">
+                        <img id="myPhoto">
+                    </div>
+                    <p class="error-tips" style="display: none;">网络出错,请稍后再试</p>
+                    <div class="bottom">
+                        <p>已有超过 <span class="loveWorkNum">0</span> 人热爱工作</p>
+                        <div id="handlePhotoBtn" class="button-long">加工照片</div>
+                    </div>
+                </div>
+                <div id="fourLayer" class="four-layer" style="display: none;">
+                    <div class="layer-wrapper"></div>
+                    <div class="layer-container">
+                        <p class="layer-tips">正在加工 请稍后...</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="swiper-slide slide-five swiper-no-swiping">
+                <div class="five-wrapper">
+                    <div class="five-top">
+                        <div id="generateImg" class="generate-image-wrapper">
+                            <div class="five-top-content">
+                                <img id="avatar">
+                            </div>
+                            <div class="five-top-bottom-wrapper">
+                                <div class="five-top-left-wrapper">
+                                    <img id="laodongjieTips" src="./mayDay/images/laodongjie.png">
+                                </div>
+                                <div class="five-top-right-wrapper">
+                                    <div class="qrcode-wrapper">
+                                        <div id="qrcodeContent" class="qrcode-content"></div>
+                                        <img id="logoImg" class="logo" src="./../../static/images/lcds_icon_80.png">
+                                    </div>
+                                    <p class="tech-tips">扫码获取工装照</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="five-top-btn-wrapper">
+                            <p>长按图片下载</p>
+                            <p class="changeCloth">换工装>></p>
+                        </div>
+                    </div>
+                    <div class="five-center">
+                        <p>正脸效果更好</p>
+                        <div class="five-center-btn-wrapper">
+                            <p class="btn-left btn-short changeImage">换 张 照 片</p>
+                            <p id="shareBtn" class="btn-right btn-short">给 工 友 看 看</p>
+                        </div>
+                    </div>
+                    <a class="five-bottom" href="./../user/invite_enroll.html">
+                        <img class="swiper-lazy" data-src="./mayDay/images/register.png">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- 预加载 -->
+    <div id="preloadContainer" class="preload-container fadeOut">
+        <div class="wrapper">
+            <div class="proload-content">
+                <div class="pre-progress-wrapper">
+                    <div id="preProgress" class="pre-progress"></div>
+                </div>
+                <p class="pre-text">正在加载 <span id="prePrecent" class="preload-percent">0</span>%</p>
+            </div>
+        </div>
+    </div>
+<script src="mayDay/js/exif.js"></script>
+<script src="mayDay/js/image-process-tools.js"></script>
+<script>
+    require('mayDay/index.js');
+</script>
+</body>
+
+</html>

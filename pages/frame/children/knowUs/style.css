@@ -1,0 +1,34 @@
+body{
+    background-color: #f3f7fe;
+}
+.wraper{
+    height: 100%;
+}
+.swiper-container{
+    position: relative;
+    height: 100%;
+}
+.swiper-slide img {
+    position: relative;
+    top: -.5rem;
+}
+.know-arrow{
+    width: .26rem;
+    position: absolute;
+    bottom: .4rem;
+    left: 50%;
+    margin-left: -.13rem;
+    z-index: 999;
+    
+}
+.know-arrow img {
+    top: 0;
+}
+h1{
+    width: 100%;
+    font-size: .35rem;
+    color: #13b7f6;
+    text-align: center;
+    padding-top: .47rem;
+    padding-bottom: .67rem;
+}

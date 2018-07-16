@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>下载APP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="background-color: #fff">
+	<div class="wraper">
+		<div class="downloadLogo">
+			<div class="downloadLogoImg" id="downloadLogoImg">
+				<img src="../../static/images/logo.png" />
+			</div>
+		</div>
+
+		<ul class="downloadButton" id="downloadButton">
+			<li id="iphoneDownVersion" class="versionsText"></li>
+			<li><a id="iphoneDown"><img src="../../static/images/iosDown.png" /></a></li>
+
+			<li id="androidDownVersion" class="versionsText"></li>
+			<li><a id="androidDown"><img src="../../static/images/androidDown.png" /></a></li>
+		</ul>
+
+	</div>
+	<div class="downloadtip">
+		<p>微信可能会禁止下载功能</p>
+		<p>请在浏览器中打开本界面</p>
+	</div>
+
+	<a id="loadAppButton" style="display:none;width:0px;height:0px;"></a>
+
+	<script type="text/javascript">
+		require('./download');
+	    function getParams() {
+	        var url = decodeURIComponent(location.search);
+	        var request = {};
+	        if (url.indexOf("?") != -1) {
+	            var str = url.substr(1);
+	            arr = str.split("&");
+	            for (var i = 0; i < arr.length; i++) {
+	                request[arr[i].split("=")[0]] = unescape(arr[i].split("=")[1]);
+	            }
+	        }
+			console.log(request)
+	        return request || {};
+	    }
+
+	    var doOpenApp = function() {
+			var params = getParams().Action;	
+			console.log(params)			
+			if(params){
+			    var el = document.getElementById('loadAppButton');
+				el.setAttribute('href','lcds://lcdsApp/LINEAction='+params);
+		        el.click();				
+			}
+	    };
+
+	    window.onload = function() {
+	        doOpenApp();
+	    };
+  
+	</script>
+</body>
+</html>

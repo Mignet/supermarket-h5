@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>领取创业福利</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+<!--     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <style type="text/css">
+        body{
+            background-color: #45a8f2;
+        }
+        .input-wraper{
+            position: relative;
+            width: 3.66rem;
+            height: .55rem;
+            padding: .5rem .2rem .12rem;
+            margin: .1rem auto 0;
+            background: url("./receiveBenefit/number-input.png") no-repeat center center;
+            background-size: contain;
+        }
+        .input-box{
+            position: absolute;
+            left: 50%;
+            top: .48rem;
+            margin-left: -1.5rem;
+            width: 3rem;
+            height: .55rem;
+        }
+        .input-wraper input{
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+            text-align: center;
+            background-color: #f5fbff;
+            vertical-align: middle;
+            font-size: .19rem;
+        } 
+        ::-webkit-input-placeholder { 
+            font-size: .19rem;
+            color: #b8babc; 
+        } 
+        .receive-button{
+            width: 3.5rem;
+            height: .65rem;
+            margin: .34rem auto 0;
+            background: url("./receiveBenefit/reveiceButton.png?__inline") no-repeat center;
+            background-size: 100% auto;
+        }
+        .wraper .disButton{
+            background-image:  url('./receiveBenefit/button-gray.png');
+        }
+        .tel{
+            padding-top: .18rem;
+            text-align: center;
+            color: #f6fbff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <div>
+            <img src="receiveBenefit/banner.png">
+        </div>
+        <div class="input-wraper" id="revevieForm">
+            <div class="input-box">
+                <input id="telephone" type="tel" placeholder="请输入手机号码" required pattern="^1\d{10}$" name="mobile" maxlength="11">
+            </div>
+        </div>
+        <div class="receive-button" id="loginSub"></div>
+        <p class="tel">客服电话：400-888-6987</p>
+    </div>
+    <script type="text/javascript">
+        var $           = require("zepto");
+        var checkForm = require("modules/common/checkForm");
+        var service = require('modules/common/service');
+        var comm    = require('modules/common/common');
+        var reveive={
+            init:function(){
+                var self = this;
+                this.info={};
+                this.info.cfpName = sessionStorage.getItem("__shareName__");
+                this.info.cfpMobile = sessionStorage.getItem("__shareMobile__");
+                this.info.headImgUrl = sessionStorage.getItem("__headimgurl__");
+                this.info.nickName = sessionStorage.getItem("__nickname__");
+                this.info.openId = sessionStorage.getItem("__openid__");
+                // 表单校验
+                new checkForm({
+                    isSetButtonState : true,
+                    formEle : $('#revevieForm'),
+                    buttonEle : $('#loginSub'),
+                    callback : function(data){
+                        self.getWelfare();
+                    }
+                });
+            },
+            getWelfare:function(){
+                var Service = new service();
+                Service.api = 'user/getWelfare';
+                Service.isShowLoading = true;
+                Service.isNeedToken = false;
+                Service.data =$.extend({},{mobile:$("#telephone").val()},this.info);
+                Service.success = function (result) {
+                    location.href="./receiveSuccess.html"
+                }
+                Service.error = function (msg, result) {
+                    comm.alert(msg);
+                    $("#telephone").val("");
+                }
+                Service.send();
+            }
+        };
+        reveive.init();
+    </script> 
+</body>
+</html>

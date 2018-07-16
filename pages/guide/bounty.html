@@ -1,0 +1,447 @@
+<!-- 抽奖活动  日常运营活动 -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>一元签到金抽奖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"/><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+<div class="img-container" style="display: none;">
+    <img id="lotteryOneDefault" src="boundty/lottery-1-default.png">
+    <img id="lotteryOneActive" src="boundty/lottery-1-active.png">
+    <img id="lotteryTenDefault" src="boundty/lottery-10-default.png">
+    <img id="lotteryTenActive" src="boundty/lottery-10-active.png">
+    <img id="luckLineDefault" src="./boundty/luck-line-default.png">
+    <img id="luckLineActive" src="./boundty/luck-line-active.png">
+    <img id="luckText200" src="boundty/scale-200.png">
+    <img id="luckText400" src="boundty/scale-400.png">
+    <img id="luckText600" src="boundty/scale-600.png">
+    <img id="luckText800" src="boundty/scale-800.png">
+    <img id="luckText1200" src="boundty/scale-1200.png">
+    <img id="reward-0" src="boundty/zhaizhiji.png">
+    <img id="reward-1" src="boundty/jiayong_icon.png">
+    <img id="reward-2" src="boundty/aiqiyi.png">
+    <img id="reward-3" src="boundty/5jiao-icon.png">
+    <img id="reward-4" src="boundty/xiaomi5x-icon.png">
+    <img id="reward-5" src="boundty/touzihongbao16yuan-icon.png">
+    <img id="reward-6" src="boundty/lanyaerji-icon.png">
+    <img id="reward-7" src="boundty/jianglijin1yuan-icon.png">
+    <img id="reward-8" src="boundty/iphonex.png">
+    <img id="reward-9" src="boundty/xianjin10yuan.png">
+    <img id="reward-10" src="boundty/lanyayinxiang.png">
+    <img id="reward-11" src="boundty/touzihaobao3yuan-icon.png">
+    <img id="reward-12" src="boundty/jingli_icon.png">
+    <img id="luckReward1" src="boundty/luck-reward-zongjian.png">
+    <img id="luckReward2" src="boundty/luck-reward-50.png">
+    <img id="luckReward3" src="boundty/luck-reward-100.png">
+</div>
+<div class="preload-container fadeOut">
+    <div class="preload-progress-wrapper">
+        <div id="preloadProgress" class="preload-progress"></div>
+    </div>
+    <p id="progressText" class="progress-text">0%</p>
+</div>
+<div class="wraper" style="visibility: hidden;">
+    <div class="linear-gradient-wrapper"></div>
+    
+    <div class="banner">
+        <img src="boundty/banner.png">
+    </div>
+
+    <div id="carouselWrapper" class="carousel-wrapper">
+        <ul id="carousel" class="carousel swiper-wrapper">
+            <!-- <li class="carousel-item">135****2561 手机用户获得爱奇艺VIP会员</li> -->
+        </ul>
+    </div>
+
+    <div class="rotate-container">
+        <div class="rotate-header">
+            <p id="prizeMoenyWraper" style="display: none;">奖励金:<span></span>元</p>
+            <p id="balanceMoneyWraper" style="display: none;">余额:<span></span>元</p>
+        </div>
+        <div class="rotate-content-wrapper">
+            <ul class="rotate-content clearfix">
+                <li data-id="0" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods zhaizhiji"></div>
+                    <p class="rotate-content-item-text">榨汁机</p>
+                </li>
+                <li data-id="1" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods jiayong"></div>
+                    <p class="rotate-content-item-text">加佣券</p>
+                </li>
+                <li data-id="2" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods vipyueka"></div>
+                    <p class="rotate-content-item-text">VIP月卡</p>
+                </li>
+                <li data-id="3" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods xianjin5jiao"></div>
+                    <p class="rotate-content-item-text">现金</p>
+                </li>
+                <li data-id="11" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods touzihongbao3yuan"></div>
+                    <p class="rotate-content-item-text">投资红包</p>
+                </li>
+                <li class="rotate-content-item empty">
+                </li>
+                <li class="rotate-content-item empty">
+                </li>
+                <li data-id="4" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods xiaomi5x"></div>
+                    <p class="rotate-content-item-text">小米5X</p>
+                </li>
+                <li data-id="10" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods lanyayinxiang"></div>
+                    <p class="rotate-content-item-text">蓝牙音箱</p>
+                </li>
+                <li class="rotate-content-item empty">
+                </li>
+                <li class="rotate-content-item empty">
+                </li>
+                <li data-id="5" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods touzihongbao16yuan"></div>
+                    <p class="rotate-content-item-text">投资红包</p>
+                </li>
+                <li data-id="9" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods xianjin10yuan"></div>
+                    <p class="rotate-content-item-text">现金</p>
+                </li>
+                <li data-id="8" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods iphonex"></div>
+                    <p class="rotate-content-item-text">iPhone X</p>
+                </li>
+                <li data-id="7" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods jianglijin"></div>
+                    <p class="rotate-content-item-text">奖励金</p>
+                </li>
+                <li data-id="6" class="rotate-content-item">
+                    <div class="rotate-content-item-inner"></div>
+                    <div class="rotate-content-item-goods lanyaerji"></div>
+                    <p class="rotate-content-item-text">蓝牙耳机</p>
+                </li>
+            </ul>
+            <div class="rotate-luck-wrapper">
+                <div class="cylinder">
+                    <div class="cyclinder-center-wrapper">
+                        <div id="luckValueHeight" class="cyclinder-center"></div>
+                    </div>
+                </div>
+                <div id="luckLineOne" class="luck-line luck-line-one">
+                    <img id="luckValueScale3" class="luck-img-one" src="./boundty/scale-600.png">
+                    <img class="luck-img-two" style="visibility: hidden;" src="boundty/luck-line-default.png">
+                </div>
+                <div id="luckLineTwo" class="luck-line luck-line-two">
+                    <img class="luck-img-two" src="boundty/luck-line-default.png">
+                    <img id="luckValueScale2" class="luck-img-one" src="./boundty/scale-400.png">
+                </div>
+                <div id="luckLineThree" class="luck-line luck-line-three">
+                    <img id="luckValueScale1" class="luck-img-one" src="boundty/scale-200.png">
+                    <img class="luck-img-two" src="boundty/luck-line-default.png">
+                </div>
+                <div class="luck-text">
+                    <h2>平台幸运值: <span id="platformLuckValue">0</span></h2>
+                    <p id="nextLuckValueReward" style="display: none;">(拿50元京东E卡)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <div id="lotteryOneTime" class="lottery-one-time">
+            <img src="boundty/lottery-1-default.png">
+        </div>
+        <div id="lotteryTenTime" class="lottery-ten-time">
+            <img src="boundty/lottery-10-default.png">
+        </div>
+    </div>
+
+    <div style="height: .1656rem;"></div>
+
+    <a id="seeReward" class="see-reward">查看奖品></a>
+
+    <div class="luck-progress-container">
+        <div class="luck-progress-wrapper">
+            <div class="luck-progress-header">
+                <p>幸运奖品：下一幸运奖品发奖还差<span id="luckValueDistance">0</span>点幸运值</p>
+                <img id="luckRuleBtn" src="boundty/question.png">
+            </div>
+            <div class="luck-progress-center">
+                <div class="luck-progress-center-left">
+                    <p id="roundTimes">
+                        第<br><span id="rountTime">一</span><br>轮
+                    </p>
+                </div>
+                <div class="luck-progress-center-prize luck-progress-center-prize-one">
+                    <img src="boundty/luck-reward-zongjian.png">
+                    <p>总监职级券</p>
+                </div>
+                <div class="luck-progress-center-prize luck-progress-center-prize-two">
+                    <img src="boundty/luck-reward-50.png">
+                    <p>50元京东卡</p>
+                </div>
+                <div class="luck-progress-center-prize luck-progress-center-prize-one">
+                    <img src="boundty/luck-reward-100.png">
+                    <p>100元京东卡</p>
+                </div>
+            </div>
+            <div class="luck-progress-bottom">
+                <div class="luck-progress-bottom-wrapper">
+                    <div class="luck-progress"></div>
+                    <div class="luck-circle">
+                        <img src="boundty/circle-icon.png">
+                    </div>
+                </div>
+                <div id="luckProgressBottomText" class="luck-progress-bottom-text clearfix">
+                    <p>200</p>
+                    <p>400</p>
+                    <p>600</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rule-container">
+        <h2>活动规则</h2>
+        <div class="paragraph">
+            <span>1.</span>
+            <p>一元奖励金或一元余额可抽奖一次。每一次抽奖累计1点平台幸运值。幸运值由平台所有用户共有。</p>
+        </div>
+        <div class="paragraph">
+            <span>2.</span>
+            <p>投资红包/加佣券/现金将在中奖后30分钟内发放到猎财帐户，投资红包有效期为10天，加佣券有效期为15天。</p>
+        </div>
+        <div class="paragraph">
+            <span>3.</span>
+            <p>总监职级券:中奖后30分钟内发到帐户,在“我的”-“优惠券”-“职级券”查看职级券生效时间。</p>
+        </div>
+        <div class="paragraph">
+            <span>4.</span>
+            <p>实物奖品、爱奇艺会员、京东E卡发放说明<br>时间：统一在下月10个工作日内发出。<br>1) 在“查看奖品”→“收货地址”填写收件人地址信息，实物奖品都需要填写地址。<br>实物奖品或爱奇艺会员，若因<b>用户填写收货地址信息有误导致发放失败，需用户自行负责。</b><br>3) 京东E卡统一由客服发放</p>
+        </div>
+        <div class="paragraph">
+            <span>5.</span>
+            <p>幸运值兑换<br>如何累计：猎财大师的理财师每抽1次奖，将会累计1个幸运值，幸运值为平台猎财大师的理财师共有<br>兑换奖品 : 你抽奖获得的幸运值，如果刚好是兑换奖品的幸运值，奖品就属于你。</p>
+        </div>
+        <div class="paragraph">
+            <span>6.</span>
+            <p>本活动是深圳市前海领会科技有限公司专属活动, 奖励由本公司提供，与Apple Inc.无关</p>
+        </div>
+    </div>
+</div>
+<div id="popContainer" class="pop-container" style="display: none;">
+    <div id="popWrapper" class="pop-wrapper"></div>
+
+    <div id="oneRewardNotLuckReward" class="pop-content pop-content-one animated zoomIn" style="display: none;">
+        <div class="pop-content-inner">
+            <div class="pop-header">
+                <img src="./boundty/pop-header.png">
+            </div>
+            <div class="pop-reward">
+                <img id="oneRewardNotLuckRewardImg">
+            </div>
+            <h2 id="oneRewardNotLuckRewardText"></h2>
+            <button class="hidePop">确 定</button>
+            <p>请在中奖记录查看中奖奖品</p>
+        </div>
+    </div>
+
+    <div id="oneRewardHaveLuckReward" class="pop-content pop-content-three animated zoomIn" style="display: none;">
+        <div class="pop-content-inner">
+            <div class="pop-header">
+                <img src="./boundty/pop-header.png">
+            </div>
+            <div class="pop-luck-reward-one">
+                <img id="oneRewardHaveLuckRewardImg">
+                <h3 id="oneRewardHaveLuckRewardText"></h3>
+            </div>
+            <div class="pop-luck-reward-two">
+                <img id="oneRewardHaveLuckRewardLuckImg">
+                <h2 id="oneRewardHaveLuckRewardLuckText"></h2>
+            </div>
+            <button class="hidePop">确 定</button>
+            <p>请在中奖记录查看中奖奖品</p>
+        </div>
+    </div>
+
+    <div id="tenReward" class="pop-content pop-content-four animated zoomIn" style="display: none;">
+        <div class="pop-content-inner">
+            <div class="pop-header">
+                <img src="./boundty/pop-header.png">
+            </div>
+            <div class="luck-ten-rewards-wrapper">
+                <ul id="tenRewardItems" class="luck-ten-rewards">
+      <!--                     <li>
+                        <img src="boundty/lanyayinxiang.png">
+                        <div class="rewards-text">
+                            <p>小米蓝牙音箱</p>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <h2>获得10件奖品</h2>
+            <div id="tenRewardHaveLuckWrapper" class="pop-luck-reward-three hidePart" style="display: none;">
+                <img id="tenRewardHaveLuckImg">
+                <h2 id="tenRewardHaveLuckText"></h2>
+            </div>
+            <button class="hidePop">确 定</button>
+            <p>请在中奖记录查看中奖奖品</p>
+        </div>
+    </div>
+
+    <!-- 奖品记录 -->
+    <div class="pop-content pop-content-five animated zoomIn" style="display: none;">
+        <div class="close-btn hidePop"><img src="boundty/close-btn.png"></div>
+        <div class="pop-header pop-header-two">
+            <img src="./boundty/my-reward-header.png">
+        </div>
+        <div id="popTab" class="pop-tab">
+            <p class="active" data-key="0">中奖记录</p>
+            <div class="gap"></div>
+            <p data-key="1">幸运奖品</p>
+            <div class="gap"></div>
+            <p data-key="2">收货地址</p>
+        </div>
+        <div id="rewardTipsWrapper" class="reward-tips-wrapper">
+            <div id="rewardTips" class="reward-tips rewardTips">还没有获得奖品</div>
+            <div id="luckTips" class="reward-tips luckTips" style="display: none;">还没发放幸运奖品</div>
+            <div class="reward-tips" style="display: none;"></div>
+        </div>
+        <div id="popRewardLists" class="pop-content-inner">
+            <ul id="popTabContent" class="pop-tab-content">
+                <li>
+<!--                     <h4 id="rewardTips">还没有获得奖品</h4> -->
+                    <div id="emptyRewardContainer" class="empty-reward-container" style="display: none;">
+                        <div class="empty-wrapper">
+                            <img src="./boundty/empty-reward-icon.png">
+                            <p>赶紧去抽奖 试试手气吧！！</p>
+                        </div>
+                    </div>
+                    <div id="rewardItemsContainer" class="reward-items-container">
+                        <ul id="rewardItems" class="reward-items">
+                            <li class="reward-item">
+                                <div class="reward-item-left">
+                                    {{imgPic}}
+                                </div>
+                                <div class="reward-item-right">
+                                    <div class="reward-item-right-top">{{prizeDesc}}</div>
+                                    <div class="reward-item-right-bottom">{{winningTime}}</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li style="display: none;">
+                    <div id="emptyLuckContainer" class="empty-luck-container" style="display: none;">
+                        <div class="empty-wrapper">
+                            <img src="boundty/empty-luck-icon.png">
+                            <p>还没发放幸运奖品</p>
+                        </div>
+                    </div>
+                    <div id="luckItemsContainer" class="luck-items-container">
+                        <ul id="luckItems" class="luck-items">
+                            <li class="luck-item">
+                                <div class="luck-item-top">猎财手机用户{{mobile}}，获得{{roundTime}}{{count}}点幸运值兑换奖品{{prizeDesc}}</div>
+                                <div class="luck-item-bottom">{{winningTime}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li style="display: none;">
+                    <div class="empty-add-container">
+                        <div class="empty-wrapper empty-addr-wrapper">
+                            <img src="boundty/empty-addr-icon.png">
+                            <h5 id="goShipAddr"><span>+</span><b id="address">添加收货地址</b></h5>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 幸运值兑奖规则 -->
+    <div id="luckRuleTips" class="pop-content pop-content-six animated zoomIn" style="display: none;">
+        <div class="close-btn hidePop"><img src="boundty/close-btn.png"></div>
+        <div class="pop-content-inner">
+            <div class="pop-header pop-header-two">
+                <img src="./boundty/luck-header.png">
+            </div>
+            <div class="luck-rule-content">
+                <h6>第一轮幸运值奖品</h6>
+                <h6>平台幸运值满200点、400点、600点发放幸运奖品给最后一位累积幸运值点数的用户。</h6>
+                <ul class="ticket-wrapper">
+                    <li>
+                        <div class="top">
+                            <img src="boundty/luck-reward-zongjian.png">
+                            <p>总监职级券</p>
+                        </div>
+                        <p class="bottom">200点</p>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <img src="boundty/luck-reward-50.png">
+                            <p>50元京东卡</p>
+                        </div>
+                        <p class="bottom">400点</p>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <img src="boundty/luck-reward-100.png">
+                            <p>100元京东卡</p>
+                        </div>
+                        <p class="bottom">600点</p>
+                    </li>
+                </ul>
+                <h6>第二轮幸运值奖品</h6>
+                <h6>平台幸运值满400点、800点、1200点发放幸运奖品给最后一位累积幸运值点数的用户。</h6>
+                <ul class="ticket-wrapper">
+                    <li>
+                        <div class="top">
+                            <img src="boundty/luck-reward-zongjian.png">
+                            <p>总监职级券</p>
+                        </div>
+                        <p class="bottom">400点</p>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <img src="boundty/luck-reward-50.png">
+                            <p>50元京东卡</p>
+                        </div>
+                        <p class="bottom">800点</p>
+                    </li>
+                    <li>
+                        <div class="top">
+                            <img src="boundty/luck-reward-100.png">
+                            <p>100元京东卡</p>
+                        </div>
+                        <p class="bottom">1200点</p>
+                    </li>
+                </ul>
+                <h6>两轮循环放奖,即第一轮、第二轮、第一轮...,每轮幸运奖品发完，重置幸运值点数。</h6>
+                <h6>幸运值点数为平台所有用户累计数值。</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script src="./vconsole.min.js"></script> -->
+<script src="boundty/iscroll.js"></script>
+<script>
+    // var vConsole = new VConsole();
+    require('./boundty/index')
+</script>
+</body>
+</html>

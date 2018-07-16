@@ -1,0 +1,299 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+.swiper-slide{
+	overflow: hidden;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.transition{
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden; 
+  transition: all 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+}
+.first{
+	background: url("./bg.png") no-repeat center center;
+}
+.first_one{
+    text-align: center;
+    margin-top: .44rem;
+    transform:translate(0,-200%);
+    -webkit-transform:translate(0,-200%);
+}
+.first_one.active,.first_two.active{
+  transform:translate(0,0);
+  -webkit-transform:translate(0,0);     
+}
+.first_two{
+  margin-top: .6rem;
+  transform:translate(-200%,0);
+  -webkit-transform:translate(-200%,0);
+}
+.first_three{
+  margin-top: .6rem;
+  opacity: 0;
+}
+.first_three.active{
+  opacity: 1;
+}
+.footer{
+  position: absolute;
+  text-align: center;
+  width:100%;
+  bottom:0;
+  padding-bottom: .1rem;
+  -webkit-animation: nextPageMove 1.5s linear infinite;
+  -moz-animation: nextPageMove 1.5s linear infinite;
+  -o-animation: nextPageMove 1.5s linear infinite;
+  animation: nextPageMove 1.5s linear infinite;    
+}
+@-webkit-keyframes nextPageMove {
+ from {
+    bottom:-0.1rem;
+    opacity:0;
+ }
+
+  50%{
+    bottom:.1rem;
+    opacity:0.8;
+ }
+ to {
+    bottom:.0;
+    opacity:0;
+ }
+}
+.nextPageLoad{
+   margin-top: 0.12rem;
+}
+.nextPageLoad img{
+   height:.25rem;
+}
+.second{
+  background:url("../understand/bg.png") center center;
+  background-size: 100% 100%;
+}
+.second_one{
+    margin-top:.44rem;
+    transform:translate(0,-200%);
+    -webkit-transform:translate(0,-200%);
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+.second_two{
+    margin:1.25rem 0;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay: .4s;
+    -webkit-transition-delay: .4s; /* Safari 和 Chrome */
+}
+.second_three{
+    margin-top:.25rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:0.8s;
+    -webkit-transition-delay:0.8s; /* Safari 和 Chrome */
+}
+.second_two.active,
+.second_one.active,
+.second_three.active
+{
+    transform:translate(0,0);
+    -webkit-transform:translate(0,0);       
+}
+.third{
+  background:url("../understand/bg.png") center center;
+  background-size: 100% 100%;
+}
+.third_one{
+ margin-top:.44rem;
+ transform:translate(0,-200%);
+ -webkit-transform:translate(0,-200%);
+}
+.third_two{
+  margin-top:.8rem;
+  transform:translate(-200%,0);
+  -webkit-transform:translate(-200%,0);
+  transition-delay:.4s;
+  -webkit-transition-delay:.4s; /* Safari 和 Chrome */
+}
+.third_three{
+    margin-top:.3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:0.8s;
+    -webkit-transition-delay:0.8s; /* Safari 和 Chrome */
+}
+.third_four {
+    margin-top: .3rem;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay: 1.2s;
+    -webkit-transition-delay: 1.2s; /* Safari 和 Chrome */
+}
+.third_five{
+    margin-top:.3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:1.6s;
+    -webkit-transition-delay:1.6s; /* Safari 和 Chrome */
+}
+.third_one.active,
+.third_two.active,
+.third_three.active,
+.third_four.active,
+.third_five.active
+{
+  transform:translate(0,0);
+  -webkit-transform:translate(0,0);  
+}
+/*第四*/
+.fourth{
+  background:url("../understand/bg.png") center center;
+  background-size: 100% 100%;
+}
+.fourth_one{
+    margin-top:.44rem;
+  transform:translate(0,-200%);
+  -webkit-transform:translate(0,-200%);
+}
+
+.fourth_two{
+  margin-top: .3rem;
+  transform:translate(-200%,0);
+  -webkit-transform:translate(-200%,0);
+    transition-delay:0.4s;
+    -webkit-transition-delay:0.4s; /* Safari 和 Chrome */
+}
+.fourth_three{
+  margin-top: .3rem;
+  transform:translate(200%,0);
+  -webkit-transform:translate(200%,0);
+    transition-delay:0.8s;
+    -webkit-transition-delay:0.8s; /* Safari 和 Chrome */
+}
+.fourth_four{
+    margin-top: .3rem;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay:1.2s;
+    -webkit-transition-delay:1.2s; /* Safari 和 Chrome */
+}
+.fourth_five{
+    margin-top: .3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:1.6s;
+    -webkit-transition-delay:1.6s; /* Safari 和 Chrome */
+}
+.fourth_one.active,
+.fourth_two.active,
+.fourth_three.active,
+.fourth_four.active,
+.fourth_five.active
+{
+  transform:translate(0,0);
+  -webkit-transform:translate(0,0);
+}
+
+/*第五*/
+.fifth{
+    background:url("../understand/bg.png") center center;
+    background-size: 100% 100%;
+}
+.fifth_one{
+    margin-top:.44rem;
+    transform:translate(0,-200%);
+    -webkit-transform:translate(0,-200%);
+}
+
+.fifth_two{
+    margin-top: .3rem;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay:0.4s;
+    -webkit-transition-delay:0.4s; /* Safari 和 Chrome */
+}
+.fifth_three{
+    margin-top: .3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:0.8s;
+    -webkit-transition-delay:0.8s; /* Safari 和 Chrome */
+}
+.fifth_four{
+    margin-top: .3rem;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay:1.2s;
+    -webkit-transition-delay:1.2s; /* Safari 和 Chrome */
+}
+.fifth_five{
+    margin-top: .3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:1.6s;
+    -webkit-transition-delay:1.6s; /* Safari 和 Chrome */
+}
+.fifth_one.active,
+.fifth_two.active,
+.fifth_three.active,
+.fifth_four.active,
+.fifth_five.active
+{
+    transform:translate(0,0);
+    -webkit-transform:translate(0,0);
+}
+
+/*第六*/
+.sixth{
+    background:url("../understand/bg.png") center center;
+    background-size: 100% 100%;
+}
+.sixth_one{
+    margin-top:.44rem;
+    transform:translate(0,-200%);
+    -webkit-transform:translate(0,-200%);
+}
+
+.sixth_two{
+    margin-top: .3rem;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay:0.4s;
+    -webkit-transition-delay:0.4s; /* Safari 和 Chrome */
+}
+.sixth_three{
+    margin-top: .3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:0.8s;
+    -webkit-transition-delay:0.8s; /* Safari 和 Chrome */
+}
+.sixth_four{
+    margin-top: .3rem;
+    transform:translate(-200%,0);
+    -webkit-transform:translate(-200%,0);
+    transition-delay:1.2s;
+    -webkit-transition-delay:1.2s; /* Safari 和 Chrome */
+}
+.sixth_five{
+    margin-top: .3rem;
+    transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+    transition-delay:1.6s;
+    -webkit-transition-delay:1.6s; /* Safari 和 Chrome */
+}
+.sixth_one.active,
+.sixth_two.active,
+.sixth_three.active,
+.sixth_four.active,
+.sixth_five.active
+{
+    transform:translate(0,0);
+    -webkit-transform:translate(0,0);
+}
+

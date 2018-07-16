@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>职级特权说明</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        .wraper{
+            padding: 0 .18rem .18rem;
+        }
+        h1{
+            line-height: .52rem;
+        }
+        section{
+            padding-top: .18rem;
+        }
+        section h3{
+            font-size: 0;
+            color: #4f5960;
+            padding-bottom: .2rem;
+        }
+        section h3 span{
+            display: inline-block;
+            width: .06rem;
+            height: .15rem;
+            background-color: #4e8cef;
+            margin-right: .39rem;
+        }
+        section h3 p{
+            display: inline;
+            line-height: 1.5;
+            font-size: .18rem;
+            font-weight: bold;
+        }
+        table{
+            width: 100%;
+        }
+        td{
+            height: .45rem;
+            border: 1px solid #c7c7cd;
+            text-align: center;
+            background-color: #f6f6f6;
+            color: #6c6e6d;
+        }
+        tr td:first-child{
+            width: 15%;
+        }
+        tr td:last-child{
+            width: 85%;
+        }
+        p{
+            font-size: .16rem;
+            color: #686868;
+            line-height: 1.8em;
+        }
+        section h4{
+            padding-top: .2rem;
+            font-size: .18rem;
+            line-height: 1.5;
+            color: #4f5960;
+            font-weight: bold;
+        }
+        .remark-wrapper{
+            padding-top: .1rem;
+            line-height: 1.5;
+            color: #999;
+            font-size: .14rem;
+            color: #b3b3b3;
+        }
+        .remark-wrapper p{
+            padding-top: .1rem;
+            color: #b3b3b3;
+        }
+    </style>
+</head>
+<body class="articleBody">
+    <div class="wraper">
+        <section>
+            <h3><span></span><p>职级规则介绍：</p></h3>
+            <table>
+                <tr>
+                    <td>职级</td>
+                    <td>职级要求</td>
+                </tr>
+                <tr>
+                    <td>见习</td>
+                    <td>注册即可</td>
+                </tr>
+                <tr>
+                    <td>顾问</td>
+                    <td>个人年化投资额≥100元</td>
+                </tr>
+                <tr>
+                    <td>经理</td>
+                    <td>个人年化投资额≥2000元<br>顾问及以上职级的直接推荐理财师≥2名</td>
+                </tr>
+                <tr>
+                    <td>总监</td>
+                    <td>个人年化投资额≥1万元<br>经理及以上职级的直接推荐理财师≥4名</td>
+                </tr>
+            </table>
+
+            <h4>个人年化投资额 = 个人网贷年化投资额 + 个人保险首期保费金额</h4>
+
+            <div class="remark-wrapper">
+                <p>备注:</p>
+                <p>
+                    （1）、个人网贷年化投资额是指：理财师名下客户（包括你自己）在猎财大师（或T呗）上投资的所有网贷产品的年化投资额之和，其中，年化投资额 = 投资额 × 产品期限（天）/ 360 ；
+                </p>
+                <p>
+                    （2）、个人保险首期保费金额是指：理财师名下客户（包括你自己）在猎财大师上投资的所有保险产品的首期保费金额之和。
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h3><span></span><p>职级考核规则：</p></h3>
+            <p>1、职级每月考核一次，并根据本月考核结果，评定下月职级。</p>
+            <p style="padding-top: .2rem;">2、理财师的下月职级，由理财师本月的个人年化投资额和直接理财师的职级/人数共同决定，缺一不可。具体评级规则如下：</p>
+            <p>（1）晋升：如果本月就已达到更高职级的职级要求，那么下月即可晋升为该职级</p>
+            <p>（2）降级：如果本月未完成本月职级对应的职级要求，那么下月降级为与本月业绩相匹配的最高职级。</p>
+            <p>（3）保级：如果本月仅完成了本月职级对应的职级要求，那么下月职级将与本月一致。</p>
+        </section>
+    </div>
+    <script>
+        var native = require('modules/common/native');
+        var evt = {
+            init: function () {
+                var self = this;
+                if (native.isApp) {
+                    native.getAppToken(function (data) {
+                        self.token = data || "";
+                        native.action('removeLocalSharedBtn');
+                    });
+                }
+            }
+        };
+        evt.init();
+    </script>
+</body>
+</html>

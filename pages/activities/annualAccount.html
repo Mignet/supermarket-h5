@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>猎财大师年度账单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="visibility: hidden;">
+
+    <div class="musicinfo" id="musicinfo" style="visibility: hidden;">
+        <audio id="musicid" src="./annualAccount/1.mp3" preload="preload" autoplay="autoplay" loop="loop"></audio>
+    </div>
+    <div class="wraper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide1">
+                    <div class="one-title"><img class="swiper-lazy" data-src="annualAccount/one-title.png"></div>
+                    <div class="one-content active animation content">
+                        <i id="registerTimeWrapper"><b id="registerTime"></b>通过注册加入了猎财大师;</i>
+                        <i id="buyTimeWrapper" style="display: none;"><b id="buyTime"></b>完成了第 <span>1</span> 笔投资；</i>
+                        <i id="firstInviteClientWrapper" style="display: none;"><b id="firstInviteClient"></b>邀请了第 <span>1</span> 个客户；</i>
+                        <i id="firtHasTeamWrapper" style="display: none;"><b id="firtHasTeam"></b>拥有了自己的第 <span>1</span> 个团队。</i>很高兴, 与你一起为未来努力！
+                    </div>
+                    <div class="one-pic animation">
+                        <img class="swiper-lazy" data-src="./annualAccount/one-timejiqi.png">
+                        <div class="gold1 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold2 gold special-gold"><img src="./annualAccount/gold-2.png"></div>
+                        <div class="gold3 gold"><img src="./annualAccount/gold-3.png"></div>
+                    </div>
+                    <div class="next_logo"><img src="./annualAccount/top-button.png"></div>
+                </div>
+                <div class="swiper-slide slide2">
+                    <div class="two-title">
+                        <img  class="swiper-lazy" data-src="./annualAccount/two-title.png">
+                    </div>
+                    <div class="two-content animation content">
+                        <i>这一年共拿到 <span id="totalProfit"></span> 元收益</i>
+                        <i id="maxFeeMonthWrapper" style="display: none;">，<span id="maxFeeMonth"></span> 月份是收益最高的一个月！</i><br>难道你就是传说中猎财大师最佳理财师！</div>
+                    <div class="two-chart-wrapper animation">
+                        <div id="lineChart" class="two-chart"></div>
+                        <div class="gold-1 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold-2 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold-3 gold special-gold"><img src="./annualAccount/gold-2.png"></div>
+                    </div>
+                    <div id="twoFooter" class="two-footer animation"></div>
+                    <div class="next_logo"><img src="./annualAccount/top-button.png"></div>
+                </div>
+                <div class="swiper-slide slide3">
+                    <div class="three-title"><img class="swiper-lazy" data-src="./annualAccount/two-title.png"></div>
+                    <div class="three-content animation content">
+                        这一年出单 <span id="buyOrg">0</span> 个网贷平台，投资金额达到 <span id="buyMoney">0</span> 元,还购买 <span id="buyFund">0</span> 元基金和 <span id="buyInsurance">0</span> 单保险。<br>靠谱的理财产品, 钱包涨涨涨,<br>新的一年，一定会更旺哦！
+                    </div>
+                    <div class="three-pic animation">
+                        <img  class="swiper-lazy" data-src="./annualAccount/three-pic.png">
+                        <div class="gold-1 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold-2 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold-3 gold special-gold"><img src="./annualAccount/gold-2.png"></div>
+                        <div class="gold-4 gold"><img src="./annualAccount/gold-3.png"></div>
+                    </div>
+                    <div class="next_logo"><img src="./annualAccount/top-button.png"></div>
+                </div>
+                <div class="swiper-slide slide4">
+                    <div class="four-title"><img class="swiper-lazy" data-src="./annualAccount/four-title.png"></div>
+                    <div class="four-content content animation">这一年团队有了 <span id="teamPerson">0</span> 名成员，网贷平台投资金额共 <span id="teamP2PMoney">0</span> 元, 还购买 <span id="teamFund">0</span> 元基金和 <span id="teamInsurance">0</span> 单保险。团队帮你赚了 <span id="teamMoney">0</span> 元。<br>投资多样产品，佣金UP UP UP !</div>
+                    <div class="four-pie-wrapper animation">
+                        <div class="four-pie-container"></div>
+                        <div class="gold-3 gold special-gold"><img src="./annualAccount/gold-2.png"></div>
+                        <div class="four-pie">
+                            <div class="left"><div id="pieChart" class="pie-chart"></div></div>
+                            <div class="right"><h2>投资比例:</h2><ul id="orgList"></ul></div>
+                        </div>
+                        <div class="logo-container"><img src="./annualAccount/logo.png"></div>
+                        <div class="gold-1 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold-2 gold"><img src="./annualAccount/gold-1.png"></div>
+                    </div>
+                    <div id="fourFooter" class="four-footer animation"></div>
+                    <div class="next_logo"><img src="./annualAccount/top-button.png"></div>
+                </div>
+                <div class="swiper-slide slide5">
+                    <div class="five-title">
+                        <img class="swiper-lazy" data-src="./annualAccount/five-title.png">
+                    </div>
+                    <div class="five-content content animation"><h2 id="bestName"></h2><img id="bestIcon"><p>2017为你赚最多的佣金</p></div>
+                    <div class="five-pic animation">
+                        <img class="swiper-lazy" data-src="./annualAccount/five-pic.png">
+                        <div class="gold-1 gold"><img src="./annualAccount/gold-1.png"></div>
+                        <div class="gold-2 gold special-gold"><img src="./annualAccount/gold-2.png"></div>
+                        <div class="gold-3 gold "><img src="./annualAccount/gold-3.png"></div>
+                    </div>
+                    <div id="fiveFooter" class="five-footer animation">有这么好的队友，明年光棍节，再也不用为你担心了！</div>
+                    <div class="next_logo"><img src="./annualAccount/top-button.png"></div>
+                </div>
+                <div class="swiper-slide slide6">
+                    <div class="six-title">
+                        <img class="swiper-lazy" data-src="./annualAccount/six-title.png">
+                    </div>
+                    <div class="six-content content animation">截至 <span id="yearEnd"></span>,累计发放奖励<span id="liecaiReward">0</span>元,累计活跃理财师 <span id="liecaiPerson">0</span> 名。</div>
+                    <div class="six-grow-wrapper animation">
+                        <h2 class="animation">一路成长</h2>
+                        <div class="six-grow">
+                            <ul class="line-wrapper">
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span><span class="line"></span></li>
+                                <li class="animation"><span class="circle"></span></li>
+                            </ul>
+                            <ul class="grow-wrapper">
+                                <li>1月 参加珠海交流会</li>
+                                <li>03月 信用宝平台入驻</li>
+                                <li>04月 建工e贷平台入驻</li>
+                                <li>05月 正式进入长沙市场</li>
+                                <li>08月 芒果V基金、乐享宝入驻</li>
+                                <li>09月 接入保险、基金产品</li>
+                                <li>10月 小赢理财平台入驻</li>
+                                <li>2018 ... ...</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="six-pic animation">
+                        <img class="swiper-lazy" data-src="./annualAccount/calendar.png">
+                        <div class="gold-1 gold">
+                            <img src="./annualAccount/gold-1.png">
+                        </div>
+                        <div class="gold-2 gold">
+                            <img src="./annualAccount/gold-3.png">
+                        </div>
+                    </div>
+                    <div class="next_logo">
+                        <img src="./annualAccount/top-button.png">
+                    </div>
+                </div>
+                <div class="swiper-slide slide7">
+                    <div class="first-page">
+                        <div class="seven-title">
+                            <img src="./annualAccount/seven-title.png">
+                        </div>
+                        <div class="seven-sub-title">请为自己2018年选个标签</div>
+                        <div class="select-wrapper">
+                            <ul>
+                                <li data-index="0">赚钱大咔</li>
+                                <li data-index="1">理财达人</li>
+                                <li data-index="2">靠谱投资者</li>
+                                <li data-index="3">农药王者</li>
+                                <li data-index="4">投资砖家</li>
+                                <li data-index="5">团队诸葛亮</li>
+                                <li data-index="6">搬砖民工</li>
+                                <li data-index="7">剁手达人</li>
+                                <li data-index="8">专业理财师</li>
+                            </ul>
+                        </div>
+                        <div class="ceshi-wrapper">
+                            <button id="ceshi"><b id="startCeshi">开始测算2018年的财运</b><p id="donghua"><span class="dot">。</span><span class="dot">。</span><span class="dot">。</span></p></button>
+                        </div>
+                    </div>
+                    <div class="second-page">
+                        <h3 class="animation">我的2018年标签为 <span id="myTagText"> </span><br>预计我在2018年将会赚得 <span id="futureMoney"></span> 元</h3>
+                        <div class="tag-wrapper animation">
+                            <img style="display: none;" data-src="./annualAccount/tag-1.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-2.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-3.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-4.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-5.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-6.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-7.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-8.png">
+                            <img style="display: none;" data-src="./annualAccount/tag-9.png">
+                            <div class="gold-1 gold"><img src="./annualAccount/gold-1.png"></div>
+                            <div class="gold-2 gold"><img src="./annualAccount/gold-3.png"></div>
+                        </div>
+                        <div class="share-button animation">
+                            <button id="shareButton">分享给好友围观</button>
+                        </div>
+
+                        <p id="goLogin" class="go-login animation">老用户请到APP生成账单</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./annualAccount/d3.js"></script>
+<script>
+    require('./annualAccount/annualAccount')
+</script>
+</body>
+</html>

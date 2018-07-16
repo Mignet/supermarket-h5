@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>更新日志</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+<!--     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <style type="text/css" media="screen">
+        body{
+            background-color: #fff;
+        }
+        .log-list{
+            padding: 0 .14rem;
+            display: none;
+        }
+        .listMore{
+            display: none;
+        }
+        .list{
+            padding-top: .03rem;
+            padding-bottom: .3rem;
+        }
+        .list p{
+            padding-top: .02rem;
+            font-size: .18rem;
+            color: #646464;
+        }
+        .list li{
+            padding-top: .02rem;
+            font-size: .16rem;
+            color: #969696;
+        }
+    </style>
+</head>
+<body>
+<div id="logList" class="log-list">
+    <div class="list">
+        <p>版本：{{version}}</p>
+        <p>更新时间：{{issueTime}}</p>
+        <p>更新说明:</p>
+        <ul class="explain">
+            {{explain}}
+        </ul>
+    </div>
+</div>
+<script>
+    var api     =  require('modules/api/api');
+    var native      =  require('modules/common/native');
+    var Render      =  require('modules/common/render');
+    var token       =  $(window.parent.token).selector;
+    var log = {
+        init:function(){
+            var self = this;
+            if(native.isApp){
+                self.token    = token;
+                switch(native.source){
+                    case 'android':
+                        self.specialOrgNumber = 'App_channel_android'
+                    break;
+                    case 'ios':
+                        self.specialOrgNumber = 'App_channel_ios'
+                }
+                self.getLog();
+            } else {
+                self.token = token;
+                self.specialOrgNumber = 'App_channel_android';
+                self.getLog(); 
+            }  
+        },
+        /*
+        * 获取日志数据并渲染
+        */
+        getLog:function(){
+            var self = this;
+            new Render({
+                ele:$("#logList"),
+                api:api.appLogList,
+                data:{
+                    specialOrgNumber:self.specialOrgNumber,
+                },
+                isList : true,
+                filter:function(result){
+                    $.each(result,function(index,item){
+                        if($.trim(item.updateHints)){
+                            var updateExplainStr = "";
+                            if(item.updateHints.split("&").length === 1){
+                                updateExplainStr = item.updateHints.split("&")[0];
+                            }else if(item.updateHints.split("&").length === 2){
+                                updateExplainStr = item.updateHints.split("&")[1];
+                            }
+                            var updateExplainArr = self.removeEmptyArrayEle(updateExplainStr.split(/；|;/));
+                            item.explain = "";
+                            updateExplainArr.forEach(function(value,index){
+                                value = $.trim(value);
+                                if(value){
+                                    if(index < (updateExplainArr.length-1)){
+                                        item.explain += "<li>"+value+"；</li>"
+                                    }else if(index == (updateExplainArr.length-1)){
+                                        if(value.substr(value.length-1,1) == "." || value.substr(value.length-1,1) == "。"){
+                                            item.explain += "<li>"+value+"</li>"
+                                        }else{
+                                            item.explain += "<li>"+value+"。</li>" 
+                                        }
+                                    }
+                                }
+                            })
+                        }else{
+                            item.explain = "<li>暂无</li>"
+                        }
+                    });
+                    return result;
+                },
+                callback:function(){
+                    $('#logList').show();
+                }
+            })
+        },
+        removeEmptyArrayEle: function(arr){    
+          for(var i = 0; i < arr.length; i++) {
+           if(arr[i] == undefined) {
+              arr.splice(i,1);
+              i = i - 1; // i - 1 ,因为空元素在数组下标 2 位置，删除空之后，后面的元素要向前补位，
+                               // 这样才能真正去掉空元素,觉得这句可以删掉的连续为空试试，然后思考其中逻辑
+            }
+           }
+           return arr;
+        }
+    };
+    log.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+.bubbleWraper{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:996;
+	display:none;
+	opacity: 0;
+ 	-moz-transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+}
+
+.bubble{
+    position: fixed;
+    margin: 0 .5rem;
+    z-index: 998;
+    color: #000;
+    text-align: center;
+    background: #fff;
+    border-radius: .1rem;
+    overflow: hidden;
+    width:3.15rem;
+}
+
+.bubble h1{
+	font-size:.184rem;
+	line-height:.5rem;
+}
+
+.bubbleMsg{
+	padding:.1rem .2rem;
+	font-size:.17rem;
+	color:#646464;
+}
+
+.bubbleMsg > p{
+	line-height: 1.5em;
+}
+
+.bubbleButton{
+	display: flex;
+	display: -webkit-flex;
+	display: -webkit-box-flex;
+	text-align:center;
+	line-height:.48rem;
+	font-size:.21rem;
+	border-top:solid 1px #f1f1f1;
+}
+
+.bubbleButton a{
+    flex:1;
+    -webkit-flex:1;
+    -webkit-box-flex:1;
+	border-right:solid 1px #f1f1f1;
+}
+
+.bubbleButton a:last-child{
+	color:#12b7f5;
+}
+
+.bubbleBg{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:997;
+	background:rgba(0,0,0,0.5);
+}
+.remark{
+	padding-top: 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #999;
+}

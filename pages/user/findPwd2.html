@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>找回密码</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+
+	<div class="wraper">
+		<!-- 登录 -->
+		<p class="padding2 lineHeight2_5" id="formTitle">请填写图形中的字母和数字，再点击获取验证码</p>
+		<ul class="inputList commonForm" id="getCodeForm">
+<!-- 			<li class="hadPhoneCode" id="hadPhoneCode">
+				<label id="imgCode" class="imgCode"><img src="" style="display:none" /></label>
+				<div class="inputWraper">
+					<input name="inputImgCode" required type="text" id="inputImgCode"  placeholder="请输入图形中内容" />
+				</div>
+				<a class="phoneCode hadSend" id="phoneCode">获取验证码</a>
+			</li>
+
+			<li style="display:none;" id="showPhoneCode">
+				<label for="inputPhoneCode">验证码</label>
+				<div class="inputWraper">
+					<input  name="inputPhoneCode" required id="inputPhoneCode"  type="text" placeholder="请输入您收到的手机验证码">
+				</div>
+			</li> -->
+
+<!-- 			<li class="hadPhoneCode" id="hadPhoneCode">
+				<label id="imgCode" class="imgCode"><img src="" style="display:none;margin-top:-0.04rem;" /></label>
+				<div class="inputWraper">
+					<input name="inputImgCode" required type="text" id="inputImgCode"  placeholder="请输入图形中内容" />
+				</div>
+				<span class="phoneCode hadSend" id="phoneCode">获取验证码</span>
+			</li> -->
+
+			<li style="display:none;margin-top:0.14rem;" id="hadPhoneCode">
+				<label for="inputPhoneCode">验证码</label>
+				<div class="inputWraper">
+					<input  name="inputPhoneCode" id="inputPhoneCode"  type="tel" placeholder="请输入手机验证码" maxlength="4">
+				</div>
+				<span class="phoneCode hadSend" id="phoneCode">获取验证码</span>
+			</li>
+		</ul>
+
+		<ul class="inputList commonForm marginTop014" id="findPasswordFrom">
+			<li>
+				<label for="registerPwd">新密码</label>
+				<div class="inputWraper" style="margin-right:.3rem;">
+					<input required  name="password" id="registerPwd"  type="password" maxlength="20" placeholder="6~20位数字、字母和字符组合">
+				</div>
+				<a class="eyes" id="eyes"></a>
+			</li>
+		</ul>
+		<!-- <p class="setNewPwd">请使用6~20位数字、字母、符号组合</p> -->
+		<!-- 底部内容 -->
+		<div class="padding">
+			<a id="findPasswordSub" class="button subButton">完成</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		require('findPwd/findPwd2');
+	</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="min-screen">
+
+<head>
+  <meta charset="utf-8">
+  <title>竞猜NBA总冠军</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <!-- @require static/css/public.css -->
+  <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+
+<body>
+    <div id="js-loading" class="pageload">
+        <img src="./nba2018/imgs/loading_bg1.jpg" />
+        <img src="./nba2018/imgs/loading_bg2.jpg" />
+        <div class="process">
+            <div class="line">
+                <div class="color" style="width:5%"></div>
+                <div class="rate" style="left:-5%">
+                    <img src="./nba2018/imgs/loading_ball.png" />
+                    <span>1%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="js-content" class="hide">
+        <header>
+            <img src="./nba2018/imgs/bg_01.jpg" />
+            <img src="./nba2018/imgs/bg_02.jpg" />
+            <img src="./nba2018/imgs/bg_03.jpg" />
+        </header>
+
+        <div class="act">
+            <img src="./nba2018/imgs/box_01.png" />
+            <div class="box">
+                <div class="item">
+                    <div class="nba nba1" id="js-nba1">
+                        <div class="icon"><img src="./nba2018/imgs/nba1.png" /></div>
+                        <span class="name" id="js-name1">-</span>
+                        <span class="qty"><label id="js-votes1" class="num">-</label>票</span>
+                    </div>
+                    <div class="score">
+                        <span id="js-score1" class="num">0</span>
+                        <span class="divide">-</span>
+                        <span id="js-score2" class="num">0</span>
+                    </div>
+                    <div class="nba nba2" id="js-nba2">
+                        <div class="icon"><img src="./nba2018/imgs/nba2.png" /></div>
+                        <span class="name" id="js-name2">-</span>
+                        <span class="qty"><label id="js-votes2" class="num">-</label>票</span>
+                    </div>
+                </div>
+                
+                <div id="js-investArea">
+                    <div id="js-gameover" class="hide">
+                        <p class="txt2"><label id="js-winner">--</label>队胜出 获得奖金<label id="js-prize">--</label>元</p>
+                        <input type="button" class="btn btn-tixian" id="js-btn-tixian" value="马上去提现" />
+                    </div>
+
+                    <div id="js-gameing">
+                        <input type="button" class="btn btn-invest" id="js-btn-invest" value="马上投资去拿投票券" />
+                        <p class="txt1">现有投票券<label id="js-leftVotes1" class="num">0</label>张</p>
+                    </div>
+                </div>
+
+                <div id="js-loginArea" class="unlogin hide">
+                    <input type="button" class="ubtn" id="js-btn-login" value="登录" />
+                    <input type="button" class="ubtn" id="js-btn-register" value="注册" />
+                    <p>猜中总冠军花落谁家，10万元现金大奖就是你的！</p>
+                </div>
+
+                <div class="bgtxt">
+                    <span>你已支持<label id="js-name11">--</label><label id="js-supportVotes1" class="num">0</label>投票</span>
+                    <span>你已支持<label id="js-name22">--</label><label id="js-supportVotes2" class="num">0</label>投票</span>
+                </div>
+            </div>
+            <img src="./nba2018/imgs/box_03.png" />
+        </div>
+
+        <div class="info">
+            <img src="./nba2018/imgs/box_04.png" />
+            <div class="box">
+                <div class="item">
+                    <p>活动时间：6月1日  —  总决赛结束。</p>
+                    <p>猎财大师设立10万奖金支持NBA球迷 ，猜中总冠军按照票数一起瓜分奖金。</p>
+                    <p>如何竞猜总冠军？</p>
+                    <p class="sub">获得投票券：自己投资或邀请直接推荐理财师投资 , 期限≥30天的产品。</p>
+                    <table>
+                        <tr>
+                            <td>单笔投资金额 (元)</td>
+                            <td>获得投票券 (张)</td>
+                        </tr>
+                        <tr>
+                            <td>5000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>10000</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                    <p class="sub">单笔投资金额每增加5000元，获得投票券增加1张，无上限。</p>
+                    <p class="sub">投票时间：在赛点局开赛后不可以投票，其余时间都可以投票。</p>
+                    <p class="sub">由于投资后获得投票券有大概五分钟的延迟，建议您提前投资，安排好投票时间。</p>
+                    <p>奖金发放：总冠军产生后的第二个工作日下午4:00之前发放到猎财余额。</p>
+                    <p>本活动解释权归猎财大师所有。</p>
+                </div>
+            </div>
+            <img src="./nba2018/imgs/box_03.png" />
+        </div>
+    </div>
+
+    <div id="js-pop-masking" class="masking hide"></div>
+    <div id="js-pop" class="pop-wrap hide">
+        <div class="pop">
+            <span id="js-pop-close" class="close">x</span>
+            <img class="cup" src="./nba2018/imgs/pop_cup.png" />
+            <div class="superman man1" id="js-superman"></div>
+            <div class="title">
+                <p>我心目中英雄<label id="js-chooseTeam">--</label>队必得冠军</p>
+            </div>
+            <div class="ticket">
+                <p class="p-inpt">投<input type="tel" id="js-txt-vote" maxlength="5" value="1" />票</p>
+                <p class="p-tip">现有投票券<label id="js-leftVotes2" class="num">--</label>张</p>
+            </div>
+            <p class="p-btn"><input type="button" id="js-btn-vote" value="确定" /></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require('./nba2018/index')
+    </script>
+</body>
+
+</html>

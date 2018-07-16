@@ -1,0 +1,45 @@
+.tipBoxWraper{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:996;
+	display:none;
+	opacity: 0;
+ 	-moz-transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+}
+.tipBox{
+	position:fixed;
+	width:3rem;
+	left:50%;
+	top:0;
+	margin-left:-1.5rem;
+	background:#fff;
+	border-radius:.1rem;
+	text-align:center;
+	z-index:998;
+	color:#000;
+}
+.tipBox h1{
+	font-size:.2rem;
+	line-height:.5rem;
+	border-bottom:solid 1px #cecece;
+}
+.tipBox p{
+	padding:.2rem;
+	font-size:.18rem;
+}
+
+.tipBoxBg{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:997;
+	background:rgba(0,0,0,0.5);
+}

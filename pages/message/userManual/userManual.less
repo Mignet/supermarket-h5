@@ -1,0 +1,42 @@
+.wraper{
+	width: 100%;
+	overflow: hidden;
+}
+.tab-container{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	display: flex;
+	height: 90px;
+	background-color: #fff;
+	z-index: 800;
+	border-bottom: 1px solid #efefef;
+	li{
+		position: relative;
+		flex:1;
+		display: flex;
+		align-items:center;
+		justify-content:center;
+		color: #4f5960;
+	}
+	li:not(:last-child):after{
+		content: "";
+		width: 1PX;
+		height: 42px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background-color: #dcdcdc;
+		transform: scaleX(0.5);
+		transform-origin: 0 0;
+	}
+	.active{
+		color: #4e8cef;
+	}
+}
+.container{
+	padding: 90px 30px 30px;
+}

@@ -1,0 +1,177 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+/* 个人名片样式 */
+.wrapper{
+	width: 100%;
+	height: 100%;
+}
+.wrapper .swiper-container,
+.wrapper .swiper-wrapper{
+	height:100%;
+	width:100%;
+}
+/* 名片公共样式 */
+.wrapper .swiper-slide{
+	height: 100%;
+}
+.wrapper .swiper-slide .swiper-slide-inner{
+	height: 100%;
+	overflow: hidden;
+}
+.swiper-slide-inner > img{
+	position: relative;
+	left: 0;
+	top: 0;
+}
+.swiper-slide-inner .logo,
+.swiper-slide-inner .reminder,
+.swiper-slide-inner .info,
+.swiper-slide-inner .qrcode-wrapper{
+	position: absolute;
+}
+.swiper-slide-inner .reminder{
+	width: 100%;
+	text-align: center;
+	left: 0;
+	top: 1.3rem;
+}
+.swiper-slide-inner .reminder img{
+	width: 3.14rem;
+}
+.swiper-slide-inner .qrcode-wrapper img{
+	width: 1rem;
+}
+/*第一张名片*/
+.swiper-slide .inner-1{
+	background-color: #eff4fc;
+}
+.inner-1 .logo{
+	left: .3rem;
+	top: .34rem;
+}
+.inner-1 .logo img{
+	width: 1.3rem;
+}
+.inner-1 .info{
+	position: absolute;
+	bottom: .5rem;
+	left: .5rem;
+	width: 1.6rem;
+}
+.inner-1 .info .portrait{
+	width: .75rem;
+	float: left;
+}
+.inner-1 .info .username{
+	float: right;
+	line-height: .75rem;
+	font-size: .21rem;
+	color: #636464;
+	letter-spacing: 2px;
+}
+.inner-1 .info .level{
+	font-size: .164rem;
+	line-height: 1.5em;
+	color: #636464;
+}
+.inner-1 .info .tel{
+	font-size: .164rem;
+	line-height: 1.5em;
+	color: #636464;
+}
+.inner-1 .qrcode-wrapper{
+	right: .6rem;
+	bottom: .5rem;
+}
+
+/*第二张名片*/
+.swiper-slide .inner-2{
+	background-color: #fff;
+}
+.inner-2 .logo{
+	left: .27rem;
+	top: .28rem;
+}
+.inner-2 .logo img{
+	width: 1.4rem;
+}
+.inner-2 .info{
+	bottom: .9rem;
+	right: .4rem;
+}
+.inner-2 .info .info-top{
+	text-align: right;
+}
+.inner-2 .info .portrait{
+	width: .85rem;
+}
+.inner-2 .info .username{
+	padding-top: .15rem;
+	line-height: 1em;
+	font-size: .21rem;
+	letter-spacing: 2px;
+	color: #636464;
+	width: 100%;
+}
+.inner-2 .info .level{
+	font-size: .14rem;
+	line-height: 1.5em;
+	margin-top: .08rem;
+	color: #636464;
+	width: 1.5rem;
+}
+.inner-2 .info .tel{
+	font-size: .14rem;
+	line-height: 1.5em;
+	color: #636464;
+	width: 1.5rem;
+}
+.inner-2 .qrcode-wrapper{
+	left: .28rem;
+	bottom: .35rem;
+}
+
+/*第三张名片*/
+.swiper-slide .inner-3{
+	background-color: #e3ecfa;
+}
+.inner-3 .logo{
+	right: .21rem;
+	top: .24rem;
+}
+.inner-3 .logo img{
+	width: 1.3rem;
+}
+.inner-3 .info{
+	bottom: .67rem;
+	left: .35rem;
+	width: 1.8rem;
+}
+.inner-3 .info .portrait{
+	width: 1.04rem;
+	float: left;
+}
+.inner-3 .info .username{
+	float: right;
+	line-height: 1.04rem;
+	font-size: .21rem;
+	letter-spacing: 2px;
+	color: #636464;
+}
+.inner-3 .info .level{
+	font-size: .164rem;
+	line-height: 1.5em;
+	color: #636464;
+}
+.inner-3 .info .tel{
+	font-size: .164rem;
+	line-height: 1.5em;
+	color: #636464;
+}
+.inner-3 .qrcode-wrapper{
+	right: .4rem;
+	bottom: .64rem;
+}
+

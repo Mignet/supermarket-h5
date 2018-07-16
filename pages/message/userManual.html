@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>使用说明</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <!-- @require public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div class="wraper">
+        <ul id="tabContainer" class="tab-container">
+            <li class="active">我的红包</li>
+            <li>职级体验券</li>
+            <li>加佣券</li>
+        </ul>
+        <div id="content" class="container">
+            <div class="tab tab-1">
+                <p>红包分为投资红包跟可派发红包。一般可以通过新用户注册、绑定银行卡、推荐新用户、参加平台活动、投资等方式获得。目前红包仅网贷产品适用。</p>
+                <div class="padding-top">
+                    <p class="title">1、红包是什么？</p>
+                    <p>红包是猎财大师为理财师投资成功后发放的现金奖励。我的红包与投资平台自身的红包无关，是猎财大师额外给理财师的投资福利。</p>
+                </div>
+                <div class="padding-top">
+                    <p class="title">2、红包如何使用？</p>
+                    <p>在理财师投资满足红包使用条件后，系统自动激活使用（选择金额最大、距离过期时间最短的红包），获取的红包会自动发放到理财师的猎财账户中。</p>
+                </div>
+                <div class="padding-top">
+                    <p class="title">3、红包派发规则？</p>
+                    <p>派发红包是猎财大师给用户投资使用的激励福利，该红包只能派发给自己的直接推荐理财师或者自己的客户，同一个红包在有效期内可以被多次派发。</p>
+                </div>
+                <div class="padding-top">
+                    <p class="title">4、派发后的红包如何使用？</p>
+                    <p>
+                        <span>红包可以派发给直接推荐理财师和客户，派发后的红包享受的福利一致。</span>
+                        <span>备注：4.3.0版本用户领到的投资红包显示会有区别，使用逻辑一致。</span>
+                    </p>
+                </div>
+                <div class="padding-top">
+                    <p style="text-indent:0;">如您还有疑问请致电客服400-888-6987</p>
+                </div>
+            </div>
+            <div class="tab tab-2" style="display:none;">
+                <p>职级体验有经理、总监职级体验券，一般可以通过参加平台活动、投资等方式获得。</p>
+                <div class="padding-top">
+                    <p class="title">1、职级体验券如何使用？</p>
+                    <p>获得职级体验后（不用激活），用户根据使用时间享受职级福利；所获得的职级体验相同或者小于用户当前职级则不做调整。</p>
+                </div>
+                <div class="padding-top">
+                    <p class="title">2、已失效与已使用的区别？</p>
+                    <p>
+                        <span>1）同一段时间内通过多次活动获得的多张职级体验券，用户仅可享受一张，默认使用最高级别体验券，其他不可用券状态为“已失效”；</span>
+                        <span>2）系统发送的职级体验券与当前职级相同或者低于当前职级时，状态为“已失效”；比如：我当前是顾问，同一月份同时获得经理职级体验券与总监职级体验券，经理职级体验券默认状态“已失效“。</span>
+                    </p>
+                </div>
+                <div class="padding-top">
+                    <p style="text-indent:0;">如您还有疑问请致电客服400-888-6987</p>
+                </div>
+            </div>
+            <div class="tab tab-3" style="display:none;">
+                <p>加佣券一般可以通过参加平台活动、投资等方式获得。完成活动任务的用户系统会自动发放。</p>
+                <div class="padding-top">
+                    <p class="title">1、加佣券如何使用？</p>
+                    <p>获得加佣券后（不用激活），满足加佣条件后即可享受佣金收益。目前加佣券仅网贷产品适用。</p>
+                </div>
+                <div class="padding-top">
+                    <p class="title">2、加佣券有几种形式？</p>
+                    <p>
+                        <span>1. 目前有两种加佣券：</span>
+                        <span>1） 理财师出单获得加佣券；</span>
+                        <span>2）直接推荐理财师出单,用户获得奖励券；</span>
+                    </p>
+                    <p>
+                        <span>2. 已使用与已过期的区别？</span>
+                        <span>1）用户使用过并且时间过期叫已使用；</span>
+                        <span> 2）用户未使用时间过期叫已过期 ；</span>
+                        <span>备注：加佣券以投资成功时间为准，与平台募集成功与否无关。</span>
+                    </p>
+                </div>
+                <div class="padding-top">
+                    <p style="text-indent:0;">如您还有疑问请致电客服400-888-6987</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        require('./userManual/userManual')
+    </script>
+</body>
+</html>

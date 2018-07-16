@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>寻找创业伙伴</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+<!--     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <style type="text/css">
+        body{
+            background-color: #fff;
+        }
+        .cue{
+            background-color: #f87661;
+            padding: 0 .25rem;
+            height: .3rem;
+            line-height: .3rem;
+            color: #fff;
+            font-size: .14rem;
+        }
+        .cumulative{
+            width: 100%;
+            height: 1.03rem;
+            background: url('searchPartner/bg.png') no-repeat center center;
+            background-size: cover;
+        }
+        .cumulative p{
+            font-size: .2rem;
+            line-height: 1.03rem;
+            text-align: center;
+            color: #fff;
+        }
+        .cumulative p span{
+            font-family: DINOTMedium;
+            font-size: .4rem;
+        }
+        .empty {
+            display: none;
+            text-align: center;
+            padding-top: .74rem;
+        }
+        .empty img{
+            width: 1.54rem;
+        }
+        .empty p{
+            font-size: .162rem;
+            color: #a2a2a2;
+            padding-top: .1rem;
+        }
+        .invite-button{
+            margin-top: .9rem;
+            text-align: center;
+        }
+        .invite-button img{
+            width: 3.13rem;
+        }
+        .data-wrapper{
+            display: none;
+            padding: 0 .25rem;
+        }
+        .title{
+            width: 100%;
+            font-size: 0;
+        }
+        .title span{
+            display: inline-block;
+            text-align:left;
+            line-height: .82rem;
+            font-size: .2rem;
+        }
+        .title span:first-child{
+            width: 65%;
+        }
+        .title span:last-child{
+            width: 35%;
+        }
+        .content{
+            width: 100%;
+        }
+        .content li{
+             font-size: 0;
+             border-bottom: 1px solid #e9e9e9;
+        }
+        .content li span{
+            display: inline-block;
+            line-height: .5rem;
+            font-size: .165rem;
+            color: #6a6a6a;
+        }
+        .content li span:first-child{
+            width: 65%;
+        }
+        .content li span:last-child{
+            width: 35%;
+        }
+        .content li img{
+            padding-right: .1rem;
+            width: .34rem;
+            height: .34rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wraper">
+        <div class="cue">提示：现金奖励将在好友参与培训并通关后发放</div>
+        <div class="cumulative">
+            <p>累计邀请：<span id="invitNum">0</span>人</p>
+        </div>
+        <div class="empty">
+            <img src="searchPartner/no-data.png">
+            <p>还没有人支持你，赶紧去邀请吧</p>
+            <div id="fenxiang" class="invite-button">
+                <img src="searchPartner/button.png">
+            </div>
+        </div>
+        <div class="data-wrapper">
+            <div class="title">
+                <span style="color: #44a8f2;">被邀请人</span>
+                <span style="color: #373737;">手机号</span>
+            </div>
+            <div class="content">
+                <ul id="list" style="display: none;">
+                    <li>
+                        <span><img src={{headImgUrl}}>{{nickName}}</span>
+                        <span>{{mobile}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="ios-fixed-hack"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var $              = require("zepto");
+        var Service = require('modules/common/service');
+        var native         = require('modules/common/native');
+        var ScrollList  = require('modules/common/scrollList');
+        var comm           = require('modules/common/common');
+        var api        = require('modules/api/api');
+        var searchPartner2 = {
+            init:function(){
+                var self  = this;
+                this.shareInfo = {};
+                this.shareInfo.shareName = sessionStorage.getItem("__sharename__");
+                this.shareInfo.shareMobile = sessionStorage.getItem("__sharemobile__");
+                if(native.isApp){
+                    native.getAppToken(function(data){
+                        self.token = data || '';
+                        self.getData();
+                        self.getData2();
+                        self.bindEvent();
+                    });
+                }else{
+                    self.token = comm.getCookie("__token__");
+                    self.getData();
+                    self.getData2();
+                    self.bindEvent();
+                }
+            },
+            bindEvent:function(){
+                var self = this;
+                $("#fenxiang").on('click',function(event) {
+                    self.getBindCard();
+                });
+            },
+            getData2:function(){
+                var self  = this;
+                var service = new Service();
+                service.api = "user/queryInvitationRecord";
+                service.data = {
+                    token:self.token
+                };
+                service.success=function(result){
+                    if(result.datas.length === 0){
+                        $(".empty").show();
+                        $(".data-wrapper").hide();
+                    }else{
+                        $(".empty").hide();
+                        $(".data-wrapper").show();
+                    }
+                }
+                service.send();
+            },
+            getData:function(){
+                var self = this;
+                new ScrollList({
+                    ele : $('#list'),
+                    api : "user/queryInvitationRecord",
+                    data:{
+                        token:self.token
+                    },
+                    dataFilter : function(result){
+                        $.each(result,function(index , item){
+                            if(item.headImgUrl){
+                                if(item.headImgUrl.indexOf("https") === -1){
+                                    item.headImgUrl = item.headImgUrl.replace("http","https")
+                                }
+                            }else{
+                                item.headImgUrl = "https://image.toobei.com/ee8f18ad155638a6eae8745e1e7c09bc"
+                            }
+
+                        })
+                        return result;
+                    },
+                    callback:function(data){
+                        $("#invitNum").text(data[0].invitNum);
+                        $("#list").show();
+                    }          
+                });
+            },
+            getBindCard:function(){
+                var self  = this;
+                var bindCardService = new Service();
+                bindCardService.api = api.personAuthenticate;
+                bindCardService.data = {
+                    token:self.token
+                };
+                bindCardService.success=function(result){
+                    var shareUrl;
+                    if(!native.isApp){
+                        shareUrl = "http://10.16.2.92:9003/pages/cswar/csFenxiang.html?shareName="+encodeURI(self.shareInfo.shareName) +"&shareMobile="+self.shareInfo.shareMobile
+                    }else{
+                        shareUrl = publicConfig.static + "pages/cswar/csFenxiang.html?shareName="+encodeURI(self.shareInfo.shareName) +"&shareMobile="+self.shareInfo.shareMobile
+                    }
+                    var shareData = {
+                        shareTitle  :  comm.handleName(self.shareInfo.shareName) +'邀请您成为创业伙伴，赶紧支持他！', // 分享标题
+                        shareDesc   : '小圈子，大生意！支持他有机会获得价值488元长沙高端金融沙龙一天及50元交通补贴',
+                        shareLink   : shareUrl, // 分享链接
+                        shareImgurl : '85886c560a1503c4b8edfade1812bdad' // 分享图标
+                    };
+                    console.log(shareData)
+                    if(result.bundBankcard){
+                        native.action('getAppShareFunction',shareData);
+                    }else{
+                        native.action('bindCardAuthenticate'); 
+                    }
+                    if(!native.isApp){
+                        location.href = shareUrl;
+                    }
+                }
+                bindCardService.send();
+            }
+        };
+        searchPartner2.init();
+    </script> 
+</body>
+</html>

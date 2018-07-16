@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+<!--     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <style type="text/css" media="screen">
+        .wraper{
+            height: 100%;
+        }
+        iframe{
+            width:100%;
+            border: 0;
+            box-sizing: border-box;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="articleBody">
+    <div class="wraper">
+        <!-- <a id="updateLog" data-href="./children/log.html" style="display: none;"></a> -->
+        <a id="skip" style="display: none;">链接跳转处</a>
+        <iframe id="frame" src="" style="display: none;"></iframe>
+    </div>
+    <script type="text/javascript">
+        require('./frame/frame');
+    </script>
+</body>
+</html>

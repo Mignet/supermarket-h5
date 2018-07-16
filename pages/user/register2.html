@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+
+	<div class="wraper">
+		<!-- 登录 -->
+		<p class="padding2 lineHeight2_5" id="formTitle">请点击获取按钮接收验证码</p>
+		<ul class="inputList commonForm" id="getCodeForm">
+<!-- 			<li class="hadPhoneCode" id="hadPhoneCode">
+				<label id="imgCode" class="imgCode"><img src="" style="display:none" /></label>
+				<div class="inputWraper">
+					<input name="inputImgCode" required type="text" id="inputImgCode"  placeholder="请输入图形中内容" />
+				</div>
+				<span class="phoneCode hadSend" id="phoneCode">获取验证码</span>
+			</li> -->
+
+			<li id="hadPhoneCode">
+				<label for="inputPhoneCode">验证码</label>
+				<div class="inputWraper">
+					<input name="inputPhoneCode" id="inputPhoneCode" type="tel" placeholder="请输入手机验证码" maxlength="4">
+				</div>
+				<span class="phoneCode" id="phoneCode">获取验证码</span>
+			</li>
+		</ul>
+
+		<ul class="inputList commonForm marginTop014" id="findPasswordFrom">
+			<li>
+				<label for="registerPwd">输入密码</label>
+				<div class="inputWraper">
+					<input required  name="password" id="registerPwd"  type="password" maxlength="20" placeholder="6~20位数字、字母和字符组合">
+				</div>
+			</li>
+			<li>
+				<label for="registerPwdAgain">确认密码</label>
+				<div class="inputWraper">
+					<input required name="password2" id="registerPwdAgain"  type="password" maxlength="20" placeholder="请再次输入登录密码">
+				</div>
+			</li>
+		</ul>
+
+		<ul class="inputList commonForm marginTop014" id="recommendManFrom">
+			<li>
+				<label for="recommendMan">邀请人</label>
+				<div class="inputWraper">
+					<input  name="recommendMan" id="recommendMan"  type="text"  placeholder="请输入邀请人手机号，如无可不填">
+				</div>
+			</li>
+		</ul>
+		<div class="agree"><input type="checkbox" checked id="isAgree" > 我同意<a href="../agreement/register.html">《猎财大师用户使用协议》</a></div>
+
+		<!-- 底部内容 -->
+		<div class="padding">
+			<a id="findPasswordSub" class="button subButton disButton">完成</a>
+		</div>
+	</div>
+	<div class="lineHeight3 bodyBottom">客服电话400-888-6987</div>
+	<script type="text/javascript">
+		require('register/register2');
+	</script>
+</body>
+</html>

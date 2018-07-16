@@ -1,0 +1,20 @@
+body{
+	background-color: #5c4dd6;
+}
+.share-btn{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0.61824rem;
+	z-index: 999;
+}
+.share-btn button{
+	display: table;
+	width: 100%;
+	height: 100%;
+	font-size: 0.25392rem;
+	color: #fff;
+	background-color: #6481f4;
+	vertical-align: middle;
+}

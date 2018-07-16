@@ -1,0 +1,142 @@
+body{
+	background-color: #ff6357;
+}
+section{
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+}
+.welfare-swiper{
+	width: 100%;
+	overflow: hidden;
+	height: 2.99184rem;
+	box-sizing: border-box;
+	background: url('./bg-1.jpg') no-repeat left top;
+	background-size: 100% auto;
+	padding-left: 0.20976rem;
+	padding-right: 0.138rem;
+	padding-top: 0.1656rem;
+}
+.welfare-swiper-container{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.status-1 .swiper-container{
+	width: 140%;
+}
+.status-2 .swiper-container{
+	width: 140%;
+	transform:translateX(-15%)
+}
+.swiper-container .swiper-slide{
+	transition:all 1s;
+	transform:scale(.9,.9)
+}
+.swiper-container .swiper-transition{
+	 transition:all 1s; 
+}
+.swiper-container .swiper-slide-active{
+	transform:scale(1,1)
+}
+.btn-wrapper{
+	width: 1.84368rem;
+	height: 0.37536rem;
+	margin: 0.06072rem auto 0;
+	background-image: url('./btn-default.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	button{
+		font-size: 0.17664rem;
+		color: #b15811;
+	}
+}
+.task-progress-container{
+	width: 100%;
+	height: 2.43984rem;
+	background:url('./bg-2.jpg') no-repeat left top;
+	background-size: 100% auto;
+	.task-progress{
+		padding: .25rem 0.138rem 0;
+		box-sizing: border-box;
+		height: 100%;
+		h3{
+			text-align: center;
+			color: #fef4b1;
+			font-size: 0.14352rem;
+			span{
+				font-size: 0.19872rem;
+			}
+		}
+		.progress-graphic{
+			display: flex;
+			padding-top: .1rem;
+			font-size: 0;
+			align-items:center;
+			justify-content:center; 
+			span{
+				width: 0.36432rem;
+				height: 0.36432rem;
+				background-image:  url('./circle-yellow.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% 100%;
+				color: #d76000;
+				font-size: 0.19872rem;
+				display: flex;
+				align-items:center;
+				justify-content:center;
+			}
+			.un-finish{
+				background-image:url('./circle-red.png');
+				color: #a73120;
+			}
+			i{
+				display: flex;
+				height: 0.02208rem;
+				width: 0.1656rem;
+				background: #ae3e2e;
+			}
+			img{
+				display: flex;
+				height: 0.78384rem;
+				margin-left: -.1rem;
+			}
+		}
+		.progress-btn{
+			width: 1.84368rem;
+			height: 0.37536rem;
+			margin: 0 auto;
+			padding-top: .1rem;
+			button{
+				width: 100%;
+				height: 100%;
+				background-image: url('./btn-gray.png');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				color: #a07977;
+				font-size: 0.17664rem;
+			}
+			.receive{
+				background-image: url('./btn-default.png');
+				color: #b15811;
+			}
+			.receive-active{
+				background-image: url('./btn-active.png');
+				color: #b15811;
+			}
+		}
+		.reminder{
+			height: 0.47472rem;
+			width: 100%;
+			padding-top: 0.1656rem;
+			display: flex;
+			align-items:center;
+			justify-content:center;
+			font-size: 0.13248rem;
+			color: #ae3e2e;
+		}
+	}
+}

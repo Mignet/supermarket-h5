@@ -1,0 +1,27 @@
+body{
+	position: relative;
+    background-color: #fff;
+}
+.wraper-padding{
+    padding: 60px 30px;
+}
+p{
+    font-size: 28px;
+    color: #666;
+    text-align: justify;
+    padding-top: 20px;
+    line-height: 1.84em;
+    text-indent: 56px;
+}
+p span{
+    display: block;
+}
+p.title{
+    color: #4f5960;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.padding-top{
+    padding-top: 40px;
+}

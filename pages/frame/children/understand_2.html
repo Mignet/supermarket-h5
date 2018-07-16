@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>了解我们</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"/><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        .risk_management {
+            position: absolute;
+            width: 1.4rem;
+            height: .4rem;
+            top: 3.2rem;
+            left: .5rem;
+            display: block;
+        }
+
+        .safe {
+            position: absolute;
+            width: 1.4rem;
+            height: .4rem;
+            top: 3.2rem;
+            left: 2.2rem;
+            display: block;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .more-btn {
+            position: absolute;
+            left: 42%;
+            top: .1rem;
+            padding-right: 20px;
+            color: #969696;
+            background: url('/static/images/arrow-down.png') no-repeat right;
+            background-size: 15px 15px;
+        }
+
+        .arrow-up {
+            top: 0;
+            background: url('/static/images/arrow-up.png') no-repeat right;
+            background-size: 15px 15px;
+        }
+        .download{
+            position: fixed;
+            bottom: 0;
+            bottom: 0;
+        }
+        .download{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.35328rem;
+            z-index: 999;
+            background-color: rgba(0,0,0,.6);
+            padding: 0 0.24288rem;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="background-color: #fff">
+<div class="wraper">
+    <div>
+        <div>
+            <img class="lazy" style="height: 4.21176rem;" data-src="./understand/1.png">
+        </div>
+        <div id="showPic" style="height: 1.46rem;">
+            <img class="lazy" data-src="./understand/2.png">
+        </div>
+        <div class="more-div relative">
+            <img class="lazy" data-src="./understand/3.png" style="height: .57rem;">
+            <p class="more-btn">展开更多</p>
+        </div>
+        <div><img class="lazy" data-src="./understand/4.png" style="height: 4.70856rem;"></div>
+        <div><img class="lazy" data-src="./understand/5.png" style="height:.8223rem"></div>
+        <div>
+            <a href="../../message/sale_commission.html">
+                <img class="lazy" data-src="./understand/6.png" style="height: 1.08744rem;">
+            </a>
+        </div>
+        <div>
+            <img class="lazy" data-src="./understand/7.png" style="height: 3.036rem;">
+        </div>
+        <div>
+            <img class="lazy" data-src="./understand/8.png" style="height: 3.64872rem;">
+        </div>
+        <div>
+            <img class="lazy" data-src="./understand/9.png" style="height: 3.37272rem;">
+        </div>
+        <div>
+            <a href="../../message/manage_allowance.html">
+                <img class="lazy" data-src="./understand/10.png" style="height: 0.41952rem;">
+            </a>
+        </div>
+        <div>
+            <img class="lazy" data-src="./understand/11.png" style="height: 2.08656rem;">
+        </div>
+        <div class="relative">
+            <img class="lazy" data-src="./understand/12.png" style="height:4.09032rem">
+            <a class="risk_management" href="riskManagement.html"></a>
+            <a class="safe" href="../../activities/safeShield.html"></a>
+        </div>
+        <div><img class="lazy" data-src="./understand/13.png" style="height: 3.7812rem;"></div>
+        <div><img class="lazy" data-src="./understand/14.png" style="height: 2.484rem;"></div>
+    </div>
+    <div class="download" style="display:none;">
+        <a href="./../../download/download.html" title="下载" style="display: block;">
+            <img src="../../../static/images/download.png" alt="下载">
+        </a>
+    </div>
+</div>
+</body>
+<script>
+    var $ = require("zepto");
+    var native         = require('modules/common/native');
+    var Lazyload    = require("modules/common/lazyload");//图片懒加载
+
+    if(native.isApp){
+        $(".download").hide();
+        $('.wraper').css('marginBottom','0');
+    }else{
+        $(".download").show();
+        $('.wraper').css('marginBottom','.552rem');
+    }
+    $('.more-div').on('click', function () {
+        if ($('.more-btn').text() == '展开更多') {
+            $('.more-btn').text('收起简介');
+            $("#showPic").css({
+                height:'auto'
+            })
+        } else {
+            $('.more-btn').text('展开更多');
+            $("#showPic").css({
+                height:'1.46rem'
+            })
+        }
+        if($(".more-info img").attr("data-src")){
+            $(".more-info img").attr('src', $(".more-info img").attr("data-src")).removeAttr("data-src");
+        }
+        $('.more-btn').toggleClass('arrow-up');
+        $('.more-info').toggle();
+    });
+</script>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>猎财攻略</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="background-color: #fff;">
+    <div class="wraper" style="visibility:hidden;">
+        <div class="top">
+            <p class="desc">目前猎财大师的用户分为总监、经理、顾问、见习四个职级，每个职级有不同的职级要求，也对应不同的收入类型。具体情况如下：</p>
+            <div class="slide-wraper">
+                <img src="calc/card-bg.png">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/rank_logo_1.png">
+                            <p>完成注册即可</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/rank_logo_2.png">
+                            <p>需满足个人年化投资额 ≥ 100元</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/rank_logo_3.png">
+                            <p>需满足个人年化投资额 ≥ 2000元，<br>顾问及以上职级的直接推荐理财师 ≥ 2名</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/rank_logo_4.png">
+                            <p>需满足个人年化投资额 ≥ 1万元，<br>经理及以上职级的直接推荐理财师 ≥ 4名</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;height: .21rem;background-color: #f6f6f6;"></div>
+        <div class="center">
+            <ul data-id="0" style="display: block;">
+                <li class="clearfix">
+                    <div></div>
+                    <div>
+                        <h3>销售佣金：</h3>
+                        <p>自己出单佣金的<span>100%</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div></div>
+                    <div>
+                        <h3>推荐奖励：</h3>
+                        <p>直接推荐理财师出单佣金的<span>160%</span></p>
+                    </div>
+                </li>
+            </ul>
+            <ul data-id="1">
+                <li class="clearfix">
+                    <div></div>
+                    <div>
+                        <h3>销售佣金：</h3>
+                        <p>自己出单佣金的<span>100%</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div></div>
+                    <div>
+                        <h3>推荐奖励：</h3>
+                        <p>直接推荐理财师出单佣金的<span>160%</span></p>
+                    </div>
+                </li>
+            </ul>
+            <ul data-id="2">
+                <li class="clearfix">
+                    <div></div>
+                    <div>
+                        <h3>销售佣金：</h3>
+                        <p>自己出单佣金的<span>100%</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div></div>
+                    <div>
+                        <h3>推荐奖励：</h3>
+                        <p>直接推荐理财师出单佣金的<span>160%</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div></div>
+                    <div>
+                        <h3>直接管理津贴：</h3>
+                        <p>直接推荐理财师出单佣金的<span>30%</span></p>
+                    </div>
+                </li>
+                <li style="height: 1.07rem;">
+                    <div></div>
+                    <div>
+                        <h3>团队管理津贴：</h3>
+                        <p>直接推荐、二级推荐、三级推荐理财师出单佣金的<span>30%</span></p>
+                    </div>
+                </li>
+            </ul>
+            <ul data-id="3">
+                <li class="clearfix">
+                    <div></div>
+                    <div>
+                        <h3>销售佣金：</h3>
+                        <p>自己出单佣金的<span>100%</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div></div>
+                    <div>
+                        <h3>推荐奖励：</h3>
+                        <p>直接推荐理财师出单佣金的<span>160%</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div></div>
+                    <div>
+                        <h3>直接管理津贴：</h3>
+                        <p>直接推荐理财师出单佣金的<span>50%</span></p>
+                    </div>
+                </li>
+                <li style="height: 1.07rem;">
+                    <div></div>
+                    <div>
+                        <h3>团队管理津贴：</h3>
+                        <p>直接推荐、二级推荐、三级推荐理财师出单佣金的<span>50%</span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 100%;height: .21rem;background-color: #f6f6f6;"></div>
+        <div style="display: none;" class="bottom">
+            <div id="calcButton" class="calc-button">职级收入计算器</div>
+        </div>
+    </div>
+<script type="text/javascript">
+    require("./calc/index");
+</script>
+</body>
+</html>

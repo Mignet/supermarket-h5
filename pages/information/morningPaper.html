@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>每日早报</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body style="display: none;">
+	<header id="header">
+		<img id="headerIcon" src="./../../static/images/head-portrait.jpg">
+		<p class="intro">
+			<strong class="username"></strong>
+			<span>猎财大师&nbsp;&nbsp;&nbsp;&nbsp;高级理财师</span>
+		</p>
+	</header>
+	<div id="content" class="content"></div>
+	<div class="wisdom-container">
+		<img src="images/end-title.png">
+		<img src="images/wisdom.png">
+	</div>
+	<div id="footer" class="footer">
+		<p>我是<span class="username"></span>，我在【猎财大师】利用闲余时间、闲余资金、完成了财富的多次增长！</p>
+		<div>
+			<img id="QRCode">
+		</div>
+	</div>
+	<script type="text/javascript">
+		require('./morningPaper/morningPaper')
+	</script>
+</body>
+</html>

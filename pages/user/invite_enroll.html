@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册赚17.7%的超高收益</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+    <div class="wraper">
+        <input type="password" style="position:absolute;height:0;top:-10000px;">
+        <div class="banner-container">
+            <p class="recommendText">您的好友 <span id="recommendMob">---</span> 送您</p>
+            <img src="./register_two/enroll-banner.png">
+        </div>
+        <div class="register-container">
+            <div class="register-top clearfix">
+                <div class="left">
+                    <img src="register_two/enroll-avatar.png">
+                </div>
+                <div class="right">
+                    我在猎财大师投资<span id="regTime">0</span>天,赚取收益<span id="totalIncome">0</span>元,现在送你528元红包福利,邀请你一起来赚钱哦！
+                </div>
+            </div>
+            <div class="register-reward-wrapper">
+                <div id="scrollInner" class="scroll-inner">
+                    <ul id="firstScroll"></ul>
+                    <ul id="secondScroll"></ul>
+                </div>
+            </div>
+            <!-- 填写手机号 begin -->
+            <div id="mobContainer">
+                <div class="input-wraper">
+                    <div class="input-inner">
+                        <input required id="telephone" pattern="^1\d{10}$" name="telephone" type="tel" maxlength="11" placeholder="请输入您的手机号码" autofocus>
+                    </div>
+                </div>
+                <div class="button-wrapper">
+                    <button id="goRegister">领取红包</button>
+                </div>
+            </div>
+            <!-- 填写手机号 end -->
+            <!-- 注册部分 begin -->
+            <div id="trueRegisterContainer" class="go-register-container" style="display: none;">
+                <div id="loginFrom" class="content clearfix">
+                    <div class="input-wrapper clearfix">
+                        <label class="mobile" for="mobile"></label>
+                        <input required id="mobile" pattern="^1\d{10}$" name="mobile" type="tel" maxlength="11" placeholder="请输入您的手机号码" autofocus>
+                    </div>
+                    <div class="input-wrapper clearfix">
+                        <label for="password" class="password"></label>
+                        <input id="password" type="password" placeholder="密码由6~20位数字、字母和字符组合" minlength="6" maxlength="20" pattern="^[^\s]{6,20}$" class="password-input">
+                        <span id="eye" class="eye"></span>
+                    </div>
+
+                    <div class="input-wrapper2 clearfix">
+                        <div class="vcode-wraper clearfix">
+                            <label class="vcode" for="vcode" ></label>
+                            <input id="vcode" type="tel" placeholder="请输入验证码" maxlength="4" class="imgCode" name="vcode" pattern="^\d{4}$">
+                        </div>
+                        <div class="vcode-button">
+                            <p id="getVcode" class="get-vcode">获取验证码</p>
+                        </div>
+                    </div>
+
+                    <div class="agreement clearfix" >
+                        <span id="select" class="select"></span>
+                        <a href="/pages/agreement/register.html">我同意《猎财大师用户服务协议》</a>
+                    </div>
+
+                    <div class="register-wraper clearfix">
+                        <div id="loginSub" class="register">领取红包</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 注册部分 end -->
+        </div>
+        <div><img src="register_two/enroll-section-one.png"></div>
+        <div><img src="register_two/enroll-section-two.png"></div>
+        <div><img src="register_two/enroll-section-three.png"></div>
+        <div><img src="register_two/enroll-section-four.png"></div>
+        <div class="section-five"><img src="register_two/enroll-section-five.png"></div>
+        <div class="footer translate-status">领取红包</div>
+    </div>
+<script type="text/javascript">
+    require('register_two/invite_enroll');
+</script>
+</body>
+</html>

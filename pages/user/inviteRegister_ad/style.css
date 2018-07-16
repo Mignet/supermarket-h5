@@ -1,0 +1,203 @@
+img{
+    display: block;
+}
+.content{
+    background: url('./../images/register_bg.jpg') no-repeat center;
+    background-size: cover;
+    padding:0 .2rem;
+    padding-bottom: .7rem;
+    overflow: hidden;
+}
+.recommend{
+    padding-top: .32rem;
+    padding-bottom: .19rem;
+    font-size: .15rem;
+    color: #fff;
+}
+.input-wrapper{
+    width: 3.82rem;
+    height: .5rem;
+    border-radius: .25rem;
+    background-color: #fff;
+    font-size: 0;
+    margin-top: .16rem;
+}
+.input-wrapper label{
+    width: .16rem;
+    height: 100%;
+    float: left;
+    margin-left: .26rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    margin-right: .16rem;
+}
+.mobile{
+    background-image: url("./../images/phone_icon.png");
+}
+.vcode{
+    background-image: url('./../images/identify_code_icon.png')
+}
+.password{
+    background-image: url('./../images/password_icon.png');
+}
+.input-wrapper input{
+    float: left;
+    height: 100%;
+    width: 3rem;
+    font-size: .165rem;
+}
+
+.input-wrapper2{
+    width: 3.82rem;
+    height: .5rem;
+    margin-top: .3rem;
+}
+.input-wrapper2 .vcode-wraper{
+    float: left;
+    width: 2.16rem;
+    height: 100%;
+    background-color: #fff;
+    border-radius: .25rem;
+    margin-right: .1rem;
+    font-size: 0;
+}
+.vcode-wraper .vcode{
+    float: left;
+    width: .16rem;
+    height: 100%;
+    margin-left: .26rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    background-image: url('./../images/identify_code_icon.png');
+    margin-right: .16rem;
+}
+.vcode-wraper input{
+    float: left;
+    height: 100%;
+    width: 1.2rem;
+    font-size: .165rem;
+}
+.input-wrapper2 .vcode-button{
+    float: left;
+    width: 1.56rem;
+    height: 100%;
+    border-radius: .45rem;
+    color: #fff;
+    font-size: .165rem;
+    line-height: .5rem;
+    text-align: center;
+    overflow: hidden;
+}
+.get-vcode{
+    background-color: #f8cb55;
+}
+.vcode-button .disButton{
+    background-color: #cecece!important;
+}
+.gray{
+    background-color: #f4a951!important;
+}
+.eye{
+    float: left;
+    width: .16rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    margin-left: .2rem;
+    margin-right: .2rem;
+}
+.eye-close{
+    background-image: url("./../images/eye_close.png");
+}
+.eye-open{
+    background-image: url("./../images/eye_open.png");
+}
+/***************************************/
+.register-wraper{
+    width:100%;
+    height: .5rem;
+}
+.register{
+    width: 100%;
+    height: 100%;
+    margin-top: .16rem;
+    background-color: #f8cb55;
+    border-radius:.25rem;
+    text-align: center;
+    line-height: .5rem;
+    font-size: .2rem;
+    color: #fff;
+}
+
+.agreement{
+    padding-top: .22rem;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agreement span{
+    width: .14rem;
+    height: .14rem;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    margin-right: .1rem;
+    vertical-align: middle;
+}
+.agreement a{
+    font-size: .165rem;
+    color: #fff;
+}
+.select{
+    background: url("./../images/hook.png") no-repeat center;
+    background-size: 100% auto;
+}
+.register-box{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background: url("./../images/register_bg.jpg") no-repeat center;
+    background-size: 100% auto;
+    padding: .8rem .2rem;
+}
+
+
+.register-to-top{
+    margin:0 auto;
+    width: 100%;
+    height: .5rem;
+    border-radius: .25rem;
+    text-align: center;
+    line-height: .5rem;
+    background-color: #f8cb55;
+    font-size: .2rem;
+    color: #fff;
+}
+/****  公司信息 ****/
+.comp-info{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    background: url("./../images/register_bg.jpg") no-repeat center;
+    background-size: 100% auto;
+    padding-bottom:.1rem;
+    text-align: center;
+}
+.comp-info p{
+    color: #fff1f1;
+    font-size: .11rem;
+    line-height: 2em;
+}
+/** 下载按钮  **/
+
+.download{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    height: .49rem;
+}

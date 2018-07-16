@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<!-- @require static/css/public.css -->
+	<script type="text/javascript" src="public/mod.js" data-loader></script>
+</head>
+<body>
+	<div class="wraper">
+		<div class="login2Form">
+			<p class="padding2 lineHeight2_5" id="login2Title"></p>
+			<ul class="inputList commonForm" id="loginFrom">
+				<li>
+					<label for="loginMob">手机号码</label>
+					<div class="inputWraper">
+						<input required pattern="^1\d{10}$" name="mobile" id="loginMob" type="tel" maxlength="11" placeholder="请输入您的手机号码">
+					</div>
+				</li>
+				<li>
+					<label for="loginMob">确认密码</label>
+					<div class="inputWraper">
+						<input required pattern=".{6,20}" name="password" id="loginPwd"  type="password">
+					</div>
+				</li>
+			</ul>
+			<div class="agree"><input type="checkbox" checked id="isAgree" > 我同意<a href="../agreement/register.html">《猎财大师用户使用协议》</a></div>
+			<!-- 底部内容 -->
+			<div class="padding2">
+				<a id="loginSub" class="button subButton">激活</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		require('register/thirdRegister');
+	</script>
+</body>
+</html>

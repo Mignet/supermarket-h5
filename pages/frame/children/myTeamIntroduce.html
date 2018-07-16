@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- @require static/css/public.css -->
+    <script type="text/javascript" src="public/mod.js" data-loader></script>
+    <style>
+        h1{
+            font-size: .16rem;
+            color: #323232;
+            padding-top: .3rem;
+            padding-bottom: .1rem;
+        }
+        h3{
+            padding-top: .3rem;
+            padding-bottom: .2rem;
+            font-size: .14rem;
+            color: #666;
+        }
+        p{
+            color: #6c6e6d;
+            font-size: .14rem;
+            line-height: 2em;
+        }
+        .wraper {
+            padding: 0 .18rem .2rem;
+        }
+        .team-component{
+            padding-bottom: .22rem;
+        }
+        ul li{
+            float: left;
+        }
+        ul li img{
+            width: .54rem;
+        }
+        ul li:nth-child(odd){
+            width: .54rem;
+            height: .78rem;
+            text-align: center;
+        }
+        ul li:nth-child(odd) span{
+            display: block;
+            padding-top: .1rem;
+            font-size: .14rem;
+        }
+        ul li:nth-child(even){
+            width: .5rem;
+            height: .54rem;
+            line-height: .54rem;
+            box-sizing: border-box;
+            padding-left: .05rem;
+            font-size: .14rem;
+            color: #969696;
+            background: url("../../../static/images/team_arrow.png") no-repeat right center;
+            background-size: .14rem auto;
+        }
+        h4{
+            padding-top: .35rem;
+            padding-bottom: .1rem;
+            font-size: .14rem;
+            color: #323232;
+        }
+        .leader-reward img{
+            display: block;
+            width: 80%;
+            margin: .32rem auto 0;
+        }
+        h5{
+            text-align: center;
+            line-height: 2em;
+            color: #6c6e6d;
+            font-size: .16rem;
+            font-weight: 800;
+        }
+        a {
+            color: #007aff;
+        }
+    </style>
+</head>
+<body class="articleBody">
+    <div class="wraper">
+        <h1>什么是我的理财师团队？</h1>
+        <p>您推荐的理财师、他们的下级理财师和他们的下下级理财师与您一起组成您的理财师团队，您为团队leader，他们为成员。</p>
+        <h3>示例：</h3>
+        <div class="team-component">
+            <img src="/static/images/example_diagram_4.png">
+        </div>
+        <p>则A、B、C和您一起组成您的理财师团队，您是该团队的leader，A、B、C都是您团队的成员。</p>
+        <h1>建立理财师团队有什么好处？</h1>
+        <p>通过推荐理财师组建团队，被推荐理财师出单时您可享受推荐奖励；当您职级达到经理或总监时，队员(职级比您低)出单您可享受直接管理津贴或团队管理津贴。点击查看 <a id="illustrate" data-href="../message/reward_allowance.html">《奖励与津贴》</a>详情</p>
+    </div>
+    </div>
+<script type="text/javascript">
+    var $ = require("zepto");
+    $("#illustrate").on("click",function(){
+        $("#skip",window.parent.document).attr("href",$(this).data("href")).trigger('click')
+    })
+</script>
+</body>
+</html>

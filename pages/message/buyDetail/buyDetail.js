@@ -112,7 +112,7 @@ var evt = {
                 $("#totalYearRateTips").on('click','i',function(){
                     var tip = new BubbleTip({
                         title: '综合年化收益率',
-                        msg: '综合年化收益率=产品累计收益(包括:投资收益+猎财佣金+猎财返现红包+平台奖励)/产品年化金额<p class="remark">备注：浮动利率产品投资收益按照最低利率计算。</p>',
+                        msg: '综合年化收益率=产品累计收益(包括:投资收益+貅比特佣金+貅比特返现红包+平台奖励)/产品年化金额<p class="remark">备注：浮动利率产品投资收益按照最低利率计算。</p>',
                         buttonText: ['我知道了']
                     });
                     tip.show();

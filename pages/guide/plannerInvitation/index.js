@@ -197,8 +197,8 @@ var evt = {
             REGISTER_URL = publicConfig.leicaiDomain + 'pages/user/register_packet.html?recommendCode=' + this.recommendCode
         }
         var appShareData = {
-            shareTitle: '我用猎财大师很久了，送你528元红包，速领！', // 分享标题
-            shareDesc: '理财我推荐安全靠谱的猎财大师，我已经用了很久了，邀你一起来赚钱,速来！',
+            shareTitle: '我用貅比特很久了，送你528元红包，速领！', // 分享标题
+            shareDesc: '理财我推荐安全靠谱的貅比特，我已经用了很久了，邀你一起来赚钱,速来！',
             shareLink: REGISTER_URL,
             shareImgurl: 'dfa3e35be331f6ec67566130f67820b9' // 分享图标
         }

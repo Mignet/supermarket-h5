@@ -37,7 +37,7 @@ var know = {
             shareDesc:"平台安全，资金更安全",
             shareImgurl:"dfa3e35be331f6ec67566130f67820b9",
             shareLink: publicConfig.static + 'pages/guide/safeShield.html',
-            shareTitle:"猎财大师安全保障"
+            shareTitle:"貅比特安全保障"
         }
         native.action("getSharedContent",shareData)
     }

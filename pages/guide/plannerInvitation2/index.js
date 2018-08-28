@@ -119,7 +119,7 @@ var evt = {
     appShareRegEvent: function () {
         var appShareData = {
             shareTitle: '组团赚17.7%的超高收益', // 分享标题
-            shareDesc: '理财赚钱我推荐安全靠谱的猎财大师，收益最高可达17.7%。邀你跟我组团，一起赚更多哦～',
+            shareDesc: '理财赚钱我推荐安全靠谱的貅比特，收益最高可达17.7%。邀你跟我组团，一起赚更多哦～',
             shareLink: publicConfig.static + 'pages/user/inviteRegister.html?recommendCode=' + this.recommendCode + '&name=' + encodeURIComponent(this.name),
             shareImgurl: 'dfa3e35be331f6ec67566130f67820b9' // 分享图标
         }

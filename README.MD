@@ -1,4 +1,4 @@
-## 猎财大师
+## 貅比特
 
 项目目录结构说明
 
@@ -41,3 +41,9 @@
 	-- master 主干分支:用于线上发布稳定版本
 	-- master-dev 活动开发分支:用于开发活动使用
 	-- dev_X.X.X 开发分支,用于版本迭代
+	
+
+构建步骤
+   npm install -g fis3
+   npm install
+   fis3 release -d dist

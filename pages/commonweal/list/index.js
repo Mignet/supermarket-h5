@@ -21,8 +21,8 @@ var fund = {
 	//微信分享
 	wechatShareEvent:function(){
 	    var wechatShareData = {
-	        title  : '猎财爱心公益', // 分享标题
-	        desc   : '猎财大师携手腾讯公益，为爱前行！', // 分享描述
+	        title  : '貅比特爱心公益', // 分享标题
+	        desc   : '貅比特携手腾讯公益，为爱前行！', // 分享描述
 	        link   : publicConfig.leicaiDomain+'pages/commonweal/list.html', // 分享链接
 	        imgUrl : publicConfig.imageUrl + 'f84999cb058936d5accb3f6d7ea43956' + '?f=png' // 分享图标
 	    };
@@ -31,8 +31,8 @@ var fund = {
 	// app分享
 	appSelfShare:function () {
 	    var appShareData = {
-	        shareTitle: '猎财爱心公益', // 分享标题
-	        shareDesc: '猎财大师携手腾讯公益，为爱前行！',
+	        shareTitle: '貅比特爱心公益', // 分享标题
+	        shareDesc: '貅比特携手腾讯公益，为爱前行！',
 	        shareLink: publicConfig.leicaiDomain+'pages/commonweal/list.html',
 	        shareImgurl: 'f84999cb058936d5accb3f6d7ea43956' // 分享图标
 	    }

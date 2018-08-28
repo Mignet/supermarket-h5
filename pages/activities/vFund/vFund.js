@@ -31,7 +31,7 @@ var vFund = {
     wechatShareEvent:function(){
         // 微信分享信息
         var wechatShareData = {
-            title  : '猎财大师携手芒果V基金，为慈善助力', // 分享标题
+            title  : '貅比特携手芒果V基金，为慈善助力', // 分享标题
             desc   : '帮助特殊孩子快乐阅读，奉献自己的一份力量', // 分享描述
             link   : window.location.href, // 分享链接
             imgUrl : publicConfig.imageUrl + 'a3fce851ea0b0687b0366f2c123abeea' + '?f=png' // 分享图标

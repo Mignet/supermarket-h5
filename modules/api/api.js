@@ -165,7 +165,7 @@ api = {
     //领取终极大奖--4.3.0
     sendFinalPrize:"cfpnewcomerwelfaretask/sendFinalPrize/4.3.0",
 
-    //猎财月份收益榜
+    //貅比特月份收益榜
     monthIncome:"act/rankList/zyb/rank",
 
     // 每日早报

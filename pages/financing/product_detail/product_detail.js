@@ -225,7 +225,7 @@ var financing = {
                 var shareLink = (userInfo.userName && self.isBindCard) ?publicConfig.liecaiUrl + '/product/detail?productId='+ response.productId+"&recommendCode="+userInfo.mobile+"&name=" + encodeURIComponent(userInfo.userName) : publicConfig.liecaiUrl + '/product/detail?productId='+ response.productId+"&recommendCode="+result.mobile;
 
                 var shareData = {
-                    shareDesc:'我已使用猎财大师'+result.regTime+'天，猎财严选网贷平台，分散投资值得信赖。',
+                    shareDesc:'我已使用貅比特'+result.regTime+'天，貅比特严选网贷平台，分散投资值得信赖。',
                     shareImgurl:comm.getServerImg('dfa3e35be331f6ec67566130f67820b9'),
                     shareLink:shareLink,
                     shareTitle:'送你一个收益'+response.flowMaxRate+'%的理财产品，额外加息'+response.feeRatio+'%'

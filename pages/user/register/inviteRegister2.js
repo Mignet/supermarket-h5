@@ -61,7 +61,7 @@ var inviteRegister2 = {
                             _this.goRegister(data);
                         }
                     } else {
-                        comm.alert('注册领会，需勾选服务协议');
+                        comm.alert('注册貅比特，需勾选服务协议');
                     }
                 }
             }

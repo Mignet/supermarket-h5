@@ -97,13 +97,13 @@ var publicConfig = (function() {
     //注册图片验证码用
     config.host = httpProtocolType + host[config.mode];
 
-    // 新版猎财链接
+    // 新版貅比特链接
     config.liecaiUrl = liecaiHost[config.mode];
 
     // 网站域名
     config.static = httpProtocol.https + static[config.mode] + config.root;
 
-    // 猎财网站域名
+    // 貅比特网站域名
     config.leicaiDomain = httpProtocol.https + webAddress[config.mode] + config.root;
 
     // T呗域名

@@ -91,7 +91,7 @@ var evt = {
                 if(this.shareButtonTime === 0){
                     $("#shareButton").text('我也要测算2018年的财运')
                 }else if(this.shareButtonTime === 1){
-                    $("#shareButton").text('立即注册猎财大师')
+                    $("#shareButton").text('立即注册貅比特')
                 }
             }else if(this.token){ // 微信中登录
                 self.getUserInfo()
@@ -175,7 +175,7 @@ var evt = {
                             $("#shareButton").text('我也要测算2018年的财运')
                         }else if(self.shareButtonTime === 1){
                             $("#goLogin").show()
-                            $("#shareButton").text('立即注册猎财大师')
+                            $("#shareButton").text('立即注册貅比特')
                         }
                         $(".first-page").hide()
                         $(".second-page").show()
@@ -509,7 +509,7 @@ var evt = {
         };
         teamAchievementService.send();
     },
-    //猎财成绩
+    //貅比特成绩
     liecaiAchievement:function () {
         var self = this;
         var liecaiAchievementService = new service();
@@ -602,7 +602,7 @@ var evt = {
             SHARE_URL = publicConfig.leicaiDomain + 'pages/activities/annualAccount.html?userId='+this.appUserId+'&mobile='+this.mobile
         }
         var appShareData = {
-            shareTitle: '猎财大师年度账单', // 分享标题
+            shareTitle: '貅比特年度账单', // 分享标题
             shareDesc: '我在2018年的标签为“'+result.flag+'”,在2018年将会赚得'+result.financial+'元,你也来测测吧',
             shareLink: SHARE_URL,
             shareImgurl: 'e934c9c9b54badc68dc2a8c647a7c154' // 分享图标
@@ -647,7 +647,7 @@ var evt = {
         }
         // 微信分享信息
         var wechatShareData = {
-            title  : '猎财大师年度账单', // 分享标题
+            title  : '貅比特年度账单', // 分享标题
             desc   : '我在2018年的标签为“'+result.flag+'”,在2018年将会赚得'+result.financial+'元,你也来测测吧', // 分享描述
             link   : SHARE_URL, // 分享链接
             imgUrl : publicConfig.imageUrl + 'e934c9c9b54badc68dc2a8c647a7c154?f=png' // 分享图标

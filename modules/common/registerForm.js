@@ -185,7 +185,7 @@ registerForm.prototype = {
 
 	isAgreement:function(ele){
 		if(!ele.hasClass("select")){
-			tip.show("请同意猎财大师服务协议");
+			tip.show("请同意貅比特服务协议");
 			return false
 		}else {
 			return true;
@@ -257,7 +257,7 @@ registerForm.prototype = {
 					// 已注册为理财师
 					case '2':
 						var theTip = new tipBox({
-						 	msg : '你已经是猎财大师用户，可直接登录',
+						 	msg : '你已经是貅比特用户，可直接登录',
 						 	callback : function(){
 						 		// 跳转到下载页面
 						 		comm.goUrl('/pages/download/download.html');

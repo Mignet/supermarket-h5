@@ -90,7 +90,7 @@ var understand={
             shareDesc:"致力于为理财师打造的“一站式”理财、投顾服务的零门槛创业平台。",
             shareImgurl:"dfa3e35be331f6ec67566130f67820b9",
             shareLink:publicConfig.static + 'pages/frame/children/understand.html',
-            shareTitle:"了解猎财大师"
+            shareTitle:"了解貅比特"
         }
         native.action("getSharedContent",shareData)
     }

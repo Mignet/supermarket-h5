@@ -32,7 +32,7 @@ var thirdRegister = {
                 if ($('#isAgree').prop('checked')) {
                     _this.register($.extend({}, source, formData));
                 } else {
-                    new tipBox().show('请先同意《猎财大师用户使用协议》');
+                    new tipBox().show('请先同意《貅比特用户使用协议》');
                 }
             }
         });

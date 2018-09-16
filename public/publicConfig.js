@@ -73,7 +73,7 @@ var publicConfig = (function() {
     // http协议名
     var httpProtocol = {
         http: 'http://',
-        https: 'https://'
+        https: 'http://'
     }
     var httpProtocolType = null;
     var hostPostfix = null;

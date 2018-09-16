@@ -7,7 +7,7 @@ var native = require('modules/common/native')
 
 function download() {
     if(!native.isApp){
-        this.init();
+        // this.init();
     }
 }
 download.prototype = {

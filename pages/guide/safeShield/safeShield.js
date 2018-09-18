@@ -35,7 +35,7 @@ var know = {
     appSelfShare:function(){
         var shareData = {
             shareDesc:"平台安全，资金更安全",
-            shareImgurl:"65fa5a9d5a12f503463c146464cd193e",
+            shareImgurl:"4f28a223e86e8b12a29ed0240b76328f",
             shareLink: publicConfig.static + 'pages/guide/safeShield.html',
             shareTitle:"貅比特安全保障"
         }

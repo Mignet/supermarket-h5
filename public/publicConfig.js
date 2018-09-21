@@ -17,7 +17,7 @@ var publicConfig = (function() {
     // 接口主机地址
     var host = {
         mock: "10.16.0.204:8080",
-        dev: 'devmarket.bethye.top',
+        dev: '10.16.0.128:8888',
         pre: 'premarket.bethye.top',
         produce: 'market.bethye.top'
     };
@@ -25,23 +25,23 @@ var publicConfig = (function() {
     // 图片接口主机地址
     var imgHost = {
         mock: 'preimage.bethye.top',
-        dev: 'preimage.bethye.top',
+        dev: 'image.bethye.top',
         pre: 'preimage.bethye.top',
         produce: 'image.bethye.top'
     }
 
     var liecaiHost = {
         mock: 'https://prenliecai.bethye.top',
-        dev: 'https://prenliecai.bethye.top',
+        dev: 'http://10.16.0.128:12002',
         pre: 'https://prenliecai.bethye.top',
-        produce: 'https://nliecai.bethye.top'
+        produce: 'http://nliecai.bethye.top'
     }
 
     //网址地址
     var static = {
         mock: 'preliecai.bethye.top',
         //开发环境
-        dev: 'devliecai.bethye.top',
+        dev: '10.16.0.128:12001',
         // 预发布环境
         pre: 'preliecai.bethye.top',
         // 生产环境
@@ -53,7 +53,7 @@ var publicConfig = (function() {
         // mock环境
         mock: 'preliecai.bethye.top',
         //开发环境
-        dev: 'devliecai.bethye.top',
+        dev: '10.16.0.128:12001',
         // 预发布环境
         pre: 'preliecai.bethye.top',
         // 生产环境
@@ -63,7 +63,7 @@ var publicConfig = (function() {
     var toobeiDomain = {
         mock: 'pre.bethye.top/app',
         //开发环境
-        dev: 'pre.bethye.top/app',
+        dev: '10.16.0.128:12001',
         // 预发布环境
         pre: 'pre.bethye.top/app',
         // 生产环境

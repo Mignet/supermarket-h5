@@ -47,3 +47,5 @@
    npm install -g fis3
    npm install
    fis3 release -d dist
+   
+   fis3 server start -p 12001

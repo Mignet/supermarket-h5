@@ -275,7 +275,7 @@ var financing = {
             //显示剩余额度(默认)
             data.isShowResidualAmount = '';
             data.residualAmount = (data.buyTotalMoney - data.buyedTotalMoney);
-            data.residualAmount = comm.numberTransform(data.residualAmount)
+            data.residualAmount = comm.numberTransform(data.residualAmount);
             percent = parseInt(data.buyedTotalMoney / data.buyTotalMoney * 100);
             //产品购买占比
             if (data.residualAmount < 0) {

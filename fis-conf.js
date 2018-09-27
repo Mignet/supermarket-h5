@@ -135,7 +135,7 @@ fis.match('**', {
       }),
       fis.plugin('replace', {
           from: '__project_mode__',
-          to: 'produce' //pre:测试环境，produce:生产环境
+          to: 'dev' //pre:测试环境，produce:生产环境
       }),
       fis.plugin('local-deliver',{
         

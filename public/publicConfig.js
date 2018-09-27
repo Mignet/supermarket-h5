@@ -18,56 +18,56 @@ var publicConfig = (function() {
     var host = {
         mock: "10.16.0.204:8080",
         dev: '10.16.0.128:8888',
-        pre: 'premarket.bethye.top',
-        produce: 'market.bethye.top'
+        pre: 'premarket.v5ent.com',
+        produce: 'market.v5ent.com'
     };
 
     // 图片接口主机地址
     var imgHost = {
-        mock: 'preimage.bethye.top',
-        dev: 'image.bethye.top',
-        pre: 'preimage.bethye.top',
-        produce: 'image.bethye.top'
+        mock: 'preimage.v5ent.com',
+        dev: 'image.v5ent.com',
+        pre: 'preimage.v5ent.com',
+        produce: 'image.v5ent.com'
     }
 
     var liecaiHost = {
-        mock: 'https://prenliecai.bethye.top',
+        mock: 'https://prenliecai.v5ent.com',
         dev: 'http://10.16.0.128:12002',
-        pre: 'https://prenliecai.bethye.top',
-        produce: 'http://nliecai.bethye.top'
+        pre: 'https://prenliecai.v5ent.com',
+        produce: 'http://nliecai.v5ent.com'
     }
 
     //网址地址
     var static = {
-        mock: 'preliecai.bethye.top',
+        mock: 'preliecai.v5ent.com',
         //开发环境
         dev: '10.16.0.128:12001',
         // 预发布环境
-        pre: 'preliecai.bethye.top',
+        pre: 'preliecai.v5ent.com',
         // 生产环境
-        produce: 'liecai.bethye.top'
+        produce: 'liecai.v5ent.com'
     }
 
     // 网站地址
     var webAddress = {
         // mock环境
-        mock: 'preliecai.bethye.top',
+        mock: 'preliecai.v5ent.com',
         //开发环境
         dev: '10.16.0.128:12001',
         // 预发布环境
-        pre: 'preliecai.bethye.top',
+        pre: 'preliecai.v5ent.com',
         // 生产环境
-        produce: 'liecai.bethye.top'
+        produce: 'liecai.v5ent.com'
     }
 
     var toobeiDomain = {
-        mock: 'pre.bethye.top/app',
+        mock: 'pre.v5ent.com/app',
         //开发环境
         dev: '10.16.0.128:12001',
         // 预发布环境
-        pre: 'pre.bethye.top/app',
+        pre: 'pre.v5ent.com/app',
         // 生产环境
-        produce: 'www.bethye.top/app'
+        produce: 'www.v5ent.com/app'
     }
 
     // http协议名
